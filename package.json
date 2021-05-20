@@ -1,0 +1,40 @@
+{
+  "name": "webshop-enjine",
+  "version": "1.0.0",
+  "description": "Webshop of Enjine which sells cars",
+  "main": "server/app.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development HOSTNAME=localhost PORT=8080 nodemon --exec babel-node -e js,html,nj server/app.js --watch src/*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pgmgent-pgm-4/webshop-wunder.git"
+  },
+  "author": "Jan Descacht, Jeroen Dewelde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pgmgent-pgm-4/webshop-wunder/issues"
+  },
+  "homepage": "https://github.com/pgmgent-pgm-4/webshop-wunder#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.3",
+    "path": "^0.12.7",
+    "sequelize": "^6.6.2",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.14.2",
+    "babel-polyfill": "^6.26.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^9.0.2",
+    "nodemon": "^2.0.7",
+    "sequelize-cli": "^6.2.0"
+  }
+}

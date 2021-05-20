@@ -1,0 +1,35 @@
+import sequelize from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
+
+export default (sequelize) => {
+  class CarReview extends Model {
+    static associate(models) {
+      this.belongsTo(models.User, {
+        foreignKey : {
+          allowNull: false
+        }
+      })
+    }
+  }
+
+  CarReview.init(
+    {
+      //userId
+      //carId
+      description: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      rating: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+    },
+    {
+      sequelize,
+      modelName: 'CarReview',
+    },
+  );
+
+  return CarReview;
+}
