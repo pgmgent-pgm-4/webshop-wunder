@@ -5,14 +5,17 @@ export default (sequelize) => {
   class Car extends Model {
     static associate(models) {
       this.hasMany(models.CarReview, {
+        foreignKey : {
+          allowNull: false
+        },
         onDelete: "cascade"
-      });
+      }),
       this.hasMany(models.Car_has_option, {
         onDelete: "cascade"
-      });
+      }),
       this.hasMany(models.Promotion, {
         onDelete: "cascade"
-      });
+      }),
 
       this.hasMany(models.OrderItem, {
         foreignKey: 'orderItemTableId',
@@ -30,6 +33,10 @@ export default (sequelize) => {
       //brandId
       //shapeId
       //colourId
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
       price: {
         type: DataTypes.INTEGER,
         allowNull: false

@@ -5,6 +5,9 @@ export default (sequelize) => {
   class Shape extends Model {
     static associate(models) {
       this.hasMany(models.Car, {
+        foreignKey : {
+          allowNull: false
+        },
         onDelete: "cascade"
       });
     }
@@ -17,7 +20,6 @@ export default (sequelize) => {
         allowNull: false
       },
       imgUrl: DataTypes.STRING,
-      brandImgUrl: DataTypes.STRING
     },
     {
       sequelize,

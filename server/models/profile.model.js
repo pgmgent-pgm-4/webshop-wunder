@@ -14,9 +14,9 @@ export default (sequelize) => {
 
   Profile.init(
     {
-      name: DataTypes.STRING,
-      url: DataTypes.STRING,
-      imgUrl: DataTypes.STRING,
+      firstName: DataTypes.STRING,
+      lastName: DataTypes.STRING,
+      dob: DataTypes.DATEONLY,
     },
     {
       sequelize,

@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Berline",
+        "imgUrl": "Berline.svg"
+    },
+    {
+        "name": "Break",
+        "imgUrl": "Break.svg"
+    },
+    {
+        "name": "Cabrio",
+        "imgUrl": "Cabrio.svg"
+    },
+    {
+        "name": "Coupé",
+        "imgUrl": "Coupé.svg"
+    },
+    {
+        "name": "Hatchback",
+        "imgUrl": "Hatchback.svg"
+    },
+    {
+        "name": "MPV",
+        "imgUrl": "MPV.svg"
+    },
+    {
+        "name": "SUV",
+        "imgUrl": "SUV.svg"
+    }
+]

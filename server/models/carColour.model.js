@@ -4,13 +4,25 @@ import { Model, DataTypes } from 'sequelize';
 export default (sequelize) => {
   class CarColour extends Model {
     static associate(models) {
-      this.hasMany(models.Car);
+      this.hasMany(models.Car, {
+        foreignKey : {
+          allowNull: false
+        },
+        onDelete: "cascade"
+      });
     }
   }
 
   CarColour.init(
     {
-      name: DataTypes.STRING,
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      rgb: {
+        type: DataTypes.STRING,
+        allowNull: false
+      }
     },
     {
       sequelize,
