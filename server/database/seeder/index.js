@@ -96,40 +96,41 @@ File paths
 
 //console.log(models);
 
-console.log('test');
+// console.log('test');
 
-// First, we start a transaction and save it into a variable
-import database from '../../database';
-import sequelize from 'Sequelize';
-const getData = async () => {
-  const t = await sequelize.transaction();
-  console.log(t)
-}
+// // First, we start a transaction and save it into a variable
+// import database from '../../database';
+// import sequelize from 'Sequelize';
+// const getData = async () => {
+//   const t = await sequelize.transaction();
+//   console.log(t)
+// }
 
-try {
+// try {
 
-  // Then, we do some calls passing this transaction as an option:
+//   // Then, we do some calls passing this transaction as an option:
 
-  const user = await database.User.create({
-    email: 'test4@enjine.be',
-    lastName: 'password124'
-  }, { transaction: t });
+//   const user = await database.User.create({
+//     email: 'test4@enjine.be',
+//     lastName: 'password124'
+//   }, { transaction: t });
 
-  await user.addSibling({
-    email: 'test5@enjine.be',
-    lastName: 'password125'
-  }, { transaction: t });
+//   await user.addSibling({
+//     email: 'test5@enjine.be',
+//     lastName: 'password125'
+//   }, { transaction: t });
 
-  // If the execution reaches this line, no errors were thrown.
-  // We commit the transaction.
-  await t.commit();
+//   // If the execution reaches this line, no errors were thrown.
+//   // We commit the transaction.
+//   await t.commit();
 
-} catch (error) {
+// } catch (error) {
 
-  // If the execution reaches this line, an error was thrown.
-  // We rollback the transaction.
-  await t.rollback();
+//   // If the execution reaches this line, an error was thrown.
+//   // We rollback the transaction.
+//   await t.rollback();
 
-}
+// }
 
-getData();
+// getData();
+
