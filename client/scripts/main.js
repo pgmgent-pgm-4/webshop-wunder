@@ -1,13 +1,16 @@
+import './../style/main.scss';
+import EnjineApi from './services';
 (() => {
   const app = {
     initialize() {
+      //console.log(services);
       this.enjineApi = new EnjineApi();
 
       this.brands = [];
       this.shapes = [];
       this.carColours = [];
       this.cars = [];
-
+      
       this.cacheElements();
       this.registerListeners();
     },
@@ -36,7 +39,9 @@
       });
     },
     async fetchData() {
-
+      //console.log('test in fetch');
+      //console.log(services.getBrands);
+      console.log(this.enjineApi);
       this.brands = await this.enjineApi.getBrands();
       this.shapes = await this.enjineApi.getShapes();
       this.carColours = await this.enjineApi.getCarColours();

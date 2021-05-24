@@ -1,7 +1,8 @@
 const ENJINE_BASE_PATH = 'http://localhost:8080/api';
 
-function EnjineApi() {
-  this.getBrands = async () => {
+export default class EnjineApi {
+  getBrands = async () => {
+    console.log('get brands');
     try {
       const response = await fetch(`${ENJINE_BASE_PATH}/brands`);
 
@@ -10,8 +11,8 @@ function EnjineApi() {
     } catch(error) {
       console.warn('An error occured!', error);
     }
-  };
-  this.getShapes = async () => {
+  }
+  getShapes = async () => {
     try {
       const response = await fetch(`${ENJINE_BASE_PATH}/shapes`);
 
@@ -20,8 +21,8 @@ function EnjineApi() {
     } catch(error) {
       console.warn('An error occured!', error);
     }
-  };
-  this.getCarColours = async () => {
+  }
+  getCarColours = async () => {
     try {
       const response = await fetch(`${ENJINE_BASE_PATH}/carColours`);
 
@@ -30,8 +31,8 @@ function EnjineApi() {
     } catch(error) {
       console.warn('An error occured!', error);
     }
-  };
-  this.getCars = async () => {
+  }
+  getCars = async () => {
     try {
       const response = await fetch(`${ENJINE_BASE_PATH}/cars`);
 
