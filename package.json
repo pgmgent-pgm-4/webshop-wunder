@@ -5,7 +5,7 @@
   "main": "server/app.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development HOSTNAME=localhost PORT=8080 nodemon --exec babel-node -e js,html,nj server/app.js --watch server/*",
-    "build-css": "node-sass --include-path scss server/views/style/main.scss server/public/css/main.css",
+    "build-css": "node-sass --include-path scss server/views/style/main.scss server/static/css/main.css",
     "watch-css": "nodemon -e scss -x \" npm run build-css \"",
     "start": "concurrently \" npm run watch-css \" \"npm run dev\" "
   },
