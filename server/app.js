@@ -13,6 +13,7 @@ import { createTerminus } from '@godaddy/terminus';
  */
 import { EnvironmentVariables } from './config';
 import { morganMiddleware, swaggerSpec } from './middleware';
+import publicRoutes from './routes';
 import apiRoutes from './api/routes';
 
 /**
@@ -36,7 +37,7 @@ nunjucks.configure(path.join(__dirname, 'views'), {
 	noCache: true,
 	watch: true,
 });
-app.set('view engine', 'html');
+app.set('view engine', 'njk');
 
 /*
 bodyParser
@@ -64,6 +65,16 @@ https://www.npmjs.com/package/morgan
 if (EnvironmentVariables.NODE_ENV === 'development') {
 	app.use(morganMiddleware);
 }
+
+/*
+Serving static files
+*/
+app.use('/static', express.static(path.join(__dirname, 'static')));
+
+/*
+Public Routes
+*/
+app.use('/', publicRoutes);
 
 /*
 API Routes

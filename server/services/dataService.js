@@ -1,4 +1,5 @@
 const ENJINE_BASE_PATH = 'http://localhost:8080/api';
+import fetch from 'node-fetch';
 
 export default class EnjineApi {
   getBrands = async () => {
