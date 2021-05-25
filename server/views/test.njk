@@ -1,0 +1,14 @@
+{% extends "base.njk" %}
+
+{% block content %}
+    This should be placed as content
+
+    This should be a fetch for the brands:
+    <ul>
+        {% for item in data %}
+        <li>
+            {{ item.name }}
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

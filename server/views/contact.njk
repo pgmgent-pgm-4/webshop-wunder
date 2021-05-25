@@ -1,0 +1,13 @@
+{% extends "base.njk" %}
+
+{% block content %}
+    THIS IS A TEST PAGE for <strong>CONTACT</strong> WITH THE PUBLIC CONTROLLER
+    <h2>This is data passed through the controller </h2>
+    Office:
+
+    {% if name %}
+        {{name }}
+    {% else %}        
+        no name
+    {% endif %}
+{% endblock %}
