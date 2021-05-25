@@ -1,22 +1,59 @@
 # Final Project: Webshop
 
 ## Development (in progress)
-### Front-End
-Use parcel to convert scss to css, creates 'dist'-folder which is going to run on server http://localhost:1234,  
-**with command:**
-> npm run parcel-dev
+### Start up server
+You can run the server with the command :  
+> npm run start
 
-Connection to some endpoints are made in './client/scripts/services.js', which is imported in './client/scripts/main.js'  
+This Code will start the server, create database if not present, start up API, render views.
 
-**TODO:**  
-Nunjucks still needs to be implemented to allow component-based html/njk-files
+## Folder-structure
+```
+├── README.md  
+└── server  
+    ├── api
+    │   ├── controllers 
+    │   └── routes
+    │       └── index.js (all routes for the API)
+    ├── app.js
+    ├── controllers
+    │   └── publicController.js ( controller is being called from /routes, decides what to output )
+    ├── public
+    │   ├── css
+    │   │   └── main.css ( file is being generated from node-sass)
+    │   ├── images ( images can be added here, refer to './static/images/...' )
+    │   └── js ( add script is necesarry, refer to './static/js/...' )
+    ├── routes
+    │   └── index.js ( defined routes ex. /contact will call publicController "getContact" )
+    ├── services
+    │   └── dataService.js ( bundles calls for API )
+    └── views
+        ├── base.njk ( base-file as example, use include in other files)
+        ├── index.njk
+        ├── partials
+        │   └── header.njk ( partials can be loaded with {% include "partials/header.njk" %}  )
+        └── style ( folders to seperate scss )
+            ├── abstracts
+            ├── base
+            ├── components
+            ├── layout
+            ├── main.scss ( bundle of 7-1 scss structure )
+            ├── pages
+            ├── themes
+            └── vendors
+```
 
-### Back-end
-Run back-end in new terminal window, which will run from http://localhost:8080,  
-**with command:**
-> npm run dev
+## Front-end
+Nunjucks-files are being rendered from the **/views**-folder.  
+Scss is being converted from **/views/style/main.scss** to **/public/css/main.css**  
+images, scripts, ..can be added to the **/public/images** and **/public/css**-folders.  
 
-**accesing API:**
+
+## Back-end
+**public controller**
+Endpoints are created in the publicController and refers to that specific page in the **/views**-folder
+
+**accesing API:**  
 API documentation is available at [http://localhost:8080/api/docs](http://localhost:8080/api/docs).  
 For now only 'shapes' is defined, below is a list of finished models, controllers, endpoints
 
