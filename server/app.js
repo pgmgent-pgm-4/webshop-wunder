@@ -7,6 +7,7 @@ import path from 'path';
 import nunjucks from 'nunjucks';
 import swaggerUi from 'swagger-ui-express';
 import { createTerminus } from '@godaddy/terminus';
+//import livereload from 'livereload';
 
 /**
  * Custom modules 
@@ -75,6 +76,12 @@ app.use('/static', express.static(path.join(__dirname, 'static')));
 Public Routes
 */
 app.use('/', publicRoutes);
+
+/**
+ * Live reload
+ */
+//const liveReloadServer = livereload.createServer();
+//liveReloadServer.watch(path.join(__dirname, 'static'));
 
 /*
 API Routes
