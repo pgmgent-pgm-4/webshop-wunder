@@ -1,0 +1,46 @@
+// form
+
+// alternative form
+.alt-label {
+    display: block;
+    width: 100%;
+    height: 3rem;
+    position: relative;
+    margin-bottom: 1rem;
+
+    .alt-input {
+        width: 100%;
+        position: absolute;
+        top: 1.2rem;
+        padding: 0.3rem 0.3rem;
+        outline: none;
+        border-bottom: 1px solid $grey-dark-color;
+        background-color: $primary-color;
+        color: $secondary-color;
+        @include transition;
+        font-size: 1rem;
+        @include media-min(md) {
+            font-size: 1.1rem;
+        }
+
+        & ~ span {
+            @include transition;
+            position: absolute;
+            top: 1.2rem;
+            font-size: 1rem;
+            @include media-min(md) {
+                font-size: 1.1rem;
+            }
+            color: $grey-dark-color;
+        }
+
+        &:focus ~ span {
+            top: 0.25rem;
+            font-size: 0.8rem;
+        }
+
+        &:focus {
+            border-color: $accent-color;
+        }
+    }
+}

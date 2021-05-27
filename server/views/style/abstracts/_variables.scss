@@ -1,0 +1,19 @@
+// colors
+$primary-color: #0D0D0D;
+$primary-shadow-color: #0d0d0d29;
+$secondary-color: #F9F9F9;
+$accent-color: #CC0000;
+$grey-color: #9C9C9C;
+$grey-dark-color: #5E5E5E;
+$white-color: #fff;
+$black-color: #000;
+
+// A map of breakpoints.
+$breakpoints: (
+  xxs: 28rem,
+  xs: 36rem,
+  sm: 50rem,
+  md: 64rem,
+  lg: 75rem,
+  full: 80rem
+);

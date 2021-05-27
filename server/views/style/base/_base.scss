@@ -1,16 +1,17 @@
-body {
-    background-color: #E5E5E5;
-
-    p {
-        color: #180b0b;
-    }
-
-    li {
-        color: red;
-    }
+* {
+    box-sizing: border-box;
 }
 
+body {
+    background-color: $secondary-color;
+    color: $primary-color;
+    font-family: 'vw_text';
+}
 
-.test-blue {
-    color:blue;
+img {
+    max-width: 100%;
+}
+
+svg {
+    stroke: $secondary-color;
 }
