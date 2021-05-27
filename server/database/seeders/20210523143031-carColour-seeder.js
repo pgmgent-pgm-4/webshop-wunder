@@ -2,24 +2,44 @@
 
 const COLOURS = [
   {
-    name: 'red',
-    rgb: 'FF0000',
+    name: 'Metallic Black',
+    hex: '0d1116',
   },
   {
-    name: 'green',
-    rgb: '00FF00',
+    name: 'Metallic Silver',
+    hex: '999da0',
   },
   {
-    name: 'blue',
-    rgb: '0000FF',
+    name: 'Metallic White',
+    hex: 'fffff6',
   },
   {
-    name: 'white',
-    rgb: 'FFFFFF',
+    name: 'Metallic Blue',
+    hex: '47578f',
   },
   {
-    name: 'black',
-    rgb: '000000',
+    name: 'Metallic Purple',
+    hex: '621276',
+  },
+  {
+    name: 'Metallic Pink',
+    hex: 'df5891',
+  },
+  {
+    name: 'Metallic Red',
+    hex: 'c00e1a',
+  },
+  {
+    name: 'Metallic Orange',
+    hex: 'f78616',
+  },
+  {
+    name: 'Metallic Yellow',
+    hex: 'ffcf20',
+  },
+  {
+    name: 'Metallic Green',
+    hex: '155c2d',
   },
 ];
 
