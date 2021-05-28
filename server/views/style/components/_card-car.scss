@@ -1,0 +1,54 @@
+.card-car {
+    background-color: $white-color;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 1px 2px $primary-shadow-color;
+    @include transition;
+    display: flex;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    width: 100%;
+    
+    a {
+        width: 100%;
+        padding: 1.5rem;
+
+        button {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            @include transition;
+            cursor: pointer;
+
+            svg {
+                stroke: $primary-color;
+            }
+
+            &:hover {
+                svg {
+                    stroke: $accent-color;
+                }
+            }
+        }
+
+        .type {
+            font-weight: bold;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            margin-bottom: 0;
+        }
+        
+        .car-image {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+    }
+    
+    &:hover {
+        box-shadow: 0px 4px 8px $primary-shadow-color;
+    }
+}

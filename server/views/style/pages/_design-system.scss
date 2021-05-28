@@ -54,4 +54,23 @@ h1, h2, h3, h4, h5, p {
         font-size: 1.5rem;
         font-weight: normal;
     }
+    
+    button {
+        &:first-of-type {
+            margin-bottom: 1.25rem;
+        }
+    }
+}
+
+.forms {
+    div {
+        margin-right: 2rem;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: normal;
+        margin-bottom: 1rem;
+    }
 }
