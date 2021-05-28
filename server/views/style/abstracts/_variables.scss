@@ -10,10 +10,18 @@ $black-color: #000;
 
 // A map of breakpoints.
 $breakpoints: (
+  // 448px
   xxs: 28rem,
+  // 576px
   xs: 36rem,
+  // 800px
   sm: 50rem,
+  // 1024px
   md: 64rem,
+  // 1200px
   lg: 75rem,
-  full: 80rem
+  // 1280px
+  full: 80rem,
+  // 1360px
+  fullPlus: 85rem
 );

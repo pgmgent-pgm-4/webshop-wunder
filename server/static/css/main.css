@@ -6,11 +6,26 @@ body {
   color: #0D0D0D;
   font-family: 'vw_text'; }
 
+main {
+  padding-top: 4rem; }
+  @media (min-width: 28rem) {
+    main {
+      padding-top: 7.8rem; } }
+  @media (min-width: 50rem) {
+    main {
+      padding-top: 4.9rem; } }
+  @media (min-width: 64rem) {
+    main {
+      padding-top: 5.06rem; } }
+
 img {
   max-width: 100%; }
 
 svg {
   stroke: #F9F9F9; }
+
+p {
+  font-size: 18px; }
 
 @font-face {
   font-family: 'vw_head';
@@ -36,9 +51,59 @@ svg {
   font-weight: bold;
   font-style: normal; }
 
+h1, h2, h3, h4, h5 {
+  font-family: 'vw_head', sans-serif;
+  font-weight: bold;
+  line-height: 1.2; }
+
+h1 {
+  font-size: 4rem; }
+
+h2 {
+  font-size: 2.5rem; }
+
+h3 {
+  font-size: 2rem; }
+
+h4 {
+  font-size: 1.5rem; }
+
+h5 {
+  font-size: 1.25rem; }
+
 .max-width {
   max-width: 80rem;
   margin: auto; }
+
+.bold {
+  font-weight: bold; }
+
+.margin {
+  padding: 4rem 1.5rem; }
+  @media (min-width: 28rem) {
+    .margin {
+      padding: 4rem 2rem; } }
+  @media (min-width: 50rem) {
+    .margin {
+      padding: 4rem 3rem; } }
+  @media (min-width: 64rem) {
+    .margin {
+      padding: 4rem 4rem; } }
+
+.title {
+  position: relative; }
+  .title::before {
+    content: "";
+    position: absolute;
+    border-radius: 50px;
+    height: 0.4rem;
+    top: 50%;
+    right: 102%;
+    background-color: #CC0000;
+    width: 5rem; }
+    @media (min-width: 85rem) {
+      .title::before {
+        width: calc(100vw - 80rem); } }
 
 * {
   margin: 0;
@@ -58,9 +123,8 @@ button {
 input {
   border: none; }
 
-.btn {
-  padding: 0.5rem 2rem;
-  background-color: #CC0000;
+.btn-pri {
+  background-color: #0D0D0D;
   border-radius: 2px;
   color: #F9F9F9;
   font-family: 'vw_text';
@@ -69,37 +133,150 @@ input {
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  display: flex; }
-  .btn .container-text {
-    padding: 0.5rem 2rem;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  box-shadow: 0px 2px 4px #0d0d0d29; }
+  .btn-pri .overlay {
+    background-color: #CC0000;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in-out; }
+  .btn-pri .container-text {
+    padding: 0.625rem 2rem;
     position: relative;
-    display: block; }
-    .btn .container-text span {
+    display: block;
+    width: 100%; }
+    .btn-pri .container-text span {
+      text-align: center;
+      display: block;
       width: 100%;
-      position: absolute;
+      position: relative;
+      white-space: nowrap;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      transition: all 0.2s ease-in-out; }
-  .btn img {
+      transition: all 0.3s ease-in-out; }
+  .btn-pri .arrow {
     position: absolute;
     top: 50%;
     right: -1rem;
     transform: translateY(-50%);
-    transition: all 0.2s ease-in-out; }
-  .btn:hover img {
+    transition: all 0.3s ease-in-out; }
+  .btn-pri:hover .arrow {
     right: 1.2rem; }
-  .btn:hover .container-text span {
+  .btn-pri:hover .overlay {
+    transform: translateX(0); }
+  .btn-pri:hover .container-text span {
     left: calc(50% - 0.6rem); }
+  .btn-pri.disabled {
+    pointer-events: none;
+    background-color: #E4E4E4;
+    box-shadow: none;
+    color: #5E5E5E; }
 
-.alt-label {
+.btn-pri-alt {
+  background-color: #CC0000; }
+  .btn-pri-alt .overlay {
+    background-color: #CC0000; }
+  .btn-pri-alt.disabled {
+    background-color: #FC8484;
+    color: #F9F9F9; }
+
+.btn-sec {
+  color: #0D0D0D;
+  border: 2px solid #0D0D0D;
+  background-color: #F9F9F9; }
+  .btn-sec .overlay {
+    background-color: #0D0D0D; }
+  .btn-sec:hover {
+    color: #F9F9F9; }
+  .btn-sec.disabled {
+    background-color: #F9F9F9;
+    border-color: #E4E4E4; }
+
+.btn-ter {
+  color: #CC0000;
+  background-color: #F9F9F9;
+  padding-bottom: 0.2rem;
+  background: linear-gradient(90deg, currentColor calc(100%/3), transparent 0 calc(200%/3), currentColor 0) var(--d, 0%) 100%/300% 2px no-repeat;
+  box-shadow: none;
+  border-radius: 0px; }
+  .btn-ter .overlay {
+    background-color: #0D0D0D; }
+  .btn-ter .container-text {
+    padding: 0; }
+  .btn-ter .arrow {
+    display: none; }
+  .btn-ter:hover {
+    color: #FC8484;
+    --d: 100%; }
+    .btn-ter:hover .overlay {
+      transform: translateX(-100%); }
+    .btn-ter:hover .container-text span {
+      left: 50%; }
+
+.btn-ter.btn-ter-alt {
+  color: #0D0D0D;
+  background: linear-gradient(90deg, currentColor calc(100%/3), transparent 0 calc(200%/3), currentColor 0) var(--d, 0%) 100%/300% 2px no-repeat; }
+  .btn-ter.btn-ter-alt:hover {
+    color: #5E5E5E;
+    border-color: #5E5E5E; }
+
+.continuous-3 {
+  transition: 0.5s; }
+
+.continuous-3:hover {
+  --d: 100%; }
+
+.label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'vw_head'; }
+
+.input,
+.textarea,
+.select {
+  display: block;
+  border: 1px solid #9C9C9C;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  font-family: 'vw_text'; }
+  .input::placeholder,
+  .textarea::placeholder,
+  .select::placeholder {
+    color: #9C9C9C;
+    font-weight: normal; }
+  .input:focus,
+  .textarea:focus,
+  .select:focus {
+    border-color: #CC0000;
+    box-shadow: 0px 2px 4px #0d0d0d29; }
+
+.select {
+  appearance: none;
+  background: url("../images/icons/arrow_down.svg") 95%/0.8rem no-repeat #fff; }
+  .select:focus {
+    background: url("../images/icons/arrow_up.svg") 95%/0.8rem no-repeat #fff; }
+
+.label-alt {
   display: block;
   width: 100%;
   height: 3rem;
   position: relative;
   margin-bottom: 1rem; }
-  .alt-label .alt-input {
+  .label-alt .input-alt {
     width: 100%;
     position: absolute;
     top: 1.2rem;
@@ -111,21 +288,21 @@ input {
     transition: all 0.2s ease-in-out;
     font-size: 1rem; }
     @media (min-width: 64rem) {
-      .alt-label .alt-input {
+      .label-alt .input-alt {
         font-size: 1.1rem; } }
-    .alt-label .alt-input ~ span {
+    .label-alt .input-alt ~ span {
       transition: all 0.2s ease-in-out;
       position: absolute;
       top: 1.2rem;
       font-size: 1rem;
       color: #5E5E5E; }
       @media (min-width: 64rem) {
-        .alt-label .alt-input ~ span {
+        .label-alt .input-alt ~ span {
           font-size: 1.1rem; } }
-    .alt-label .alt-input:focus ~ span {
+    .label-alt .input-alt:focus ~ span {
       top: 0.25rem;
       font-size: 0.8rem; }
-    .alt-label .alt-input:focus {
+    .label-alt .input-alt:focus {
       border-color: #CC0000; }
 
 .burger {
@@ -165,6 +342,42 @@ input {
     top: 50%;
     transform: translateY(-50%);
     transform: rotate(-135deg); }
+
+.card-car {
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 1px 2px #0d0d0d29;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  width: 100%; }
+  .card-car a {
+    width: 100%;
+    padding: 1.5rem; }
+    .card-car a button {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer; }
+      .card-car a button svg {
+        stroke: #0D0D0D; }
+      .card-car a button:hover svg {
+        stroke: #CC0000; }
+    .card-car a .type {
+      font-weight: bold;
+      font-size: 1.75rem;
+      margin-bottom: 1rem; }
+    .card-car a .price {
+      font-size: 1.25rem;
+      margin-bottom: 0; }
+    .card-car a .car-image {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem; }
+  .card-car:hover {
+    box-shadow: 0px 4px 8px #0d0d0d29; }
 
 header {
   background-color: #0D0D0D;
@@ -282,8 +495,8 @@ header {
           display: flex; }
           header .desktop-nav .side-nav__item a .status {
             position: absolute;
-            top: -0.4rem;
-            left: 0.65rem; }
+            top: -0.3rem;
+            left: 0.75rem; }
           header .desktop-nav .side-nav__item a .feather-user,
           header .desktop-nav .side-nav__item a .feather-search {
             width: 26px;
@@ -600,3 +813,61 @@ footer {
         footer .footer-bottom ul li:last-of-type a::after {
           content: '';
           padding: 0; }
+
+h1, h2, h3, h4, h5, p {
+  margin-bottom: 1.5rem; }
+
+.last {
+  margin-bottom: 0; }
+
+.div {
+  margin-bottom: 3rem; }
+
+.flex {
+  display: flex; }
+
+.colour {
+  width: 10rem;
+  height: 10rem;
+  box-shadow: 0px 2px 4px #0d0d0d29;
+  margin-right: 1.25rem;
+  border-radius: 2px; }
+  .colour:last-of-type {
+    margin-right: 0; }
+
+.colour-1 {
+  background-color: #0D0D0D; }
+
+.colour-2 {
+  background-color: #F9F9F9; }
+
+.colour-3 {
+  background-color: #CC0000; }
+
+.colour-4 {
+  background-color: #9C9C9C; }
+
+.colour-5 {
+  background-color: #5E5E5E; }
+
+.colour-6 {
+  background-color: #0d0d0d29; }
+
+.buttons div {
+  margin-right: 2rem; }
+
+.buttons h2 {
+  font-size: 1.5rem;
+  font-weight: normal; }
+
+.buttons button:first-of-type {
+  margin-bottom: 1.25rem; }
+
+.forms div {
+  margin-right: 2rem;
+  width: 100%; }
+
+.forms h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 1rem; }

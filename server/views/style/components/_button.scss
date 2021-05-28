@@ -1,6 +1,6 @@
-.btn {
-    padding: 0.5rem 2rem;
-    background-color: $accent-color;
+// Primary button
+.btn-pri {
+    background-color: $primary-color;
     border-radius: 2px;
     color: $secondary-color;
     font-family: 'vw_text';
@@ -9,35 +9,56 @@
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    @include transition;
+    @include transition(0.3s);
     display: flex;
+    box-shadow: 0px 2px 4px $primary-shadow-color;
+
+    .overlay {
+        background-color: $accent-color;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        @include transition(0.3s);
+    }
     
     .container-text {
-        padding: 0.5rem 2rem;
+        padding: 0.625rem 2rem;
         position: relative;
         display: block;
+        width: 100%;
 
         span {
+            text-align: center;
+            display: block;
             width: 100%;
-            position: absolute;
+            position: relative;
+            white-space: nowrap;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            @include transition;
+            @include transition(0.3s);
         }
     }
 
-    img {
+    .arrow {
         position: absolute;
         top: 50%;
         right: -1rem;
         transform: translateY(-50%);
-        @include transition;
+        @include transition(0.3s);
     }
 
     &:hover {
-        img {
+        .arrow {
             right: 1.2rem;
+        }
+
+        .overlay {
+            transform: translateX(0);
         }
 
         .container-text {
@@ -46,4 +67,107 @@
             }
         }
     }
+
+    &.disabled {
+        pointer-events: none;
+        background-color: #E4E4E4;
+        box-shadow: none;
+        color: $grey-dark-color;
+    }
 }
+
+// Primary alternative button
+.btn-pri-alt {
+    background-color: $accent-color;
+
+    .overlay {
+        background-color: $accent-color;
+    }
+
+    &.disabled {
+        background-color: #FC8484;
+        color: $secondary-color;
+    }
+}
+
+// Secondary button
+.btn-sec {
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    background-color: $secondary-color;
+
+    .overlay {
+        background-color: $primary-color;
+    }
+
+    &:hover {
+        color: $secondary-color;
+    }
+
+    &.disabled {
+        background-color: $secondary-color;
+        border-color: #E4E4E4;
+    }
+}
+
+// Ternary button
+.btn-ter {
+    color: $accent-color;
+    background-color: $secondary-color;
+    padding-bottom: 0.2rem;
+    background: 
+       linear-gradient(90deg, currentColor calc(100%/3), transparent 0 calc(200%/3), currentColor 0) 
+       var(--d, 0%) 100% /300% 2px 
+      no-repeat;
+    box-shadow: none;
+    border-radius: 0px;
+    
+    .overlay {
+        background-color: $primary-color;
+    }
+
+    .container-text {
+        padding: 0;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    &:hover {
+        color: #FC8484;
+        --d: 100%;
+
+        .overlay {
+            transform: translateX(-100%);
+        }
+
+        .container-text {
+            span {
+                left: 50%;
+            }
+        }
+    }
+}
+
+// Ternary alternative button
+.btn-ter.btn-ter-alt {
+    color: $primary-color;
+    background: 
+       linear-gradient(90deg, currentColor calc(100%/3), transparent 0 calc(200%/3), currentColor 0) 
+       var(--d, 0%) 100% /300% 2px 
+      no-repeat;
+
+    &:hover {
+        color: $grey-dark-color;
+        border-color: $grey-dark-color;
+    }
+}
+
+.continuous-3 {
+    
+    transition:0.5s;
+  }
+  .continuous-3:hover {
+    --d: 100%;
+  }

@@ -2,4 +2,271 @@
 
 {% block content %}
     
+    <section class="max-width margin">
+        <div class="div">
+            <h1 class="title">
+                Typography
+            </h1>
+
+            <h1>
+                Heading 1 VW Head Bold 64px
+            </h1>
+            
+            <h2>
+                Heading 2 VW Head Bold 40px
+            </h2>
+
+            <h3>
+                Heading 3 VW Head Bold 32px
+            </h3>
+
+            <h4>
+                Heading 4 VW Head Bold 24px
+            </h4>
+
+            <h5>
+                Heading 5 VW Head Bold 20px
+            </h5>
+
+            <p>
+                Text VW Text Regular 18px. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent imperdiet, urna id rhoncus fringilla, lacus diam sollicitudin mi, vel tempus nibh lectus at dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam pretium diam a faucibus pellentesque. Ut imperdiet mauris a arcu suscipit hendrerit.  Aliquam vel eros in velit mattis semper. Etiam fringilla quam vitae rhoncus vehicula. Sed a ipsum et risus lacinia elementum. Duis at enim ut lorem vehicula egestas sit amet et neque. Praesent sed consequat ligula, vel faucibus ligula. Proin placerat ac sapien ut cursus.
+            </p>
+
+            <p class="bold last">
+                Text VW Text Bold 18px. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent imperdiet, urna id rhoncus fringilla, lacus diam sollicitudin mi, vel tempus nibh lectus at dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam pretium diam a faucibus pellentesque. Ut imperdiet mauris a arcu suscipit hendrerit.  Aliquam vel eros in velit mattis semper. Etiam fringilla quam vitae rhoncus vehicula. Sed a ipsum et risus lacinia elementum. Duis at enim ut lorem vehicula egestas sit amet et neque. Praesent sed consequat ligula, vel faucibus ligula. Proin placerat ac sapien ut cursus.
+            </p>
+        </div>
+
+        <div class="div">
+            <h1 class="title">
+                Colours
+            </h1>
+
+            <div class="flex">
+                <div class="colour colour-1"></div>
+
+                <div class="colour colour-2"></div>
+
+                <div class="colour colour-3"></div>
+
+                <div class="colour colour-4"></div>
+
+                <div class="colour colour-5"></div>
+
+                <div class="colour colour-6"></div>
+            </div>
+        </div>
+
+        <div class="div">
+            <h1 class="title">
+                Buttons
+            </h1>
+
+            <div class="flex buttons">
+                <div>
+                    <h2>
+                        Primary button
+                    </h2>
+
+                    <button class="btn-pri">
+                        <span class="overlay"></span>
+                        <span class="container-text">
+                            <span>Primary</span>
+                        </span>
+                        <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                    </button>
+
+                    <button class="btn-pri disabled">
+                        <span class="overlay"></span>
+                        <span class="container-text">
+                            <span>Disabled</span>
+                        </span>
+                        <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                    </button>
+                </div>
+                <div>
+                    <h2>
+                        Primary alternative button
+                    </h2>
+
+                    <button class="btn-pri btn-pri-alt">
+                        <span class="overlay"></span>
+                        <span class="container-text">
+                            <span>Primary alternative</span>
+                        </span>
+                        <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                    </button>
+
+                    <button class="btn-pri btn-pri-alt disabled">
+                        <span class="overlay"></span>
+                        <span class="container-text">
+                            <span>Disabled</span>
+                        </span>
+                        <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                    </button>
+                </div>
+                <div>
+                    <h2>
+                        Secondary button
+                    </h2>
+
+                    <button class="btn-pri btn-sec">
+                        <span class="overlay"></span>
+                        <span class="container-text">
+                            <span>Secondary</span>
+                        </span>
+                        <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                    </button>
+
+                    <button class="btn-pri btn-sec disabled">
+                        <span class="overlay"></span>
+                        <span class="container-text">
+                            <span>Disabled</span>
+                        </span>
+                        <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                    </button>
+                </div>
+                <div>
+                    <h2>
+                        Ternary button
+                    </h2>
+
+                    <button class="btn-pri btn-ter">
+                        <span class="overlay"></span>
+                        <span class="container-text">
+                            <span>Ternary</span>
+                        </span>
+                        <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                    </button>
+
+                    <button class="btn-pri btn-ter btn-ter-alt">
+                        <span class="overlay"></span>
+                        <span class="container-text">
+                            <span>Ternary alternative</span>
+                        </span>
+                        <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="div">
+            <h1 class="title">
+                Forms
+            </h1>
+            
+            <div class="flex forms">
+                <div>
+                    <h2>
+                        Label + input
+                    </h2>
+
+                    <form action="">
+                        <label class="label" for="design-label">Label</label>
+                        
+                        <input class="input" name="design-label" id="design-label" type="text" placeholder="input">
+                    </form>
+                </div>
+                <div>
+                    <h2>
+                        Textarea
+                    </h2>
+
+                    <form action="">
+                        <label class="label" for="design-textarea">Label</label>
+
+                        <Textarea class="textarea" name="design-textarea" id="design-textarea" placeholder="textarea"></Textarea>
+                    </form>
+                </div>
+                <div>
+                    <h2>
+                        Dropdown
+                    </h2>
+
+                    <form action="">
+                        <label class="label" for="design-dropdown">Label</label>
+
+                        <select class="select" name="design-dropdown" id="desgin-dropdown">
+                            <option value="option">Option</option>
+                            <option value="option">Option</option>
+                            <option value="option">Option</option>
+                            <option value="option">Option</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h1 class="title">
+                Cards
+            </h1>
+
+            <ul class="flex cards">
+                <li class="card-car">
+                    <a href="">
+                        <button>
+                            <i data-feather="heart" class="favorite"></i>
+                        </button>
+
+                        <p class="type">Audi RS 5 Coupé</p>
+                        <p class="price">Starting at $ 75,000</p>
+
+                        <img class="car-image" src="./static/images/fallback/Audi__RS 5 Coupé.png" alt="Image of car">
+
+                        <div class="btn-pri">
+                            <span class="overlay"></span>
+                            <span class="container-text">
+                                <span>Discover</span>
+                            </span>
+                            <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                        </div>
+                    </a>
+                </li>
+
+                <li class="card-car">
+                    <a href="">
+                        <button>
+                            <i data-feather="heart" class="favorite"></i>
+                        </button>
+
+                        <p class="type">Audi RS 5 Coupé</p>
+                        <p class="price">Starting at $ 75,000</p>
+
+                        <img class="car-image" src="./static/images/fallback/Audi__RS 5 Coupé.png" alt="Image of car">
+
+                        <div class="btn-pri">
+                            <span class="overlay"></span>
+                            <span class="container-text">
+                                <span>Discover</span>
+                            </span>
+                            <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                        </div>
+                    </a>
+                </li>
+
+                <li class="card-car">
+                    <a href="">
+                        <button>
+                            <i data-feather="heart" class="favorite"></i>
+                        </button>
+
+                        <p class="type">Audi RS 5 Coupé</p>
+                        <p class="price">Starting at $ 75,000</p>
+
+                        <img class="car-image" src="./static/images/fallback/Audi__RS 5 Coupé.png" alt="Image of car">
+
+                        <div class="btn-pri">
+                            <span class="overlay"></span>
+                            <span class="container-text">
+                                <span>Discover</span>
+                            </span>
+                            <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
 {% endblock %}

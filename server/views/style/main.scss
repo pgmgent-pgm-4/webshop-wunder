@@ -20,7 +20,8 @@
 @import
   'components/button',
   'components/forms',
-  'components/burger';
+  'components/burger',
+  'components/card-car';
 
 // 5. Layout-related sections
 @import
@@ -29,7 +30,8 @@
 
 // 6. Page-specific styles
 @import
-  'pages/home';
+  'pages/home',
+  'pages/design-system';
 
 // 7. Themes
 @import

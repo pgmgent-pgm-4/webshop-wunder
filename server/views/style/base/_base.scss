@@ -8,10 +8,27 @@ body {
     font-family: 'vw_text';
 }
 
+main {
+    padding-top: 4rem;
+    @include media-min(xxs) {
+        padding-top: 7.8rem;
+    }
+    @include media-min(sm) {
+        padding-top: 4.9rem;
+    }
+    @include media-min(md) {
+        padding-top: 5.06rem;
+    }
+}
+
 img {
     max-width: 100%;
 }
 
 svg {
     stroke: $secondary-color;
+}
+
+p {
+    font-size: 18px;
 }
