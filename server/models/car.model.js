@@ -33,6 +33,7 @@ export default (sequelize) => {
       //brandId
       //shapeId
       //colourId
+
       name: {
         type: DataTypes.STRING,
         allowNull: false
@@ -78,6 +79,10 @@ export default (sequelize) => {
         allowNull: false
       },
       acceleration: {
+        type: DataTypes.FLOAT,
+        allowNull: false
+      },
+      breakTIme: {
         type: DataTypes.FLOAT,
         allowNull: false
       },
