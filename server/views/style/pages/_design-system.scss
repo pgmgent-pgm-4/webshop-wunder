@@ -1,0 +1,76 @@
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 1.5rem;
+}
+
+.last {
+    margin-bottom: 0
+}
+
+.div {
+    margin-bottom: 3rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.colour {
+    width: 10rem;
+    height: 10rem;
+    box-shadow: 0px 2px 4px $primary-shadow-color;
+    margin-right: 1.25rem;
+    border-radius: 2px;
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
+
+.colour-1 {
+    background-color: $primary-color;
+}
+.colour-2 {
+    background-color: $secondary-color;
+}
+.colour-3 {
+    background-color: $accent-color;
+}
+.colour-4 {
+    background-color: $grey-color;
+}
+.colour-5 {
+    background-color: $grey-dark-color;
+}
+.colour-6 {
+    background-color: $primary-shadow-color;
+}
+
+.buttons {
+    div {
+        margin-right: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
+    
+    button {
+        &:first-of-type {
+            margin-bottom: 1.25rem;
+        }
+    }
+}
+
+.forms {
+    div {
+        margin-right: 2rem;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: normal;
+        margin-bottom: 1rem;
+    }
+}

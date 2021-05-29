@@ -23,21 +23,62 @@ const getHome = (req, res, next) => {
   }
 };
 
-const getCarsRender = (req, res, next) => {
-
-  //console.log('test in render', res.locals.test);
-  //console.log('locals', res.locals);
+/*
+Get Cat Render
+*/
+const getCars = (req, res, next) => {
   try {
-    console.log('render');
+    // Get data from service for teasers?
+    //let posts = dataService.getPosts();
+    //posts = posts.slice(0, 3);
+    // Send response
     res.render('cars', {
-      dataTest: 'testextrarender'
+      //posts,
+    });
+  } catch (error) {
+    handleHTTPError(error, next);
+  }
+};
+
+/*
+Get News Render
+*/
+const getNews = (req, res, next) => {
+  try {
+    // Get data from service for teasers?
+    //let posts = dataService.getPosts();
+    //posts = posts.slice(0, 3);
+    // Send response
+    res.render('news', {
+      //posts,
+    });
+  } catch (error) {
+    handleHTTPError(error, next);
+  }
+};
+
+/*
+Get About Render
+*/
+const getAbout = (req, res, next) => {
+  try {
+    // Get data from service for teasers?
+    //let posts = dataService.getPosts();
+    //posts = posts.slice(0, 3);
+    // Send response
+    res.render('about', {
+      //posts,
     });
   } catch (error) {
     handleHTTPError(error, next);
   }
 }
 
-const getCars = async(req, res, next) => {
+
+/*
+Get Car Render-test
+*/
+const getCarsTest = async(req, res, next) => {
   try {
     const category = (req.params.category === 'brands') || (req.params.category === 'shapes') ? req.params.category : null ;
     res.render('cars--data-test', {
@@ -50,6 +91,21 @@ const getCars = async(req, res, next) => {
     console.warn('An error occured!', error);
   }
 }
+
+/*
+Get Design-system Render
+*/
+const getDesignSystem = (req, res, next) => {
+  try {
+    // Send response
+    res.render('design-system', {
+      //design-system,
+    });
+  } catch (error) {
+    handleHTTPError(error, next);
+  }
+};
+
 
 //! Below is test
 /*
@@ -69,6 +125,7 @@ const getContact = (req, res, next) => {
     handleHTTPError(error, next);
   }
 };
+
 //! Below is test
 /*
 Get Contact Render
@@ -98,6 +155,10 @@ const getTest = async(req, res, next) => {
 
 module.exports = {
   getHome,
+  getCars,
+  getNews,
+  getAbout,
+  getDesignSystem,
   getContact,
   getTest,
   getCars,

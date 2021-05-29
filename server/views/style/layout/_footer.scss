@@ -1,0 +1,256 @@
+footer {
+    position: relative;
+    z-index: 0;
+    background-color: $primary-color;
+    color: $grey-color;
+    font-family: 'vw_head';
+    font-size: 1.1rem;
+    @include media-min(md) {
+        font-size: 1.25rem;
+    }
+
+    .footer-top {
+        display: flex;
+        padding: 2rem 2rem;
+        flex-wrap: wrap;
+        @include media-min(sm) {
+            flex-wrap: nowrap;
+            padding: 3rem 3rem;
+        }
+        @include media-min(md) {
+            padding: 3rem 4rem;
+        }
+        // padding-bottom: 2.5rem;
+
+        &__logo {
+            width: 100%;
+            padding-right: 0rem;
+            @include media-min(md) {
+                padding-right: 4rem;
+            }
+            @include media-min(lg) {
+                padding-right: 6.75rem;
+            }
+            
+            img {
+                width: 8rem;
+                @include media-min(md) {
+                    width: 10rem;
+                }
+            }
+
+            .socials {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 2.5rem;
+
+                @include media-min(xxs) {
+                    width: 10rem;
+                }
+
+                @include media-min(xs) {
+                    width: 15rem;
+                }
+                
+                @include media-min(sm) {
+                    margin-right: 3rem;
+                    width: 13rem;
+                }
+
+                @include media-min(md) {
+                    width: calc(100% + 2rem);
+                }
+
+                li {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    @include transition;
+                    border-radius: 2px;
+
+                    a {
+                        padding: 1rem 0;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                    &:hover {
+                        background-color: $accent-color;
+                    }
+                }
+            }
+        }
+        
+        &__nav {
+            width: 100%;
+            padding-right: 0rem;
+            padding-top: 2.5rem;
+            @include media-min(xs) {
+                padding-top: 3rem;
+                width: 50%;
+            }
+            @include media-min(sm) {
+                padding-top: 0;
+                width: 80%;
+            }
+            @include media-min(md) {
+                padding-right: 4rem;
+                width: 100%;
+            }
+            @include media-min(lg) {
+                padding-right: 6.75rem;
+            }
+
+            li {
+                display: flex;
+                
+                a {
+                    padding: 0.5rem 0;
+                    @include transition;
+                    
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                }
+                
+                .active {
+                    font-weight: bold;
+                    color: $secondary-color;
+                }
+
+                &:first-of-type {
+                    a {
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+        
+        &__brands {
+            width: 100%;
+            padding-right: 0rem;
+            padding-top: 2.5rem;
+            @include media-min(xs) {
+                padding-top: 3rem;
+                width: 50%;
+            }
+            @include media-min(sm) {
+                padding-top: 0;
+                width: 80%;
+            }
+            @include media-min(md) {
+                width: 100%;
+                padding-right: 4rem;
+            }
+            @include media-min(lg) {
+                padding-right: 6.75rem;
+            }
+            
+            li {
+                display: flex;
+
+                a {
+                    padding: 0.5rem 0;
+                    @include transition;
+                    
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                }
+
+                .active-footer {
+                    color: $secondary-color;
+                    font-weight: bold;
+                }
+
+                &:first-of-type {
+                    a {
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+        
+        &__newsletter {
+            width: 100%;
+            padding-top: 2.5rem;
+            
+            @include media-min(xs) {
+                padding-top: 3rem;
+                width: 60%;
+            }
+            @include media-min(sm) {
+                padding-top: 0;
+                width: 100%;
+            }
+
+            p {
+                color: $secondary-color;
+                font-weight: bold;
+                margin-bottom: 0.75rem;
+            }
+        }
+    }
+
+    .footer-bottom {
+        padding: 0 2rem 2rem 2rem;
+        font-size: 0.8rem;
+        @include media-min(sm) {
+            font-size: 0.9rem;
+        }
+        @include media-min(sm) {
+            font-size: 1rem;
+        }
+        @include media-min(md) {
+            padding-bottom: 3rem;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            @include media-min(xxs) {
+                flex-direction: row;
+            }
+
+            li {
+                display: flex;
+                width: 50%;
+                margin-top: 0.5rem;
+                @include media-min(xxs) {
+                    margin-top: 0;
+                    width: auto
+                }
+
+                a {
+                    @include transition;
+
+                    &::after {
+                        content: '';
+                        @include media-min(xxs) {
+                            content: '|';
+                        }
+                        padding-left: 1.25rem;
+                        padding-right: 1.25rem;
+                        color: $accent-color;
+                    }
+
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                }
+
+                &:last-of-type {
+                    a {
+                        &::after {
+                            content: '';
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

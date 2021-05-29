@@ -1,10 +1,99 @@
 <header>
-    <h1>THIS IS A TEST HEADER</h1>
-    <nav>
-        <ul>
-            <li><a href="">LINK</a></li>
-            <li><a href="">LINK</a></li>
-            <li><a href="">LINK</a></li>
+    <nav class="desktop-nav max-width">
+        <button class="burger" id="burger">
+            {# <i data-feather="menu" style="width=26px heigth=26px"></i> #}
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+        </button>
+
+        <a href="/design-system" class="main-logo">
+            <img src="./static/images/logo/logo_enjin_transparent.png" alt="logo Enjin">
+        </a>
+
+        <ul class="main-nav">
+            <li class="main-nav__item">
+                <a href="/">Home</a>
+            </li>
+            
+            <li class="main-nav__item">
+                <a href="/cars">Cars</a>
+            </li>
+
+            <li class="main-nav__item">
+                <a href="/news">News</a>
+            </li>
+
+            <li class="main-nav__item">
+                <a href="/contact">Contact</a>
+            </li>
+
+            <li class="main-nav__item">
+                <a href="/about">About</a>
+            </li>
         </ul>
+
+        <ul class="side-nav">
+            <li class="side-nav__item">
+                <a class="search" href="/">
+                    <i data-feather="search"></i>
+                </a>
+            </li>
+            <li class="side-nav__item">
+                <a href="/">
+                    <i data-feather="shopping-cart"></i>
+                </a>
+            </li>
+            <li class="side-nav__item">
+                <a href="/">
+                    <i data-feather="user"></i>
+                    <img class="status" src="./static/images/icons/online.svg" alt="logo online">
+                </a>
+            </li>
+            <li class="side-nav__item cross" id="close">
+                <a class="close" href="/">
+                    <i data-feather="x"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="search-bar">
+        <div>
+            <form action="">
+                <input type="search">
+
+                <button>
+                    <i data-feather="search"></i>
+                </button>
+            </form>
+        </div>
+
+        {# <div class="results">
+        
+        </div> #}
+    </div>
+
+    <nav class="mobile-nav">
+        <div class="mobile-nav__first"></div>
+        <div class="mobile-nav__second">
+            <ul class="mobile-nav__list">
+                <li>
+                    <a class="active" href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/cars">Cars</a>
+                </li>
+                <li>
+                    <a href="/news">News</a>
+                </li>
+                <li>
+                    <a href="/contact">Contact</a>
+                </li>
+                <li>
+                    <a href="/about">About</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 </header>

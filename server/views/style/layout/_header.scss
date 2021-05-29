@@ -1,0 +1,356 @@
+header {
+    background-color: $primary-color;
+    color: $grey-dark-color;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    
+    // Desktop size navigation
+    .desktop-nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        position: relative;
+        z-index: 1000;
+        background-color: $primary-color;
+
+        @include media-min(xxs) {
+            padding: 0rem 2rem;
+            padding-top: 1rem;
+        }
+        @include media-min(sm) {
+            padding: 0 3rem;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+        @include media-min(md) {
+            padding: 0 4rem;
+        }
+
+        .burger {
+            margin-right: 2rem;
+            @include media-min(xxs) {
+                display: none;
+            }
+        }
+
+        .main-logo {
+            display: flex;
+            @include transition(0.4s);
+            @include media-min(xxs) {
+                width: 50%;
+            }
+            @include media-min(sm) {
+                width: 100%;
+            }
+
+            img {
+                width: 6.7rem;
+                @include media-min(xs) {
+                    width: 7rem;
+                }
+                @include media-min(md) {
+                    width: 9rem;
+                }
+            }
+
+            &.mobile {
+                transform: translateX(-4rem);
+            }
+        }
+
+        .main-nav {
+            display: none;
+            font-family: 'vw_head';
+            font-weight: bold;
+            font-size: 1.1rem;
+            @include media-min(xxs) {
+                display: flex;
+                order: 3;
+                width: 100%;
+                justify-content: center;
+            }
+            @include media-min(xs) {
+            }
+            @include media-min(sm) {
+                width: 100%;
+                order: 2;
+            }
+            @include media-min(md) {
+                font-size: 1.25rem;
+            }
+
+            &__item {
+                margin: 0 0.5rem;
+                @include media-min(md) {
+                    margin: 0 1rem;
+                }
+                display: flex;
+                
+                a {
+                    padding: 1.75rem 0.5rem;
+                    padding-bottom: calc(1.75rem - 0.25rem);
+                    @include media-min(xs) {
+                        padding: 1.75rem 0.5rem;
+                        padding-bottom: calc(1.75rem - 0.25rem);
+                    }
+                    border-bottom: 4px solid $primary-color;
+                    @include transition;
+
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                }
+
+                .active {
+                    color: $secondary-color;
+                    border-bottom: 4px solid $accent-color;
+                }
+            }
+        }
+
+        // shopping-cart etc
+        .side-nav {
+            display: flex;
+            position: absolute;
+            right: 1.5rem;
+            @include media-min(xxs) {
+                order: 2;
+                right: 0;
+                position: relative;
+                width: 50%;
+                justify-content: flex-end;
+            }
+            @include media-min(sm) {
+                order: 3;
+                width: 100%;
+            }
+            
+            &__item {
+                display: flex;
+                transform: translateX(0);
+                @include transition;
+                margin-left: 1.5rem;
+                @include media-min(xs) {
+                    margin-left: 2.5rem;
+                }
+
+
+                a {
+                    position: relative;
+                    display: flex;
+
+                    .status {
+                        position: absolute;
+                        top: -0.3rem;
+                        left: 0.75rem;
+                    }
+
+                    .feather-user,
+                    .feather-search {
+                        width: 26px;
+                        height: 26px;
+                    }
+
+                    .feather-x {
+                        width: 32px;
+                        height: 32px;
+                        @include transition;
+
+                        &:hover {
+                            // width: 40px;
+                            // height: 40px;
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+
+                &:first-of-type,
+                &:last-of-type {
+                    margin-left: 0;
+                }
+
+                &.cross {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    // Mobile sized navigation
+    .mobile-nav {
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        position: fixed;
+        z-index: 1;
+        left: -150vw;
+        top: 0rem;
+        @include transition(0.4s);
+
+        @include media-min(xxs) {
+            display: none;
+        }
+        
+        &__first {
+            background-color: $accent-color;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            @include transition(0.4s);
+        }
+        &__second {
+            background-color: $primary-color;
+            width: 100%;
+            height: 100%;
+            left: -100vw;
+            position: fixed;
+            @include transition(0.4s);
+        }
+        
+        &__list {
+            font-size: 1.5rem;
+            color: $grey-dark-color;
+            font-weight: bold;
+            padding: 4.5rem 1.5rem;
+
+            li {
+                @include transition(0.4s);
+                display: flex;
+                
+                &:nth-of-type(2) {
+                    transform: translateX(-4rem);
+                }
+                &:nth-of-type(3) {
+                    transform: translateX(-8rem);
+                }
+                &:nth-of-type(4) {
+                    transform: translateX(-12rem);
+                }
+                &:nth-of-type(5) {
+                    transform: translateX(-16rem);
+                }
+                
+                a {
+                    padding: 0 0.1rem 0.2rem 0.1rem;
+                    margin-bottom: 0.3rem;
+                    margin-top: 0.5rem;
+                    border-bottom: 3px solid transparent;
+                    @include transition;
+
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                }
+            }
+
+            & .active {
+                color: $secondary-color;
+                border-color: $accent-color;
+            }
+        }
+
+        &.mobile {
+            left: 0rem;
+            @include transition(0.4s);
+            
+            & .mobile-nav__second {
+                left: 0;
+            }
+
+            & .mobile-nav__list li {
+                @include transition(0.6s);
+                transform: translateX(0rem);
+            }
+        }
+
+        @include media-min(sm) {
+            display: none;
+        }
+    }
+
+    // Search bar
+    .search-bar {
+        background-color: $primary-color;
+        width: 100vw;
+        position: absolute;
+        top: -1rem;
+        right: 0;
+        padding: 1rem 1.5rem;
+        @include transition(0.4s);
+
+        @include media-min(xxs) {
+            padding: 1rem 2rem;
+        }
+        @include media-min(sm) {
+            padding: 1rem 3rem;
+        }
+        @include media-min(md) {
+            padding: 1rem 4rem;
+        }
+        
+        form {
+            display: flex;
+            max-width: calc(80rem - 8rem);
+            margin: auto;
+
+            input {
+                // background-color: $secondary-color;
+                outline: none;
+                background-color: $primary-color;
+                border-bottom: 2px solid $grey-dark-color;
+                padding: 0.2rem 1rem;
+                padding-bottom: 0.4rem;
+                // border-radius: 2px 0 0 2px;
+                font-size: 1.25rem;
+                color: $secondary-color;
+                width: 100%;
+                @include transition;
+
+                &:focus {
+                    border-color: $accent-color;
+                }
+            }
+            
+            button {
+                padding: 0.4rem 2rem;
+                cursor: pointer;
+                margin-left: 1rem;
+                @include transition;
+                // border-radius: 0 2px 2px 0;
+                border-radius: 2px;
+                border: 1.5px solid $secondary-color;
+
+                .feather-search {
+                    @include transition;
+                }
+
+                &:hover {
+                    background-color: $secondary-color;
+
+                    .feather-search {
+                        stroke: $primary-color;
+                    }
+                }
+            }
+        }
+
+        &.visible {
+            top: 100%;
+        }
+
+        &.mobile {
+            top: 0;
+            z-index: 2;
+            width: 80vw;
+            right: 0;
+        }
+
+        // .results {
+        //     height: 100vh;
+        //     width: 100vw;
+        //     background-color: $primary-color;
+        // }
+    }
+}

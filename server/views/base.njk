@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MAIN STRUCTURE TEMPLATE</title>
+        <script src="./static/js/feather.js"></script>
         <link rel="stylesheet" href="./static/css/main.css">
     </head>
 
@@ -13,11 +14,13 @@
         {% include "partials/header.njk" %}
         
         <main>
-            HERE STARTS CONTENT:
             {% block content %}
                 
             {% endblock %} 
-            HERE ENDDED CONTENT
         </main>
+
+        {% include "partials/footer.njk" %}
+        
+        <script type="module" src="./static/js/index.js"></script>
     </body>
 </html>

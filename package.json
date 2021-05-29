@@ -1,7 +1,7 @@
 {
-  "name": "webshop-enjine",
+  "name": "webshop-enjin",
   "version": "1.0.0",
-  "description": "Webshop of Enjine which sells cars",
+  "description": "Webshop of Enjin which sells cars",
   "main": "server/app.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development HOSTNAME=localhost PORT=8081 nodemon --exec babel-node -e js,html,njk,scss --watch ./server/* --watch ./server",
@@ -27,6 +27,7 @@
     "dotenv": "9.0.2",
     "express": "^4.17.1",
     "faker": "^5.5.3",
+    "feather-icons": "^4.28.0",
     "helmet": "^4.6.0",
     "moment": "^2.29.1",
     "morgan": "^1.10.0",

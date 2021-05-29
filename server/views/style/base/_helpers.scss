@@ -1,0 +1,41 @@
+.max-width {
+    max-width: 80rem;
+    margin: auto;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.margin {
+    padding: 4rem 1.5rem;
+    @include media-min(xxs) {
+        padding: 4rem 2rem;
+    }
+    @include media-min(sm) {
+        padding: 4rem 3rem;
+     }
+    @include media-min(md) {
+        padding: 4rem 4rem;
+    }
+}
+
+.title {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        border-radius: 50px;
+        height: 0.4rem;
+        top: 50%;
+        right: 102%;
+        // transform: translateY(-50%);
+        background-color: $accent-color;
+        width: 5rem;
+
+        @include media-min(fullPlus) {
+            width: calc(100vw - 80rem);
+        }
+    }
+}
