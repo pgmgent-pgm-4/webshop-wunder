@@ -162,5 +162,5 @@ module.exports = {
   getContact,
   getTest,
   getCars,
-  getCarsRender
+  getCarsTest,
 };
