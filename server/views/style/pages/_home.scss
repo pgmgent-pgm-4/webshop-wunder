@@ -1,0 +1,121 @@
+.testimonial {
+    background-color: $primary-color;
+
+    &__container {
+        color: $secondary-color;
+        padding: 4rem 8.8rem 0 8.8rem;
+        font-family: 'vw_head';
+        font-weight: bold;
+        display: flex;
+        position: relative;
+        
+        .ceo {
+            width: 40%;
+            background: linear-gradient(0deg, rgba(13,13,13,1) 10%, rgba(13,13,13,0) 40%, rgba(13,13,13,0) 100%), url("../images/team/ceo.png");
+            background-size: cover;
+
+            img {
+                position: relative;
+                z-index: -1;
+            }
+        }
+
+        .text {
+            width: 60%;
+
+            .quote {
+                
+                p {
+                    font-size: 2rem;
+                    padding: 0.5rem 0;
+                    padding-left: 3.5rem;
+                }
+
+                img {
+                    width: 2.1rem;
+
+                    &:last-of-type {
+                        position: relative;
+                        right: -100%;
+                    }
+                }
+            }
+    
+            .credit {
+                font-size: 1.5rem;
+                text-align: right;
+                margin-top: 2.5rem;
+    
+                &::before {
+                    content:"-";
+                }
+            }
+        }
+    }
+}
+
+.teaser-bonus {
+    padding: 8rem 8.8rem;
+
+    ul {
+        display: flex;
+    }
+
+    &__card {
+
+        .flex {
+            display: flex;
+
+            div {
+
+                .container-text {
+                    span {
+                        display: flex;
+                        justify-content: center;
+
+                        svg {
+                            stroke: $primary-color;
+                            @include transition;
+                        }
+                    }
+                }
+
+                &:first-of-type {
+                    margin-right: 1rem;
+                    width: 75%;
+                }
+
+                &:last-of-type {
+                    width: 25%
+                }
+            }
+
+            .btn-sec:hover {
+                svg {
+                    stroke: $secondary-color;
+                }
+            }
+        }
+    }
+}
+
+.contact-link {
+    background-color: $primary-color;
+
+    div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 4rem 0;
+
+        h2 {
+            color: $secondary-color;
+            font-size: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        a {
+            width: 15rem;
+        }
+    }
+}

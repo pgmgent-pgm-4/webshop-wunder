@@ -7,17 +7,118 @@
 
         {% include "partials/carousel.njk" %}
 
-        <section>
-
-            <h2 class="title">
-                bodywork
-            </h2>
-
+        <section class="max-width">
             <div>
-            {% for item in bodywork %}
-                <p>{{ item.name }}</p>
-                <p>{{ item.svg }}</p>
+            {% for body in bodywork %}
+                <p>{{ body.name }}</p>
+                <p>{{ body.svg }}</p>
             {% endfor %}
+            
+            </div>
+        </section>
+
+        <section class="testimonial">
+            <div class="max-width testimonial__container">
+                <div class="ceo">
+                    <img src="./static/images/team/ceo.png" alt=" Picture of Stephan Winkelmann">
+                </div>
+
+                <div class="text">
+                    <div class="quote">
+                        {# use feather #}
+                        <img src="./static/images/icons/quotation-left.svg" alt="">
+
+                        <p>
+                            A Car is not going to change your life, but it will definitely change your attitude.
+                        </p>
+
+                        <img src="./static/images/icons/quotation-right.svg" alt="">
+                    </div>
+
+                    <p class="credit">Stephan Winkelmann</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="teaser-bonus max-width">
+            <ul class="cards">
+                <li class="card-car teaser-bonus__card">
+                    <a href="">
+                        <button>
+                            <i data-feather="heart" class="favorite"></i>
+                        </button>
+
+                        <p class="type">Audi RS 5 Coupé</p>
+                        <p class="price">Starting at $ 75,000</p>
+
+                        <img class="car-image" src="./static/images/fallback/Audi__RS 5 Coupé.png" alt="Image of car">
+
+                        <div class="flex">
+                            <div class="btn-pri">
+                                <span class="overlay"></span>
+                                <span class="container-text">
+                                    <span>Discover</span>
+                                </span>
+                                <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                            </div>
+
+                            <div class="btn-pri btn-sec">
+                                <span class="overlay"></span>
+                                <span class="container-text">
+                                    <span><i data-feather="shopping-cart"></i></span>
+                                </span>
+                                <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="card-car teaser-bonus__card">
+                    <a href="">
+                        <button>
+                            <i data-feather="heart" class="favorite"></i>
+                        </button>
+
+                        <p class="type">Audi RS 5 Coupé</p>
+                        <p class="price">Starting at $ 75,000</p>
+
+                        <img class="car-image" src="./static/images/fallback/Audi__RS 5 Coupé.png" alt="Image of car">
+
+                        <div class="flex">
+                            <div class="btn-pri">
+                                <span class="overlay"></span>
+                                <span class="container-text">
+                                    <span>Discover</span>
+                                </span>
+                                <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                            </div>
+
+                            <div class="btn-pri btn-sec">
+                                <span class="overlay"></span>
+                                <span class="container-text">
+                                    <span><i data-feather="shopping-cart"></i></span>
+                                </span>
+                                <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="contact-link">
+            <div class="max-width">
+                <h2>
+                    Have any more questions?
+                </h2>
+
+                <a href="/contact" class="btn-pri btn-pri-alt">
+                    <span class="overlay"></span>
+                    <span class="container-text">
+                        <span>Contact us</span>
+                    </span>
+                    <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                </a>
             </div>
         </section>
 

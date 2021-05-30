@@ -141,6 +141,7 @@ input {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   display: flex;
+  width: min-content;
   box-shadow: 0px 2px 4px #0d0d0d29; }
   .btn-pri .overlay {
     background-color: #CC0000;
@@ -862,6 +863,74 @@ footer {
         footer .footer-bottom ul li:last-of-type a::after {
           content: '';
           padding: 0; }
+
+.testimonial {
+  background-color: #0D0D0D; }
+  .testimonial__container {
+    color: #F9F9F9;
+    padding: 4rem 8.8rem 0 8.8rem;
+    font-family: 'vw_head';
+    font-weight: bold;
+    display: flex;
+    position: relative; }
+    .testimonial__container .ceo {
+      width: 40%;
+      background: linear-gradient(0deg, #0d0d0d 10%, rgba(13, 13, 13, 0) 40%, rgba(13, 13, 13, 0) 100%), url("../images/team/ceo.png");
+      background-size: cover; }
+      .testimonial__container .ceo img {
+        position: relative;
+        z-index: -1; }
+    .testimonial__container .text {
+      width: 60%; }
+      .testimonial__container .text .quote p {
+        font-size: 2rem;
+        padding: 0.5rem 0;
+        padding-left: 3.5rem; }
+      .testimonial__container .text .quote img {
+        width: 2.1rem; }
+        .testimonial__container .text .quote img:last-of-type {
+          position: relative;
+          right: -100%; }
+      .testimonial__container .text .credit {
+        font-size: 1.5rem;
+        text-align: right;
+        margin-top: 2.5rem; }
+        .testimonial__container .text .credit::before {
+          content: "-"; }
+
+.teaser-bonus {
+  padding: 8rem 8.8rem; }
+  .teaser-bonus ul {
+    display: flex; }
+  .teaser-bonus__card .flex {
+    display: flex; }
+    .teaser-bonus__card .flex div .container-text span {
+      display: flex;
+      justify-content: center; }
+      .teaser-bonus__card .flex div .container-text span svg {
+        stroke: #0D0D0D;
+        transition: all 0.2s ease-in-out; }
+    .teaser-bonus__card .flex div:first-of-type {
+      margin-right: 1rem;
+      width: 75%; }
+    .teaser-bonus__card .flex div:last-of-type {
+      width: 25%; }
+    .teaser-bonus__card .flex .btn-sec:hover svg {
+      stroke: #F9F9F9; }
+
+.contact-link {
+  background-color: #0D0D0D; }
+  .contact-link div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem 0; }
+    .contact-link div h2 {
+      color: #F9F9F9;
+      font-size: 4rem;
+      padding-bottom: 4rem; }
+    .contact-link div a {
+      width: 15rem; }
 
 .design-system h1, .design-system h2, .design-system h3, .design-system h4, .design-system h5, .design-system p {
   margin-bottom: 1.5rem; }
