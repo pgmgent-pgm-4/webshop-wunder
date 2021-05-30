@@ -11,12 +11,15 @@ main {
   @media (min-width: 28rem) {
     main {
       padding-top: 7.8rem; } }
+  @media (min-width: 36rem) {
+    main {
+      padding-top: 7.9rem; } }
   @media (min-width: 50rem) {
     main {
-      padding-top: 4.9rem; } }
+      padding-top: 4.8rem; } }
   @media (min-width: 64rem) {
     main {
-      padding-top: 5.06rem; } }
+      padding-top: 5rem; } }
 
 img {
   max-width: 100%; }
@@ -77,6 +80,9 @@ h5 {
 
 .bold {
   font-weight: bold; }
+
+.next-line {
+  display: block; }
 
 .margin {
   padding: 4rem 1.5rem; }
@@ -378,6 +384,49 @@ input {
       padding-bottom: 0.5rem; }
   .card-car:hover {
     box-shadow: 0px 4px 8px #0d0d0d29; }
+
+.slideshow .slide {
+  background: linear-gradient(0deg, #0d0d0d 0%, rgba(13, 13, 13, 0) 33%, rgba(13, 13, 13, 0) 66%, #0d0d0d 100%);
+  overflow: hidden;
+  position: relative;
+  color: #F9F9F9;
+  height: calc(100vh - 4rem); }
+  @media (min-width: 28rem) {
+    .slideshow .slide {
+      height: calc(100vh - 7.8rem); } }
+  @media (min-width: 28rem) {
+    .slideshow .slide {
+      height: calc(100vh - 7.9rem); } }
+  @media (min-width: 50rem) {
+    .slideshow .slide {
+      height: calc(100vh - 4.8rem); } }
+  @media (min-width: 64rem) {
+    .slideshow .slide {
+      height: calc(100vh - 5.06rem); } }
+  @media (min-width: 80rem) {
+    .slideshow .slide {
+      max-height: 42rem; } }
+  .slideshow .slide__title {
+    position: absolute;
+    font-size: 3rem;
+    top: 3rem;
+    left: 4rem; }
+  .slideshow .slide__cta {
+    position: absolute;
+    left: 3rem;
+    bottom: 4rem; }
+    .slideshow .slide__cta__text {
+      font-family: 'vw_head';
+      font-weight: regular;
+      font-size: 1.75rem; }
+    .slideshow .slide__cta__button {
+      margin-top: 1rem; }
+  .slideshow .slide__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: -1; }
 
 header {
   background-color: #0D0D0D;
@@ -814,7 +863,7 @@ footer {
           content: '';
           padding: 0; }
 
-h1, h2, h3, h4, h5, p {
+.design-system h1, .design-system h2, .design-system h3, .design-system h4, .design-system h5, .design-system p {
   margin-bottom: 1.5rem; }
 
 .last {

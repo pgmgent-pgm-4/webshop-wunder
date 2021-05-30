@@ -1,12 +1,24 @@
+{% set title = 'Home' %}
+
+
 {% extends "base.njk" %}
 
 {% block content %}
-    THIS IS A TEST PAGE WITH THE PUBLIC CONTROLLER
-    <p class="test-blue">test blue </p>
 
-    <i data-feather="circle"></i>
-    <i data-feather="circle"></i>
-    <i data-feather="circle"></i>
-    <i data-feather="circle"></i>
-    <i data-feather="circle"></i>
+        {% include "partials/carousel.njk" %}
+
+        <section>
+
+            <h2 class="title">
+                bodywork
+            </h2>
+
+            <div>
+            {% for item in bodywork %}
+                <p>{{ item.name }}</p>
+                <p>{{ item.svg }}</p>
+            {% endfor %}
+            </div>
+        </section>
+
 {% endblock %}
