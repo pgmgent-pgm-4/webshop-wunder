@@ -1,0 +1,46 @@
+{
+    "carnames" : [
+        "auto",
+        "automobile",
+        "bus",
+        "convertible",
+        "jeep",
+        "limousine",
+        "machine",
+        "motor",
+        "pickup",
+        "ride",
+        "station wagon",
+        "truck",
+        "van",
+        "wagon"
+    ],
+    "adjectives" : [
+        "practical",
+        "incredible",
+        "generic",
+        "gorgeous",
+        "unbranded",
+        "small",
+        "ergonomic",
+        "awesome",
+        "refined",
+        "intelligent",
+        "licensed",
+        "fantastic",
+        "handcrafted",
+        "handmade",
+        "rustic",
+        "sleek" 
+    ],
+    "prenames" : [
+        "My",
+        "My wife's",
+        "My husband's",
+        "My comany's",
+        "My family's",
+        "My friend's",
+        "This",
+        "The"
+    ]
+}

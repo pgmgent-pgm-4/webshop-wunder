@@ -21,6 +21,7 @@
             <ul>
                 {% for car in cat.Cars %}
                 <li>{{car.name}}</li>
+                <img src="{{car.teaserImgUrl}}" />
                 {% endfor %}
             </ul>
         {% endif %}
@@ -33,6 +34,7 @@
     <ul>
     {% for car in data %}    
         <li>{{car.name}}</li>
+        <img src="{{car.teaserImgUrl}}" />
     {% endfor %}
     </ul>
     {% endif %}

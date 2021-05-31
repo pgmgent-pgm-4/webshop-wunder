@@ -9,18 +9,11 @@ export default (sequelize) => {
           allowNull: false
         }
       })
-      // this.belongsTo(models.Car, {
-      //   foreignKey : {
-      //     allowNull: false
-      //   }
-      // });
     }
   }
 
   CarReview.init(
     {
-      //userId
-      //carId
       description: {
         type: DataTypes.STRING,
         allowNull: false

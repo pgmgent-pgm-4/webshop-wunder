@@ -5,6 +5,9 @@ export default (sequelize) => {
   class CarOption extends Model {
     static associate(models) {
       this.hasMany(models.Car_has_option, {
+        foreignKey : {
+          allowNull: false
+        },
         onDelete: "cascade"
       });
     }
@@ -12,9 +15,6 @@ export default (sequelize) => {
 
   CarOption.init(
     {
-      //id
-      //userId
-      //car_has_optionId
       name: {
         type: DataTypes.STRING,
         allowNull: false

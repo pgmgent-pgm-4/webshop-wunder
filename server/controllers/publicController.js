@@ -3,6 +3,7 @@ Import custom packages
 */
 //const dataService = require('../services/dataService');
 const { /* HTTPError, */handleHTTPError } = require('../utils');
+import faker from 'faker';
 
 /*
 Get Home Render

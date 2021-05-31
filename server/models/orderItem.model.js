@@ -4,18 +4,20 @@ import { Model, DataTypes } from 'sequelize';
 export default (sequelize) => {
   class OrderItem extends Model {
     static associate(models) {
-      this.belongsTo(models.Car, { foreignKey : 'orderItemTableId', constraints: false });
-      this.belongsTo(models.Car_has_option, { foreignKey : 'orderItemTableId', constraints: false });
+      this.belongsTo(models.Car, { 
+        foreignKey : 'orderItemTableId', 
+        constraints: false 
+      });
+
+      this.belongsTo(models.Car_has_option, { 
+        foreignKey : 'orderItemTableId', 
+        constraints: false 
+      });
     }
   }
 
   OrderItem.init(
     {
-      //id
-      //orderId
-      //itemType
-      //itemItd
-      //quantity
       quantity: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -33,6 +35,7 @@ export default (sequelize) => {
     },
   );
 
+  // Define polymorphism, because Foreign Key can be NULL
   OrderItem.addHook("afterFind", findResult => {
     if (!Array.isArray(findResult)) findResult = [findResult];
     for (const instance of findResult) {
@@ -41,6 +44,7 @@ export default (sequelize) => {
       } else if (instance.commentableType === "car_has_option" && instance.Car_has_option !== undefined) {
         instance.commentable = instance.video;
       }
+
       // To prevent mistakes:
       delete instance.Car;
       delete instance.dataValues.Car;

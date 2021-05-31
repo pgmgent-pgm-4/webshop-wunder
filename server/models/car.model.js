@@ -10,10 +10,18 @@ export default (sequelize) => {
         },
         onDelete: "cascade"
       }),
+
       this.hasMany(models.Car_has_option, {
+        foreignKey : {
+          allowNull: true
+        },
         onDelete: "cascade"
       }),
+
       this.hasMany(models.Promotion, {
+        foreignKey : {
+          allowNull: false
+        },
         onDelete: "cascade"
       }),
 
@@ -29,12 +37,11 @@ export default (sequelize) => {
 
   Car.init(
     {
-      //id
-      //brandId
-      //shapeId
-      //colourId
-
       name: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      teaserImgUrl: {
         type: DataTypes.STRING,
         allowNull: false
       },

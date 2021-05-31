@@ -16,10 +16,6 @@ export default (sequelize) => {
 
   Car_has_option.init(
     {
-      //id
-      //carId
-      //carOptionId
-
       price: {
         type: DataTypes.INTEGER,
         allowNull: false

@@ -52,7 +52,11 @@ module.exports = {
       
       // each image is called "Brand__carName.png"
       const carNamesFromFileSystem =  files.map(file => {
-        return file.split('__')[1].split('.png')[0];
+        return {
+          brand:file.split('__')[0].toLowerCase(), 
+          name: file.split('__')[1].split('.png')[0],
+          img: file
+        }
       });
 
       const brandId = brandFromDatabase.find(b => b.name === brand.name).id;
@@ -66,9 +70,10 @@ module.exports = {
 
     const carList = [];
 
-    const createCar = (brandId, name) => {
+    const createCar = (brandId, name, img, brand) => {
       carList.push({
         name: name,
+        teaserImgUrl: `/static/images/cars/${brand}/${img}`,
         ShapeId: _.sample(shapeIds).id,
         BrandId: brandId,
         CarColourId: _.sample(carColourIds).id,
@@ -91,12 +96,12 @@ module.exports = {
 
     carNames.forEach(carName => {
       carName.list.forEach(c => {
-        createCar(carName.brandId, c)
+        createCar(carName.brandId, c.name, c.img, c.brand)
       });
     });
 
     await queryInterface.bulkInsert('cars', 
-    carList, {}
+      carList, {}
     );
   },
   down: (queryInterface, Sequelize) => {

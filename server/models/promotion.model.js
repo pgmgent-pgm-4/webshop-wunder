@@ -2,22 +2,10 @@ import sequelize from 'sequelize';
 import { Model, DataTypes } from 'sequelize';
 
 export default (sequelize) => {
-  class Promotion extends Model {
-    // static associate(models) {
-    // }
-  }
+  class Promotion extends Model {}
 
   Promotion.init(
     {
-      //id
-      //carId
-      //promotionCode
-      //(forWhichItem)
-      //promotionName
-      //discount
-      //endDate
-      //(active)
-
       promotionCode: {
         type: DataTypes.STRING,
         allowNull: false
@@ -28,7 +16,7 @@ export default (sequelize) => {
         allowNull: false
       },
       endDate: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.DATE,
         allowNull: false
       },
     },
