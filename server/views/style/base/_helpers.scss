@@ -25,6 +25,19 @@
     }
 }
 
+.padding-home {
+    padding: 4rem 1.5rem;
+    @include media-min(xxs) {
+        padding: 4rem 2rem;
+    }
+    @include media-min(sm) {
+        padding: 4rem 3rem;
+    }
+    @include media-min(md) {
+        padding: 8rem 8.8rem;
+    }
+}
+
 .title {
     position: relative;
 
