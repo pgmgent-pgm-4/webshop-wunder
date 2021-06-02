@@ -277,6 +277,10 @@
                 width: 100%;
                 display: flex;
                 justify-content: center;
+
+                img {
+                    @include transition;
+                }
             }
 
             &:first-of-type {
@@ -285,6 +289,13 @@
     
             &:last-of-type {
                 margin-right: 0;
+            }
+
+            &:hover {
+
+                img {
+                    transform: scale(1.2);
+                }
             }
         }
     }
