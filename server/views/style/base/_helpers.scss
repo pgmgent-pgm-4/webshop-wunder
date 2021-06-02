@@ -7,6 +7,11 @@
     font-weight: bold;
 }
 
+// for next line add this class to span
+.next-line {
+    display: block;
+}
+
 .margin {
     padding: 4rem 1.5rem;
     @include media-min(xxs) {
@@ -17,6 +22,19 @@
      }
     @include media-min(md) {
         padding: 4rem 4rem;
+    }
+}
+
+.padding-home {
+    padding: 4rem 1.5rem;
+    @include media-min(xxs) {
+        padding: 4rem 2rem;
+    }
+    @include media-min(sm) {
+        padding: 4rem 3rem;
+    }
+    @include media-min(md) {
+        padding: 8rem 8.8rem;
     }
 }
 
@@ -39,3 +57,7 @@
         }
     }
 }
+
+// .red {
+//     color: $accent-color;
+// }

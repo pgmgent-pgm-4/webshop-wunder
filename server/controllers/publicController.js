@@ -5,6 +5,12 @@ Import custom packages
 const { /* HTTPError, */handleHTTPError } = require('../utils');
 import EnjineApi from '../services/dataService';
 
+// Import local data
+import bodyworkData from '../views/_data/bodywork.json';
+import newsData from '../views/_data/news.json';
+import serviceData from '../views/_data/services.json';
+import brandData from '../views/_data/brands.json';
+
 
 
 
@@ -18,7 +24,10 @@ const getHome = (req, res, next) => {
     //posts = posts.slice(0, 3);
     // Send response
     res.render('index', {
-      //posts,
+      bodywork: bodyworkData,
+      news: newsData,
+      services: serviceData,
+      brands: brandData,
     });
   } catch (error) {
     handleHTTPError(error, next);

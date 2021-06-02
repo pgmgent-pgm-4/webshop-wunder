@@ -1,0 +1,83 @@
+.slideshow {
+    
+    .slide {
+        background: linear-gradient(0deg, rgba(13,13,13,1) 0%, rgba(13,13,13,0) 33%, rgba(13,13,13,0) 66%, rgba(13,13,13,1) 100%);
+        overflow: hidden;
+        position: relative;
+        color: $secondary-color;
+        height: calc(100vh - 4rem);
+        @include media-min(xxs) {
+            height: calc(100vh - 7.8rem);
+        }
+        @include media-min(sm) {
+            height: calc(100vh - 4.8rem);
+        }
+        @include media-min(md) {
+            height: calc(100vh - 5.06rem);
+        }
+        @include media-min(full) {
+            max-height: 42rem;
+        }
+        
+        &__title {
+            position: absolute;
+            font-size: 2.2rem;
+            top: 3rem;
+            left: 1.5rem;
+            padding-right: 1.5rem;
+            @include media-min(xxs) {
+                left: 2rem;
+                font-size: 2.5rem;
+            }
+            @include media-min(sm) {
+                left: 3rem;
+                font-size: 3rem;
+            }
+            @include media-min(md) {
+                left: 4rem;
+                
+            }
+        }
+
+        &__cta {
+            position: absolute;
+            left: 1.5rem;
+            bottom: 3rem;            
+            @include media-min(xxs) {
+                left: 2rem;
+                font-size: 2.5rem;
+            }
+            @include media-min(sm) {
+                bottom: 4rem;
+                left: 3rem;
+                font-size: 3rem;
+            }
+            @include media-min(md) {
+                left: 4rem;
+                
+            }
+
+            &__text {
+                font-family: 'vw_head';
+                font-weight: regular;
+                font-size: 1.5rem;
+                @include media-min(sm) {
+                    font-size: 1.75rem;
+                }
+            }
+            
+            &__button {
+                margin-top: 1rem;
+            }
+        }
+        
+        
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: -1;
+        }
+    }
+}
