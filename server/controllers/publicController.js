@@ -11,7 +11,7 @@ import newsData from '../views/_data/news.json';
 import serviceData from '../views/_data/services.json';
 import brandData from '../views/_data/brands.json';
 
-
+import faker from 'faker';
 
 
 /*
@@ -19,6 +19,7 @@ Get Home Render
 */
 const getHome = (req, res, next) => {
   try {
+    console.log('home');
     // Get data from service for teasers?
     //let posts = dataService.getPosts();
     //posts = posts.slice(0, 3);
@@ -28,6 +29,7 @@ const getHome = (req, res, next) => {
       news: newsData,
       services: serviceData,
       brands: brandData,
+      dataTest: 'test',
     });
   } catch (error) {
     handleHTTPError(error, next);
@@ -83,7 +85,25 @@ const getAbout = (req, res, next) => {
   } catch (error) {
     handleHTTPError(error, next);
   }
-};
+}
+
+
+/*
+Get Car Render-test
+*/
+const getCarsTest = async(req, res, next) => {
+  try {
+    const category = (req.params.category === 'brands') || (req.params.category === 'shapes') ? req.params.category : null ;
+    res.render('cars--data-test', {
+      data: res.locals.data,
+      category: category,
+      //testData: res.locals.test
+    });
+    //next();
+  } catch(error) {
+    console.warn('An error occured!', error);
+  }
+}
 
 /*
 Get Design-system Render
@@ -128,13 +148,13 @@ const getTest = async(req, res, next) => {
   try {
     
     //console.log(EnjineApi());
-    const API = new EnjineApi;
+    //const API = new EnjineApi;
     //console.log(test);
     // Get data from service for teasers?
     //let posts = dataService.getPosts();
     //posts = posts.slice(0, 3);
     // Send response
-    const dataTest = await API.getBrands();
+    //const dataTest = await API.getBrands();
     console.log(dataTest);
     //console.log(dataTest);
     //console.log('test')
@@ -154,4 +174,6 @@ module.exports = {
   getDesignSystem,
   getContact,
   getTest,
+  getCars,
+  getCarsTest,
 };
