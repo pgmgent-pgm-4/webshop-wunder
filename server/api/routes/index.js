@@ -236,11 +236,11 @@ router.delete('/users/:userId', userController.deleteUser);
 /**
  * Car routes
  */
-router.get('/cars', carController.getCars);
-router.get('/cars/:carId', carController.getCarById);
-router.get('/cars/brand/:brandId', carController.getCarsFromBrandById);
+router.get('/cars/:category', carController.getCars);
+//router.get('/cars/:carId', carController.getCarById);
+//router.get('/cars/brand/:brandId', carController.getCarsFromBrandById);
 //test with brandName in stead of Id
-router.get('/cars/brandByName/:brandName', carController.getCarsFromBrandByBrandName);
+//router.get('/cars/:category?', carController.getCars);
 router.post('/cars', carController.createCar);
 router.put('/cars/:carId', carController.updateCar);
 router.delete('/cars/:carId', carController.deleteCar);

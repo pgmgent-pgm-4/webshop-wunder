@@ -4,8 +4,9 @@
   "description": "Webshop of Enjin which sells cars",
   "main": "server/app.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development HOSTNAME=localhost PORT=8080 nodemon --exec babel-node -e js,html,njk,scss server/app.js --watch server/*",
+    "dev": "cross-env NODE_ENV=development HOSTNAME=localhost PORT=8081 nodemon --exec babel-node -e js,html,njk,scss --watch ./server/* --watch ./server",
     "build-css": "node-sass --include-path scss server/views/style/main.scss server/static/css/main.css --watch",
+    "seed-database": "sequelize db:seed:all",
     "start": "concurrently \" npm run build-css \" \"npm run dev\" "
   },
   "repository": {

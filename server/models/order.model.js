@@ -5,13 +5,18 @@ export default (sequelize) => {
   class Order extends Model {
     static associate(models) {
       this.hasOne(models.Payment, {
+        foreignKey : {
+          allowNull: false
+        },
         onDelete: "cascade"
       });
+
       this.belongsTo(models.User, {
         foreignKey : {
           allowNull: false
         }
       });
+
       this.hasMany(models.OrderItem, {
         onDelete: "cascade"
       });
@@ -20,10 +25,8 @@ export default (sequelize) => {
 
   Order.init(
     {
-      //id
-      //userId
       orderDate: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.DATE,
         allowNull: false
       },
       state: {

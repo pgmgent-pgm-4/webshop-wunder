@@ -23,6 +23,11 @@ const returnBoolean = () => {
   return number > .5 ? true :  false;
 }
 
+const returnLowChanceBoolean = () => {
+  const number = Math.random();
+  return number > .8 ? true :  false;
+}
+
 module.exports = {
   up: async(queryInterface, Sequelize) => {
 
@@ -43,11 +48,15 @@ module.exports = {
 
     let carNames = [];
     brandFromDatabase.forEach(brand => {
-      var files = fs.readdirSync(path.join(__dirname,'../../data/files/cars',brand.name));
+      var files = fs.readdirSync(path.join(__dirname,'../../static/images/cars/',brand.name));
       
       // each image is called "Brand__carName.png"
       const carNamesFromFileSystem =  files.map(file => {
-        return file.split('__')[1].split('.png')[0];
+        return {
+          brand:file.split('__')[0].toLowerCase(), 
+          name: file.split('__')[1].split('.png')[0],
+          img: file
+        }
       });
 
       const brandId = brandFromDatabase.find(b => b.name === brand.name).id;
@@ -61,23 +70,25 @@ module.exports = {
 
     const carList = [];
 
-    const createCar = (brandId, name) => {
+    const createCar = (brandId, name, img, brand) => {
       carList.push({
         name: name,
+        teaserImgUrl: `/static/images/cars/${brand}/${img}`,
         ShapeId: _.sample(shapeIds).id,
         BrandId: brandId,
         CarColourId: _.sample(carColourIds).id,
-        price: randomNumber(20000, 60000),
+        price: (randomNumber(100, 1200)*100) + (returnLowChanceBoolean() ? +500 : +0),
         isAutomatic: returnBoolean(),
         fuelType: _.sample(FUELTYPES),
         engineCapacity: randomNumber(1, 19)*100,
-        horsePower: randomNumber(50,150),
+        horsePower: randomNumber(5,40)*10,
         doors: _.sample([3,5]),
         seats: randomNumber(2, 9),
         gears: randomNumber(5,9),
-        fuelConsumption: randomNumber(10,70)/10,
-        topSpeed: randomNumber(100, 190),
-        acceleration: randomNumber(10,50)/10,
+        fuelConsumption: randomNumber(40,150)/10,
+        topSpeed: randomNumber(16, 35)*10,
+        acceleration: randomNumber(25,100)/10,
+        breaktime: randomNumber(30,60)/10,
         createdAt: new Date(),
         updatedAt: new Date(),
       })
@@ -85,12 +96,12 @@ module.exports = {
 
     carNames.forEach(carName => {
       carName.list.forEach(c => {
-        createCar(carName.brandId, c)
+        createCar(carName.brandId, c.name, c.img, c.brand)
       });
     });
 
-    await queryInterface.bulkInsert('Cars', 
-    carList, {}
+    await queryInterface.bulkInsert('cars', 
+      carList, {}
     );
   },
   down: (queryInterface, Sequelize) => {

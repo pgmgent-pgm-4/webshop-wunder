@@ -1,16 +1,34 @@
 import { handleHTTPError, HTTPError } from '../../utils';
 import database from '../../database';
+import { deleteBrand } from './brand.controller';
 
 /**
  * Get all cars 
  */
 const getCars = async (req, res, next) => {
 	try {
-		// Get Cars from database
-		const cars = await database.Car.findAll();
+    const { category } = req.params;
+    let cars;
 
-		// Send response
-		res.status(200).json(cars);
+    if( category === 'brands' ) {
+      cars = await database.Brand.findAll({
+        include: [{
+          model: database.Car,
+        }]
+      })
+    }
+    if( category === 'shapes' ) {
+      cars = await database.Shape.findAll({
+        include: [{
+          model: database.Car,
+        }]
+      })
+    }
+    if( category === 'all' ) {
+      cars = await database.Car.findAll();
+    }
+    console.log(cars.length);
+    res.status(200).json(cars);
 	} catch (error) {
 		handleHTTPError(error, next);
 	}
@@ -23,7 +41,6 @@ const getCarById = async (req, res, next) => {
   try {
     // Get carId parameter
     const { carId } = req.params;
-
     // Get specific car from database
     const car = await database.Car.findByPk(carId);
 

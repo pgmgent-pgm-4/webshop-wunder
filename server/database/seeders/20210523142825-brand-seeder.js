@@ -18,9 +18,6 @@ const brandsList = BRANDS.map(brand => {
   }
 });
 
-//console.dir(shapesList, {depth: null});
-
-
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Brands', 

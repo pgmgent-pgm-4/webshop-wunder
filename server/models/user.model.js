@@ -7,6 +7,7 @@ export default (sequelize) => {
       this.hasOne(models.Profile, {
         onDelete: "cascade"
       });
+      
       this.hasMany(models.CarReview, {
         onDelete: "cascade"
       });

@@ -1,8 +1,6 @@
 import sequelize from 'sequelize';
 import { Model, DataTypes } from 'sequelize';
 
-
-
 export default (sequelize) => {
   class Brand extends Model {
     static associate(models) {

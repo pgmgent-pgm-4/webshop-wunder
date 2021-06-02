@@ -18,15 +18,13 @@ This Code will start the server, create database if not present, start up API, r
     ├── app.js
     ├── controllers
     │   └── publicController.js ( controller is being called from /routes, decides what to output )
-    ├── public
+    ├── static
     │   ├── css
     │   │   └── main.css ( file is being generated from node-sass)
     │   ├── images ( images can be added here, refer to './static/images/...' )
     │   └── js ( add script is necesarry, refer to './static/js/...' )
     ├── routes
-    │   └── index.js ( defined routes ex. /contact will call publicController "getContact" )
-    ├── services
-    │   └── dataService.js ( bundles calls for API )
+    │   └── index.js ( defined routes ex. '/contact' will call publicController "getContact" )
     └── views
         ├── base.njk ( base-file as example, use include in other files)
         ├── index.njk
@@ -51,7 +49,8 @@ images, scripts, ..can be added to the **/public/images** and **/public/css**-fo
 
 ## Back-end
 **public controller**
-Endpoints are created in the publicController and refers to that specific page in the **/views**-folder
+Endpoints are created in the publicController and refers to that specific page in the **/views**-folder.  
+Data is fetched in middleware, saved in response so publicController can send it to the view-engine.
 
 **accesing API:**  
 API documentation is available at [http://localhost:8080/api/docs](http://localhost:8080/api/docs).  
@@ -65,12 +64,13 @@ For now only 'shapes' is defined, below is a list of finished models, controller
 - [x] Users
 - [x] Profiles
 - [x] Cars
-- [ ] Car_has_options
-- [ ] CarOptions
-- [ ] Orders
-- [ ] OrderItems
-- [ ] Payments
-- [ ] Promotions  
+- [x] Car_has_options
+- [x] CarOptions
+- [x] Orders
+- [x] OrderItems
+- [x] Payments
+- [x] Promotions  
+**!TODO:** Check polymorphism in orderItems, Id can be non existent in other tables?
 
 **Finished Controllers:**  
 - [x] Brands

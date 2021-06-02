@@ -40,13 +40,13 @@ const COLOURS = [
   {
     name: 'Metallic Green',
     hex: '155c2d',
-  },
+  }
 ];
 
 const coloursList = COLOURS.map(colour => {
   return {
     name: colour.name,
-    rgb: colour.rgb,
+    rgb: colour.hex,
     createdAt: new Date(),
     updatedAt: new Date(),
   }
@@ -54,7 +54,7 @@ const coloursList = COLOURS.map(colour => {
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('carColours', 
+    return queryInterface.bulkInsert('CarColours', 
     coloursList, {}
     );
   },

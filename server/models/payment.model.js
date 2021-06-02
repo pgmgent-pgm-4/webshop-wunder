@@ -4,26 +4,20 @@ import { Model, DataTypes } from 'sequelize';
 export default (sequelize) => {
   class Payment extends Model {
     static associate(models) {
-      this.belongsTo(models.Order, {
-        foreignKey : {
-          allowNull: false
-        }
-      })
+      this.belongsTo(models.Order)
     }
   }
 
   Payment.init(
     {
-      //id
-      //orderId
-      paymentOption: {
+      paymentMethod: {
         type: DataTypes.STRING,
         allowNull: false
       },
-      payed: {
-        type: DataTypes.BOOLEAN,
+      status: {
+        type: DataTypes.STRING,
         allowNull: false
-      },
+      },      
     },
     {
       sequelize,
