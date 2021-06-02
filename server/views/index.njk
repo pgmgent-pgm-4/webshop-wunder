@@ -7,14 +7,27 @@
 
         {% include "partials/carousel.njk" %}
 
-        <section class="max-width">
-            <div>
+        <section class="bodywork max-width">
+            <ul class="bodywork__list">
             {% for body in bodywork %}
-                <p>{{ body.name }}</p>
-                <p>{{ body.svg }}</p>
+                <li class="bodywork__list__item">
+                    <a href="/cars">
+                        <p>{{ body.name }}</p>
+                        <div class="bodywork-img">
+                            <img src="{{ body.svg }}" alt="Icon for bodywork">
+                        </div>
+                    </a>
+                </li>
             {% endfor %}
-            
-            </div>
+
+                <a class="btn-pri btn-bodywork" href="/cars">
+                    <span class="overlay"></span>
+                    <span class="container-text">
+                        <span>View all bodywork</span>
+                    </span>
+                    <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                </a>
+            </ul>
         </section>
 
         <section class="testimonial">
@@ -104,6 +117,47 @@
                     </a>
                 </li>
             </ul>
+        </section> 
+
+        <section class="services">
+            <div class="max-width">
+                <ul>
+                    {% for service in services %}
+                        <li>
+                            <p>{{ service.title }}</p>
+                            <i data-feather="{{ service.icon }}"></i>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <section class="teaser-news max-width">
+            <ul class="teaser-news__list">
+                {% for newsItem in news %}
+                    <li class="teaser-news__list__item">
+                        <div class="teaser-img">
+                            <img src="{{ newsItem.img }}" alt="Teaser image for news">
+                        </div>
+
+                        <div class="teaser-text">
+                            <p class="date">{{ newsItem.date }}</p>
+
+                            <p class="title-news">{{ newsItem.title }}</p>
+
+                            <p class="content">{{ newsItem.synopsis }}</p>
+
+                            <a class="btn-pri btn-bodywork" href="{{ newsItem.link }}">
+                                <span class="overlay"></span>
+                                <span class="container-text">
+                                    <span>Read more</span>
+                                </span>
+                                <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                            </a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
         </section>
 
         <section class="contact-link">
@@ -120,6 +174,18 @@
                     <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
                 </a>
             </div>
+        </section>
+
+        <section class="brands max-width">
+            <ul class="brands__list">
+                {% for brand in brands %}
+                    <li class="brands__list__item">
+                        <a href="{{ brand.link }}" target="_blank">
+                            <img src="{{ brand.logo }}" alt="Logo of car brand">
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
         </section>
 
 {% endblock %}

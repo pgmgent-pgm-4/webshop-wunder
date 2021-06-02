@@ -864,6 +864,41 @@ footer {
           content: '';
           padding: 0; }
 
+.bodywork {
+  padding: 8rem 8.8rem; }
+  .bodywork__list {
+    display: flex;
+    flex-wrap: wrap; }
+    .bodywork__list__item {
+      margin: 0.75rem;
+      display: flex;
+      width: calc(25% - 1.5rem); }
+      .bodywork__list__item a {
+        border-radius: 2px;
+        box-shadow: 0px 1px 2px #0d0d0d29;
+        padding: 1.5rem;
+        width: 100%;
+        background-color: #fff;
+        transition: all 0.2s ease-in-out;
+        display: flex;
+        flex-direction: column; }
+        .bodywork__list__item a p {
+          font-family: 'vw_head';
+          font-weight: bold;
+          font-size: 2rem; }
+        .bodywork__list__item a .bodywork-img {
+          padding-top: 1rem;
+          display: flex;
+          justify-content: flex-end;
+          width: 100%; }
+          .bodywork__list__item a .bodywork-img img {
+            width: 8rem; }
+        .bodywork__list__item a:hover {
+          box-shadow: 0px 3px 6px #0d0d0d29; }
+    .bodywork__list .btn-bodywork {
+      margin: 0.75rem;
+      width: calc(25% - 1.5rem); }
+
 .testimonial {
   background-color: #0D0D0D; }
   .testimonial__container {
@@ -918,6 +953,65 @@ footer {
     .teaser-bonus__card .flex .btn-sec:hover svg {
       stroke: #F9F9F9; }
 
+.services {
+  background-color: #0D0D0D;
+  padding: 8rem 8.8rem; }
+  .services ul {
+    display: flex;
+    flex-wrap: wrap; }
+    .services ul li {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #F9F9F9;
+      padding: 4rem 2rem; }
+      .services ul li p {
+        padding-bottom: 2rem;
+        font-family: 'vw_head';
+        font-weight: bold;
+        font-size: 1.75rem; }
+      .services ul li svg {
+        width: 4rem;
+        height: 4rem;
+        stroke-width: 1.5px; }
+      .services ul li:nth-of-type(1), .services ul li:nth-of-type(4) {
+        background-color: #CC0000; }
+
+.teaser-news {
+  padding: 8rem 8.8rem; }
+  .teaser-news__list {
+    display: flex;
+    flex-direction: column; }
+    .teaser-news__list__item {
+      display: flex;
+      margin-bottom: 1.5rem;
+      align-items: center; }
+      .teaser-news__list__item .teaser-img {
+        width: 100%;
+        border-radius: 2px;
+        overflow: hidden; }
+      .teaser-news__list__item .teaser-text {
+        width: 100%;
+        padding: 2rem 2.5rem;
+        padding-right: 0; }
+        .teaser-news__list__item .teaser-text .date {
+          color: #CC0000;
+          margin-bottom: 1rem;
+          font-family: 'vw_head';
+          font-size: 1.25rem;
+          font-weight: normal; }
+        .teaser-news__list__item .teaser-text .title-news {
+          margin-bottom: 0.75rem;
+          font-family: 'vw_head';
+          font-size: 2rem;
+          font-weight: bold; }
+        .teaser-news__list__item .teaser-text .content {
+          margin-bottom: 2rem; }
+      .teaser-news__list__item:last-of-type {
+        margin-bottom: 0; }
+
 .contact-link {
   background-color: #0D0D0D; }
   .contact-link div {
@@ -931,6 +1025,24 @@ footer {
       padding-bottom: 4rem; }
     .contact-link div a {
       width: 15rem; }
+
+.brands {
+  padding: 8rem 8.8rem; }
+  .brands__list {
+    display: flex;
+    align-items: center; }
+    .brands__list__item {
+      width: 100%;
+      display: flex;
+      margin: 0 2.25rem; }
+      .brands__list__item a {
+        width: 100%;
+        display: flex;
+        justify-content: center; }
+      .brands__list__item:first-of-type {
+        margin-left: 0; }
+      .brands__list__item:last-of-type {
+        margin-right: 0; }
 
 .design-system h1, .design-system h2, .design-system h3, .design-system h4, .design-system h5, .design-system p {
   margin-bottom: 1.5rem; }

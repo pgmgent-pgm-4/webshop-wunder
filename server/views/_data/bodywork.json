@@ -1,10 +1,30 @@
 [
     {
-        "name": "test",
-        "svg": "test bodywork"
+        "name": "Berline",
+        "svg": "./static/images/shapes/Berline.svg"
     },
     {
-        "name": "test",
-        "svg": "test bodywork"
+        "name": "Break",
+        "svg": "./static/images/shapes/Break.svg"
+    },
+    {
+        "name": "Cabrio",
+        "svg": "./static/images/shapes/Cabrio.svg"
+    },
+    {
+        "name": "Coupé",
+        "svg": "./static/images/shapes/Coupé.svg"
+    },
+    {
+        "name": "Hatchback",
+        "svg": "./static/images/shapes/Hatchback.svg"
+    },
+    {
+        "name": "MPV",
+        "svg": "./static/images/shapes/MPV.svg"
+    },
+    {
+        "name": "SUV",
+        "svg": "./static/images/shapes/SUV.svg"
     }
 ]

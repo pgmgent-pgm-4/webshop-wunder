@@ -1,3 +1,55 @@
+.bodywork {
+    padding: 8rem 8.8rem;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__item {
+            margin: 0.75rem;
+            display: flex;
+            width: calc(25% - 1.5rem);
+            
+            a {
+                border-radius: 2px;
+                box-shadow: 0px 1px 2px $primary-shadow-color;
+                padding: 1.5rem;
+                width: 100%;
+                background-color: $white-color;
+                @include transition;
+                display: flex;
+                flex-direction: column;
+
+                p {
+                    font-family: 'vw_head';
+                    font-weight: bold;
+                    font-size: 2rem;
+                }
+
+                .bodywork-img {
+                    padding-top: 1rem;
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 100%;
+                    
+                    img {
+                        width: 8rem;
+                    }
+                }
+                
+                &:hover {
+                    box-shadow: 0px 3px 6px $primary-shadow-color;
+                }
+            }
+        }
+        
+        .btn-bodywork {
+            margin: 0.75rem;
+            width: calc(25% - 1.5rem);
+        }
+    }
+}
+
 .testimonial {
     background-color: $primary-color;
 
@@ -99,6 +151,95 @@
     }
 }
 
+.services {
+    background-color: $primary-color;
+    padding: 8rem 8.8rem;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: $secondary-color;
+            padding: 4rem 2rem;
+
+            p {
+                padding-bottom: 2rem;
+                font-family: 'vw_head';
+                font-weight: bold;
+                font-size: 1.75rem;
+            }
+
+            svg {
+                width: 4rem;
+                height: 4rem;
+                stroke-width: 1.5px;
+            }
+
+            &:nth-of-type(1),
+            &:nth-of-type(4) {
+                background-color: $accent-color;
+            }
+        }
+    }
+}
+
+.teaser-news {
+    padding: 8rem 8.8rem;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+
+        &__item {
+            display: flex;
+            margin-bottom: 1.5rem;
+            align-items: center;
+
+            .teaser-img {
+                width: 100%;
+                border-radius: 2px;
+                overflow: hidden;
+            }
+
+            .teaser-text {
+                width: 100%;
+                padding: 2rem 2.5rem;
+                padding-right: 0;
+
+                .date {
+                    color: $accent-color;
+                    margin-bottom: 1rem;
+                    font-family: 'vw_head';
+                    font-size: 1.25rem;
+                    font-weight: normal;
+                }
+                
+                .title-news {
+                    margin-bottom: 0.75rem;
+                    font-family: 'vw_head';
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+
+                .content {
+                    margin-bottom: 2rem;
+                }
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+}
+
 .contact-link {
     background-color: $primary-color;
 
@@ -116,6 +257,35 @@
 
         a {
             width: 15rem;
+        }
+    }
+}
+
+.brands {
+    padding: 8rem 8.8rem;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        
+        &__item {
+            width: 100%;
+            display: flex;
+            margin: 0 2.25rem;
+
+            a {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+    
+            &:last-of-type {
+                margin-right: 0;
+            }
         }
     }
 }
