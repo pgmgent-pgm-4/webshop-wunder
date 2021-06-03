@@ -38,6 +38,31 @@ const getProfileById = async (req, res, next) => {
 }
 
 /**
+ * Get a specific profile by UserID
+ */
+const getProfileFromUserById = async (req, res, next) => {
+  try {
+    // Get userId parameter
+    const { userId } = req.params;
+
+    // Get specific profile from database by UserId
+    const profile = await database.Profile.findOne({
+      where: {
+        UserId: userId
+      }
+    });
+
+    if (profile === null) {
+			throw new HTTPError(`Could not find the profile from user with user id ${userId}!`, 404);
+		}
+		// Send response
+		res.status(200).json(profile);
+  } catch(error) {
+    handleHTTPError(error, next);
+  }
+}
+
+/**
  * Create a new profile
  */
 const createProfile = async (req, res, next) => {
@@ -117,6 +142,7 @@ const updateProfile = async (req, res, next) => {
 export { 
   getProfiles,
   getProfileById,
+  getProfileFromUserById,
   createProfile,
   updateProfile,
   deleteProfile,

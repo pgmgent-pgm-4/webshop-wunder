@@ -62,9 +62,11 @@ const updateShape = async (req, res, next) => {
   try {
     // get shapeId parameter
     const { shapeId } = req.params;
+    console.log(shapeId);
 
     //get specific shape from database
     const shape = await database.Shape.findByPk(shapeId);
+    console.log('shape from db:',shape);
 
     if (shape === null) {
       throw new HTTPError(`Could not find the shape with id ${shapeId}!`, 404);
