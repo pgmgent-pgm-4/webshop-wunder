@@ -3,7 +3,16 @@ Import custom packages
 */
 //const dataService = require('../services/dataService');
 const { /* HTTPError, */handleHTTPError } = require('../utils');
+// import EnjineApi from '../services/dataService';
+
+// Import local data
+import bodyworkData from '../views/_data/bodywork.json';
+import newsData from '../views/_data/news.json';
+import serviceData from '../views/_data/services.json';
+import brandData from '../views/_data/brands.json';
+
 import faker from 'faker';
+
 
 /*
 Get Home Render
@@ -16,8 +25,11 @@ const getHome = (req, res, next) => {
     //posts = posts.slice(0, 3);
     // Send response
     res.render('index', {
-      //posts,
-      dataTest: 'test'
+      bodywork: bodyworkData,
+      news: newsData,
+      services: serviceData,
+      brands: brandData,
+      dataTest: 'test',
     });
   } catch (error) {
     handleHTTPError(error, next);

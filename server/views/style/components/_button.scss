@@ -11,6 +11,7 @@
     cursor: pointer;
     @include transition(0.3s);
     display: flex;
+    width: min-content;
     box-shadow: 0px 2px 4px $primary-shadow-color;
 
     .overlay {

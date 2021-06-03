@@ -1,12 +1,199 @@
+{% set title = 'Home' %}
+
+
 {% extends "base.njk" %}
 
 {% block content %}
-    THIS IS A TEST PAGE WITH THE PUBLIC CONTROLLER
-    <p class="test-blue">test blue </p>
 
-    <i data-feather="circle"></i>
-    <i data-feather="circle"></i>
-    <i data-feather="circle"></i>
-    <i data-feather="circle"></i>
-    <i data-feather="circle"></i>
+        {% include "partials/carousel.njk" %}
+
+        <section class="bodywork max-width padding-home">
+            <ul class="bodywork__list">
+            {% for body in bodywork %}
+                <li class="bodywork__list__item">
+                    <a href="/cars">
+                        <p>{{ body.name }}</p>
+                        <div class="bodywork-img">
+                            <img src="{{ body.svg }}" alt="Icon for bodywork">
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+
+                <a class="btn-pri btn-bodywork" href="/cars">
+                    <span class="overlay"></span>
+                    <span class="container-text">
+                        <span>View all bodywork</span>
+                    </span>
+                    <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                </a>
+            </ul>
+        </section>
+
+        <section class="testimonial">
+            <div class="max-width testimonial__container padding-home">
+                <div class="ceo">
+                    <img src="./static/images/team/ceo.png" alt=" Picture of Stephan Winkelmann">
+                </div>
+
+                <div class="text">
+                    <div class="quote">
+                        {# use feather #}
+                        <img src="./static/images/icons/quotation-left.svg" alt="">
+
+                        <p>
+                            A Car is not going to change your life, but it will definitely change your attitude.
+                        </p>
+
+                        <img src="./static/images/icons/quotation-right.svg" alt="">
+                    </div>
+
+                    <p class="credit">Stephan Winkelmann</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="teaser-bonus max-width padding-home">
+            <ul class="cards">
+                <li class="card-car teaser-bonus__card">
+                    <a href="">
+                        <button>
+                            <i data-feather="heart" class="favorite"></i>
+                        </button>
+
+                        <p class="type">Audi RS 5 Coupé</p>
+                        <p class="price">Starting at $ 75,000</p>
+
+                        <img class="car-image" src="./static/images/fallback/Audi__RS 5 Coupé.png" alt="Image of car">
+
+                        <div class="flex">
+                            <div class="btn-pri">
+                                <span class="overlay"></span>
+                                <span class="container-text">
+                                    <span>Discover</span>
+                                </span>
+                                <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                            </div>
+
+                            <div class="btn-pri btn-sec">
+                                <span class="overlay"></span>
+                                <span class="container-text">
+                                    <span><i data-feather="shopping-cart"></i></span>
+                                </span>
+                                <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="card-car teaser-bonus__card">
+                    <a href="">
+                        <button>
+                            <i data-feather="heart" class="favorite"></i>
+                        </button>
+
+                        <p class="type">Audi RS 5 Coupé</p>
+                        <p class="price">Starting at $ 75,000</p>
+
+                        <img class="car-image" src="./static/images/fallback/Audi__RS 5 Coupé.png" alt="Image of car">
+
+                        <div class="flex">
+                            <div class="btn-pri">
+                                <span class="overlay"></span>
+                                <span class="container-text">
+                                    <span>Discover</span>
+                                </span>
+                                <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                            </div>
+
+                            <div class="btn-pri btn-sec">
+                                <span class="overlay"></span>
+                                <span class="container-text">
+                                    <span><i data-feather="shopping-cart"></i></span>
+                                </span>
+                                <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section> 
+
+        <section class="services padding-home">
+            <div class="max-width">
+                <ul>
+                    {% for service in services %}
+                        <li>
+                            <p>{{ service.title }}</p>
+                            <i data-feather="{{ service.icon }}"></i>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <section class="teaser-news max-width padding-home">
+            <ul class="teaser-news__list">
+                {% for newsItem in news %}
+                    <li class="teaser-news__list__item">
+                        <div class="teaser-img">
+                            <img src="{{ newsItem.img }}" alt="Teaser image for news">
+                        </div>
+
+                        <div class="teaser-text">
+                            <p class="date">{{ newsItem.date }}</p>
+
+                            <p class="title-news">{{ newsItem.title }}</p>
+
+                            <p class="content">{{ newsItem.synopsis }}</p>
+
+                            <a class="btn-pri btn-sec btn-bodywork" href="{{ newsItem.link }}">
+                                <span class="overlay"></span>
+                                <span class="container-text">
+                                    <span>Read full story</span>
+                                </span>
+                                <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                            </a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <a class="btn-pri  btn-bodywork-all" href="{{ newsItem.link }}">
+                <span class="overlay"></span>
+                <span class="container-text">
+                    <span>View all articles</span>
+                </span>
+                <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+            </a>
+        </section>
+
+        <section class="contact-link">
+            <div class="max-width padding-home">
+                <h2>
+                    Have any more questions?
+                </h2>
+
+                <a href="/contact" class="btn-pri btn-pri-alt">
+                    <span class="overlay"></span>
+                    <span class="container-text">
+                        <span>Contact us</span>
+                    </span>
+                    <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                </a>
+            </div>
+        </section>
+
+        <section class="brands max-width padding-home">
+            <ul class="brands__list">
+                {% for brand in brands %}
+                    <li class="brands__list__item">
+                        <a href="{{ brand.link }}" target="_blank">
+                            <img src="{{ brand.logo }}" alt="Logo of car brand">
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+
 {% endblock %}

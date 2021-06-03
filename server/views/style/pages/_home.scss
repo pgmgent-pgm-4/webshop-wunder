@@ -1,0 +1,425 @@
+.bodywork {
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__item {
+            margin: 0.75rem;
+            display: flex;
+            width: calc(50% - 1.5rem);
+            @include media-min(sm) {
+                width: calc(33% - 1.5rem);
+            }
+            @include media-min(lg) {
+                width: calc(25% - 1.5rem);
+            }
+            
+            a {
+                border-radius: 2px;
+                box-shadow: 0px 1px 2px $primary-shadow-color;
+                padding: 1.5rem;
+                width: 100%;
+                background-color: $white-color;
+                @include transition;
+                display: flex;
+                flex-direction: column;
+
+                p {
+                    font-family: 'vw_head';
+                    font-weight: bold;
+                    font-size: 2rem;
+                }
+
+                .bodywork-img {
+                    padding-top: 1rem;
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 100%;
+                    
+                    img {
+                        width: 8rem;
+                    }
+                }
+                
+                &:hover {
+                    box-shadow: 0px 3px 6px $primary-shadow-color;
+                }
+            }
+        }
+        
+        .btn-bodywork {
+            margin: 0.75rem;
+            width: calc(50% - 1.5rem);
+            @include media-min(sm) {
+                width: calc(33% - 1.5rem);
+            }
+            @include media-min(lg) {
+                width: calc(25% - 1.5rem);
+            }
+        }
+    }
+}
+
+.testimonial {
+    background-color: $primary-color;
+
+    &__container {
+        color: $secondary-color;
+        font-family: 'vw_head';
+        font-weight: bold;
+        display: flex;
+        position: relative;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 0;
+        @include media-min(sm) {
+            flex-direction: row;
+        }
+        
+        .ceo {
+            width: 60%;
+            margin-top: 4rem;
+            @include media-min (sm) {
+                margin-top: 0;
+                width: 40%;
+            }
+            background: linear-gradient(0deg, rgba(13,13,13,1) 10%, rgba(13,13,13,0) 40%, rgba(13,13,13,0) 100%), url("../images/team/ceo.png");
+            background-size: cover;
+
+            img {
+                position: relative;
+                z-index: -1;
+            }
+        }
+
+        .text {
+            width: 100%;
+            order: -1;
+            @include media-min (sm) {
+                order: 1;
+                width: 60%;
+            }
+
+            .quote {
+                
+                p {
+                    font-size: 1.5rem;
+                    padding: 0.5rem 3.5rem;
+                    @include media-min (xs) {
+                        font-size: 2rem;
+                    }
+                }
+
+                img {
+                    width: 2.1rem;
+
+                    &:last-of-type {
+                        position: relative;
+                        right: calc(-100% + 2.1rem);
+                    }
+                }
+            }
+    
+            .credit {
+                font-size: 1.25rem;
+                text-align: right;
+                margin-top: 2.5rem;
+                @include media-min (xs) {
+                    font-size: 1.5rem;
+                }
+    
+                &::before {
+                    content:"-";
+                }
+            }
+        }
+    }
+}
+
+.teaser-bonus {
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        @include media-min(sm) {
+            flex-direction: row;
+        }
+    }
+
+    &__card {
+
+        .flex {
+            display: flex;
+
+            div {
+
+                .container-text {
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    span {
+                        display: flex;
+                        justify-content: center;
+
+                        svg {
+                            stroke: $primary-color;
+                            @include transition;
+                        }
+                    }
+                }
+
+                &:first-of-type {
+                    margin-right: 1rem;
+                    width: 75%;
+                }
+
+                &:last-of-type {
+                    width: 25%
+                }
+            }
+
+            .btn-sec:hover {
+                svg {
+                    stroke: $secondary-color;
+                }
+            }
+        }
+
+        &:first-of-type {
+            margin: 0;
+            margin-bottom: 1.5rem;
+            
+            @include media-min(sm) {
+                margin-bottom: 0;
+                margin-right: 1.5rem
+            }
+        }
+        
+        &:last-of-type {
+            margin: 0;
+        }
+    }
+}
+
+.services {
+    background-color: $primary-color;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: $primary-color;
+            color: $secondary-color;
+            padding: 4rem 2rem;
+            @include media-min(sm) {
+                width: 50%;
+
+                &:nth-of-type(3) {
+                    background-color: $primary-color !important;
+                }
+                
+                &:nth-of-type(4) {
+                    background-color: $accent-color;
+                }
+            }
+
+            p {
+                padding-bottom: 2rem;
+                font-family: 'vw_head';
+                font-weight: bold;
+                font-size: 1.75rem;
+            }
+
+            svg {
+                width: 4rem;
+                height: 4rem;
+                stroke-width: 1.5px;
+            }
+
+            &:nth-of-type(1),
+            &:nth-of-type(3) {
+                background-color: $accent-color;
+            }
+        }
+    }
+}
+
+.teaser-news {
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+
+        &__item {
+            display: flex;
+            margin-bottom: 1.5rem;
+            align-items: center;
+            flex-direction: column;
+            @include media-min(sm) {
+                flex-direction: row;
+            }
+
+            .teaser-img {
+                width: 100%;
+                border-radius: 2px;
+                overflow: hidden;
+            }
+
+            .teaser-text {
+                width: 100%;
+                padding: 1.5rem 1.5rem;
+                @include media-min(sm) {
+                    padding: 2rem 2.5rem;
+                    padding-right: 0;
+                }
+
+                .date {
+                    color: $accent-color;
+                    margin-bottom: 1rem;
+                    font-family: 'vw_head';
+                    font-size: 1.25rem;
+                    font-weight: normal;
+                }
+                
+                .title-news {
+                    margin-bottom: 0.75rem;
+                    font-family: 'vw_head';
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+
+                .content {
+                    margin-bottom: 2rem;
+                }
+
+                .btn-bodywork {
+                    position: relative;
+                    left: 100%;
+                    transform: translateX(-100%);
+                }
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .btn-bodywork-all {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 3rem;
+    }
+}
+
+.contact-link {
+    background-color: $primary-color;
+
+    div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        h2 {
+            color: $secondary-color;
+            font-size: 1.5rem;
+            padding-bottom: 2rem;
+            @include media-min(xxs) {
+                font-size: 2rem;
+            }
+            @include media-min(xs) {
+                padding-bottom: 3rem;
+                font-size: 2.5rem;
+            }
+            @include media-min(sm) {
+                font-size: 3rem;
+            }
+            @include media-min(md) {
+                padding-bottom: 4rem;
+                font-size: 4rem;
+            }
+        }
+
+        a {
+            width: 15rem;
+        }
+    }
+}
+
+.brands {
+
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        @include media-min(sm) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        @include media-min(md) {
+            flex-wrap: nowrap;
+        }
+        
+        &__item {
+            width: 100%;
+            display: flex;
+            margin-bottom: 1.5rem;
+            margin-top: 1.5rem;
+            @include media-min(sm) {
+                width: 50%;
+
+                &:nth-of-type(3) {
+                    margin-bottom: 0;
+                }
+                &:nth-of-type(2) {
+                    margin-top: 0;
+                }
+            }
+            @include media-min(md) {
+                width: 100%;
+                margin: 0 2.25rem;
+
+                &:first-of-type {
+                    margin-left: 0;
+                }
+        
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+
+            a {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                img {
+                    @include transition;
+                }
+            }
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            &:hover {
+
+                img {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}

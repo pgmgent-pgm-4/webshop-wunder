@@ -13,11 +13,14 @@ main {
     @include media-min(xxs) {
         padding-top: 7.8rem;
     }
+    @include media-min(xs) {
+        padding-top: 7.9rem;
+    }
     @include media-min(sm) {
-        padding-top: 4.9rem;
+        padding-top: 4.8rem;
     }
     @include media-min(md) {
-        padding-top: 5.06rem;
+        padding-top: 5rem;
     }
 }
 
