@@ -119,8 +119,6 @@ const getDesignSystem = (req, res, next) => {
   }
 };
 
-
-//! Below is test
 /*
 Get Contact Render
 */
@@ -131,8 +129,8 @@ const getContact = (req, res, next) => {
     //posts = posts.slice(0, 3);
     // Send response
     res.render('contact', {
-        name: 'This is our main office',
-        address: '21 Baker Street'
+        // name: 'This is our main office',
+        // address: '21 Baker Street'
     });
   } catch (error) {
     handleHTTPError(error, next);
