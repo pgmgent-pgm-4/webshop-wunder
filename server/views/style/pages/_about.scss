@@ -1,0 +1,70 @@
+.vision {
+    // display: flex;
+    position: relative;
+    height: calc(100vh - 4rem);
+    @include media-min(xxs) {
+        height: calc(100vh - 7.8rem);
+    }
+    @include media-min(sm) {
+        height: calc(100vh - 4.8rem);
+    }
+    @include media-min(md) {
+        height: calc(100vh - 5.06rem);
+    }
+    @include media-min(full) {
+        max-height: 42rem;
+    }
+
+    &__text {
+        width: 100%;
+
+        h2 {
+            margin-bottom: 2rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.5;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        .test {
+            width: 100vw;
+            height: calc(100vh - 8rem - 2rem - 3rem - 1rem);
+            shape-outside: polygon(78% 0%, 100% 0%, 100% 100%, 48% 100%);
+            // width: 300px;
+            // height: 200px;
+            float: right;
+            opacity: .2;
+        }
+    }
+
+    &__img {
+        overflow: hidden;
+        position: absolute;
+        width: 60%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        // @include media-min(xs) {
+            //     width: 50%;
+            // }
+            // @include media-min(sm) {
+                //     width: 65%;
+                // }
+                
+        img {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            right: 0;
+            object-fit: cover;
+            -webkit-clip-path: polygon(80% 0%, 100% 0%, 100% 100%, 10% 100%);
+            clip-path: polygon(80% 0%, 100% 0%, 100% 100%, 10% 100%);           
+        }
+    }
+}

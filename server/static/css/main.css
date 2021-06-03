@@ -1493,3 +1493,50 @@ footer {
           margin-right: 0.5rem; }
       .offices__locations__list__item .content a {
         font-size: 1.5rem; }
+
+.vision {
+  position: relative;
+  height: calc(100vh - 4rem); }
+  @media (min-width: 28rem) {
+    .vision {
+      height: calc(100vh - 7.8rem); } }
+  @media (min-width: 50rem) {
+    .vision {
+      height: calc(100vh - 4.8rem); } }
+  @media (min-width: 64rem) {
+    .vision {
+      height: calc(100vh - 5.06rem); } }
+  @media (min-width: 80rem) {
+    .vision {
+      max-height: 42rem; } }
+  .vision__text {
+    width: 100%; }
+    .vision__text h2 {
+      margin-bottom: 2rem; }
+    .vision__text p {
+      margin-bottom: 1rem;
+      line-height: 1.5; }
+      .vision__text p:last-of-type {
+        margin-bottom: 0; }
+    .vision__text .test {
+      width: 100vw;
+      height: calc(100vh - 8rem - 2rem - 3rem - 1rem);
+      shape-outside: polygon(78% 0%, 100% 0%, 100% 100%, 48% 100%);
+      float: right;
+      opacity: .2; }
+  .vision__img {
+    overflow: hidden;
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    top: 0;
+    right: 0; }
+    .vision__img img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      right: 0;
+      object-fit: cover;
+      -webkit-clip-path: polygon(80% 0%, 100% 0%, 100% 100%, 10% 100%);
+      clip-path: polygon(80% 0%, 100% 0%, 100% 100%, 10% 100%); }
