@@ -66,7 +66,7 @@
     setActiveNavigationHeader() {
       // Check if 'a' link is same as url
       this.$menuList.forEach(item => {
-        if (item.href == location.href.split('?')[0]) {
+        if (item.href == location.href.split('?')[0] || item.href == location.href.split('#')[0]) {
           item.classList.add('active')
         } else {
           item.classList.remove('active')
