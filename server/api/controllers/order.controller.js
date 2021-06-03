@@ -38,6 +38,31 @@ const getOrderById = async (req, res, next) => {
 }
 
 /**
+ * Get orders by a specific UserID
+ */
+const getOrdersFromUserById = async (req, res, next) => {
+  try {
+    // Get userId parameter
+    const { userId } = req.params;
+
+    // Get list of orders from Database
+    const orders = await database.Order.findAll({
+      where: {
+        UserId: userId
+      }
+    });
+
+    if (orders === null) {
+			throw new HTTPError(`Could not find the orders from user with id ${userId}!`, 404);
+		}
+		// Send response
+		res.status(200).json(orders);
+  } catch(error) {
+    handleHTTPError(error, next);
+  }
+}
+
+/**
  * Create a new order
  */
 const createOrder = async (req, res, next) => {
@@ -117,6 +142,7 @@ const updateOrder = async (req, res, next) => {
 export { 
   getOrders,
   getOrderById,
+  getOrdersFromUserById,
   createOrder,
   updateOrder,
   deleteOrder,

@@ -38,6 +38,31 @@ const getPaymentById = async (req, res, next) => {
 }
 
 /**
+ * Get a specific payment by User-ID
+ */
+const getPaymentByUserId = async (req, res, next) => {
+  try {
+    // Get userId parameter
+    const { userId } = req.params;
+
+    // Get specific payment from database
+    const payment = await database.Payment.findOne({
+      where: {
+        userId: userId
+      }
+    });
+
+    if (payment === null) {
+			throw new HTTPError(`Could not find the payment with UserId ${userId}!`, 404);
+		}
+		// Send response
+		res.status(200).json(payment);
+  } catch(error) {
+    handleHTTPError(error, next);
+  }
+}
+
+/**
  * Create a new payment
  */
 const createPayment = async (req, res, next) => {
@@ -117,6 +142,7 @@ const updatePayment = async (req, res, next) => {
 export { 
   getPayments,
   getPaymentById,
+  getPaymentByUserId,
   createPayment,
   updatePayment,
   deletePayment,

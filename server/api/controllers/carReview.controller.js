@@ -38,6 +38,31 @@ const getCarReviewById = async (req, res, next) => {
 }
 
 /**
+ * Get carReviews from user by UserID
+ */
+const getCarReviewsByUserId = async (req, res, next) => {
+  try {
+    // Get carReviewId parameter
+    const { userId } = req.params;
+
+    // Get carReviews from database
+    const carReviews = await database.CarReview.findAll({
+      where: {
+        UserId: userId
+      }
+    });
+
+    if (carReviews === null) {
+			throw new HTTPError(`Could not find carReviews from user with id ${userId}!`, 404);
+		}
+		// Send response
+		res.status(200).json(carReviews);
+  } catch(error) {
+    handleHTTPError(error, next);
+  }
+}
+
+/**
  * Create a new carReview
  */
 const createCarReview = async (req, res, next) => {
@@ -117,6 +142,7 @@ const updateCarReview = async (req, res, next) => {
 export { 
   getCarReviews,
   getCarReviewById,
+  getCarReviewsByUserId,
   createCarReview,
   updateCarReview,
   deleteCarReview,

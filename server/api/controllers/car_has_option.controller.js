@@ -38,6 +38,31 @@ const getCar_has_optionById = async (req, res, next) => {
 }
 
 /**
+ * Get list of car_has_options by carID
+ */
+const getCar_has_optionsByCarId = async (req, res, next) => {
+  try {
+    // Get carId parameter
+    const { carId } = req.params;
+
+    // Get specific car_has_options list from database
+    const car_has_option = await database.Car_has_option.findAll({
+      where: {
+        CarId: carId
+      }
+    });
+
+    if (car_has_option === null) {
+			throw new HTTPError(`Could not found the car_has_option list for car with id ${carId}!`, 404);
+		}
+		// Send response
+		res.status(200).json(car_has_option);
+  } catch(error) {
+    handleHTTPError(error, next);
+  }
+}
+
+/**
  * Create a new car_has_option
  */
 const createCar_has_option = async (req, res, next) => {
@@ -117,6 +142,7 @@ const updateCar_has_option = async (req, res, next) => {
 export { 
   getCar_has_options,
   getCar_has_optionById,
+  getCar_has_optionsByCarId,
   createCar_has_option,
   updateCar_has_option,
   deleteCar_has_option,

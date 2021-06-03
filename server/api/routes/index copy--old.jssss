@@ -48,19 +48,23 @@ const router = express.Router();
  *        name:
  *          type: string
  *          description: The name of the shape
+ *          example: Coupé
  *        imgUrl:
  *          type: string
  *          description: The url to the shape svg
+ *          example: ./data/coupé.svg
  *        createdAt:
  *          type: Date
  *          description: The created date of the shape
+ *          example: FILL IN
  *        updatedAt:
  *          type: Date
  *          description: The updated date of the shape
+ *          example: FILL IN
  *      example:
- *        id: 1
- *        name: NameOfShape
- *        imgUrl: ./data/NameOfShape.svg
+ *        - id: 1
+ *        - name: Coupé
+ *        - imgUrl: ./data/coupé.svg
  */
 /**
  * @swagger
@@ -76,12 +80,71 @@ const router = express.Router();
 /**
  * Shape routes
  */
+
+/**
+ * //@swagger
+ *  /api/shapes:
+ *    get:
+ *      summary: Returns a list of shapes
+ *      description: Retrieve a list of shapes. Can be used to populate a list of shapes when prototyping or testing an API.*
+ *      responses:
+ *        200:
+ *          description: A JSON array of shapes
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  data:
+ *                    type: array
+ *                    items:
+ *                      type: object
+ *                      properties:
+ *                        id:
+ *                          type: integer
+ *                          description: The category ID.
+ *                          example: 1
+ *                        name:
+ *                          type: string
+ *                          description: The shape name.
+ *                          example: Coupé
+ *                        imgUrl:
+ *                          type: string
+ *                          description: The url to the shape svg
+ *                          example: ./data/coupé.svg
+ *                        createdAt:
+ *                          type: Date
+ *                          description: The created date of the shape
+ *                          example: FILL IN
+ *                        updatedAt:
+ *                          type: Date
+ *                          description: The updated date of the shape
+ *                          example: FILL IN
+ */
+/**
+ * //@swagger
+ * /api/shapes/{shapeId}:
+ *  get:
+ *    tags: [Shapes]
+ *    summary: Returns a list of shapes
+ *    description: Retrieve a list of shapes. Can be used to populate a list of shapes when prototyping or testing an API.*
+ *    responses:
+ *      200:
+ *        description: The list of shapes
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: array
+ *              items:
+ *                $ref: '#/components/schemas/Shape'
+ *        
+ */
 /**
  * @swagger
  * /api/shapes:
  *  get:
- *    summary: Returns a list of shapes
  *    tags: [Shapes]
+ *    summary: Returns a list of shapes
  *    description: Retrieve a list of shapes. Can be used to populate a list of shapes when prototyping or testing an API.*
  *    responses:
  *      200:
@@ -97,85 +160,110 @@ const router = express.Router();
 router.get('/shapes', shapeController.getShapes);
 /**
  * @swagger
- * /api/shapes/{shapeId}:
- *  get:
- *    summary: Get the shape by id
- *    tags: [Shapes]
- *    parameters:
- *      - in: path
- *        name: shapeId
- *        schema:
- *          type: string
- *        required: true
- *        description: The shapeId
- *    responses:
- *      200:
- *        description: The shape description by id
- *        content:
- *          application/json:
- *            schema:
- *              $ref: '#/components/schemas/Shape'
- *      404:
- *        description: The shape was not found
- *        
+ *  /api/shapes/{shapeId}:
+ *    get:
+ *      tags:
+ *        - shapes
+ *      summary: Returns a shape by ID
+ *      parameters:
+ *        - name: shapeId
+ *          in: path
+ *          required: true
+ *          description: Numeric ID of the shape to get
+ *          schema:
+ *            type: integer
+ *            minimum: 1
+ *            default: 1
+ *      responses:
+ *        200:
+ *          description: A JSON object of a single shape
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  data:
+ *                    type: object
+ *                    properties:
+ *                      id:
+ *                        type: integer
+ *                        description: The category ID.
+ *                        example: 1
+ *                      name:
+ *                        type: string
+ *                        description: The shape name.
+ *                        example: Coupé
+ *                      imgUrl:
+ *                        type: string
+ *                        description: The url to the shape svg
+ *                        example: ./data/coupé.svg
+ *                      createdAt:
+ *                        type: Date
+ *                        description: The created date of the shape
+ *                        example: FILL IN
+ *                      updatedAt:
+ *                        type: Date
+ *                        description: The updated date of the shape
+ *                        example: FILL IN
  */
 router.get('/shapes/:shapeId', shapeController.getShapeById);
 /**
  * @swagger
  *  /api/shapes:
  *    post:
- *      summary: Creates a new shape
- *      tags: [Shapes]
+ *      summary: Creates a shape
  *      requestBody:
+ *        description: Create a new shape with the given name and imgUrl
  *        required: true
  *        content:
  *          application/json:
  *            schema:
- *              $ref: '#/components/schemas/Shape'
+ *              type: object
+ *              properties:
+ *                name:
+ *                  type: string
+ *                  description: The shape name.
+ *                  example: ShapeName
+ *                imgUrl:
+ *                  type: string
+ *                  description: The url to the shape svg
+ *                  example: ./data/image-for-shape.svg
  *      responses:
- *        200:
- *          description: The shape was succesfully created
- *          content:
- *            application/json:
- *              schema:
- *                $ref: '#/components/schemas/Shape'
- *        500:
- *          description: An error accured on the server
- *          
+ *        '201':
+ *          description: Created a new shape
  *         
  */
 router.post('/shapes', shapeController.createShape);
 /**
  * @swagger
- * /api/shapes/{shapeId}:
- *  put:
- *    summary: Update the shape by id
- *    tags: [Shapes]
- *    parameters:
- *      - in: path
- *        name: shapeId
- *        schema:
- *          type: string
+ *  /api/shapes/{shapeId}:
+ *    put:
+ *      summary: Edit a shape by ID
+ *      parameters:
+ *        - name: shapeId
+ *          in: path
+ *          description: ID of the shape to delete
+ *          required: true
+ *          type: integer
+ *      requestBody:
+ *        description: Update an existing shape
  *        required: true
- *        description: The shapeId
- *    requestBody:
- *      required: true
- *      content:
- *        application/json:
- *          schema:
- *            $ref: '#/components/schemas/Shape'
- *    responses:
- *      200:
- *        description: The shape was updated
  *        content:
  *          application/json:
  *            schema:
- *              $ref: '#/components/schemas/Shape'
- *      404:
- *        description: The book was not found
- *      500:
- *        description: An error accured on the server
- *        
+ *              type: object
+ *              properties:
+ *                name:
+ *                  type: string
+ *                  description: The shape name.
+ *                  example: editedShapeName
+ *                imgUrl:
+ *                  type: string
+ *                  description: The url to the shape svg
+ *                  example: ./data/image-for-shape.svg
+ *      responses:
+ *        204:
+ *          description: Shape deleted
  */
 //? add curent data in the input field?
 //! TODO : define shapeId in BODY as well? how to link with it?
@@ -185,20 +273,16 @@ router.put('/shapes/:shapeId', shapeController.updateShape);
  * @swagger
  *  /api/shapes/{shapeId}:
  *    delete:
- *      summary: Remove the shape by ID
- *      tags: [Shapes]
+ *      summary: Delete a shape by ID
  *      parameters:
- *        - in: path
- *          name: shapeId
- *          schema: 
- *            type: string
+ *        - name: shapeId
+ *          in: path
+ *          description: ID of the shape to delete
  *          required: true
- *          description: ID of the shape
+ *          type: integer
  *      responses:
- *        200:
- *          description: The shape was deleted
- *        404:
- *          description: The shape was not found
+ *        204:
+ *          description: Shape deleted
  */
 router.delete('/shapes/:shapeId', shapeController.deleteShape);
 

@@ -7,6 +7,21 @@ import { deleteBrand } from './brand.controller';
  */
 const getCars = async (req, res, next) => {
 	try {
+    // Get Cars from database
+    const cars = await database.Car.findAll();
+    
+    // Sen response
+    res.status(200).json(cars);
+	} catch (error) {
+		handleHTTPError(error, next);
+	}
+};
+
+/**
+ * Get all cars 
+ */
+const getCarsByCategoryName = async (req, res, next) => {
+	try {
     const { category } = req.params;
     let cars;
 
@@ -28,6 +43,80 @@ const getCars = async (req, res, next) => {
       cars = await database.Car.findAll();
     }
     console.log(cars.length);
+    res.status(200).json(cars);
+	} catch (error) {
+		handleHTTPError(error, next);
+	}
+};
+
+/**
+ * Get all cars By Shape Name
+ */
+const getCarsByShapeName = async (req, res, next) => {
+	try {
+    const { shapeName } = req.params;
+
+    let cars;
+
+    if ( shapeName === 'all') {
+      cars = await database.Shape.findAll({
+        include: [{
+          model: database.Car,
+        }]
+      })
+    } else {
+      cars = await database.Shape.findAll({
+        where: {
+          name: shapeName
+        },
+        include: [{
+          model: database.Car,
+        }]
+      })
+    }
+
+    if (cars === null) {
+			throw new HTTPError(`Could not found the cars with ShapeName ${shapeName}!`, 404);
+		}
+
+    // Send response
+    res.status(200).json(cars);
+	} catch (error) {
+		handleHTTPError(error, next);
+	}
+};
+
+/**
+ * Get all cars By Brand Name
+ */
+const getCarsByBrandName = async (req, res, next) => {
+	try {
+    const { brandName } = req.params;
+
+    let cars;
+
+    if ( brandName === 'all') {
+      cars = await database.Brand.findAll({
+        include: [{
+          model: database.Car,
+        }]
+      })
+    } else {
+      cars = await database.Brand.findAll({
+        where: {
+          name: brandName
+        },
+        include: [{
+          model: database.Car,
+        }]
+      })
+    }
+
+    if (cars === null) {
+			throw new HTTPError(`Could not found the cars with BrandName ${brandName}!`, 404);
+		}
+
+    // Send Response
     res.status(200).json(cars);
 	} catch (error) {
 		handleHTTPError(error, next);
@@ -191,6 +280,8 @@ const updateCar = async (req, res, next) => {
 export { 
   getCars,
   getCarById,
+  getCarsByShapeName,
+  getCarsByBrandName,
   createCar,
   updateCar,
   deleteCar,

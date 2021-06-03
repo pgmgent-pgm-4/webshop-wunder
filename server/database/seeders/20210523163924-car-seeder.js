@@ -76,7 +76,7 @@ module.exports = {
         teaserImgUrl: `/static/images/cars/${brand}/${img}`,
         ShapeId: _.sample(shapeIds).id,
         BrandId: brandId,
-        CarColourId: _.sample(carColourIds).id,
+        //CarColourId: _.sample(carColourIds).id,
         price: (randomNumber(100, 1200)*100) + (returnLowChanceBoolean() ? +500 : +0),
         isAutomatic: returnBoolean(),
         fuelType: _.sample(FUELTYPES),

@@ -38,6 +38,32 @@ const getOrderItemById = async (req, res, next) => {
 }
 
 /**
+ * Get a orderItems by orderId
+ */
+const getOrderItemsByOrderId = async (req, res, next) => {
+  try {
+    // Get orderId parameter
+    const { orderId } = req.params;
+
+    // Get specific orderItem from database
+    const orderItem = await database.OrderItem.findAll({
+      where:
+      {
+        OrderId: orderId
+      }
+    });
+
+    if (orderItem === null) {
+			throw new HTTPError(`Could not find the orderItems with orderid ${orderId}!`, 404);
+		}
+		// Send response
+		res.status(200).json(orderItem);
+  } catch(error) {
+    handleHTTPError(error, next);
+  }
+}
+
+/**
  * Create a new orderItem
  */
 const createOrderItem = async (req, res, next) => {
@@ -117,6 +143,7 @@ const updateOrderItem = async (req, res, next) => {
 export { 
   getOrderItems,
   getOrderItemById,
+  getOrderItemsByOrderId,
   createOrderItem,
   updateOrderItem,
   deleteOrderItem,
