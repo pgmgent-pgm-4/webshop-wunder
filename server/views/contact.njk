@@ -4,12 +4,64 @@
 
 {% block content %}
     
-    <section class="max-width">
+    <section class="max-width head-office">
+        <div id="mapbox" class="head-office__mapbox"></div>
 
-        <div id="mapbox" style='width: 400px; height: 300px;'>
-        
+        <div class="head-office__addresss">
+            <div class="text">
+                <h2>
+                    Headquarters
+                </h2>
+
+                <p>
+                    Industrieweg 232 <span class="next-line">9030 Ghent</span>
+                </p>
+            </div>
+
+            <div class="img">
+                <img src="./static/images/contact/contact-banner.jpg" alt="Image of the headquarters of Enjin">
+            </div>
         </div>
+    </section>
 
+    <section class="max-width contact padding">
+        <h2 class="title">How to contact us</h2>
+
+        <div class="contact__info">
+            <ul class="contact__info__list">
+                <li class="contact__info__list__item">
+                    <p>By phone</p>
+                    <div>
+                        <i class="icon" data-feather="phone"></i>
+                    </div>
+                    <a href="tel:0123456789">0123/45 67 89</a>
+                </li>
+
+                <li class="contact__info__list__item">
+                    <p>Via mail</p>
+                    <div>
+                        <i class="icon" data-feather="mail"></i>
+                    </div>
+                    <a href="mailto:info@enjin.com">info@enjin.com</a>
+                </li>
+
+                <li class="contact__info__list__item">
+                    <p>In person</p>
+                    <div>
+                        <i class="icon" data-feather="home"></i>
+                    </div>
+                    <a href="https://www.google.com/maps?sxsrf=ALeKk01RBlypFbjGqEzBvkNWxRWgZ8_sxg:1622736076708&q=Industrieweg+232,+9030+Gent&biw=1280&bih=613&dpr=1.5&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjV_rL86vvwAhU1BGMBHUfgAGsQ_AUoAXoECAEQAw" target="_blank">Industrieweg 232, 9030 Ghent</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="max-width question padding">
+        <h2 class="title">Do you have a question?</h2>
+    </section>
+
+    <section class="max-width offices padding">
+        <h2 class="title">Our offices</h2>
     </section>
 
 {% endblock %}
