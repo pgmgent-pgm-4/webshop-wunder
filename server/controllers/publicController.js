@@ -10,6 +10,7 @@ import bodyworkData from '../views/_data/bodywork.json';
 import newsData from '../views/_data/news.json';
 import serviceData from '../views/_data/services.json';
 import brandData from '../views/_data/brands.json';
+import officeData from '../views/_data/offices.json';
 
 import faker from 'faker';
 
@@ -129,6 +130,7 @@ const getContact = (req, res, next) => {
     //posts = posts.slice(0, 3);
     // Send response
     res.render('contact', {
+      offices: officeData,
         // name: 'This is our main office',
         // address: '21 Baker Street'
     });

@@ -12,7 +12,7 @@
     display: block;
 }
 
-.margin {
+.padding {
     padding: 4rem 1.5rem;
     @include media-min(xxs) {
         padding: 4rem 2rem;

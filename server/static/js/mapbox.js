@@ -11,7 +11,7 @@ map.addControl(new mapboxgl.NavigationControl());
 map.on('load', function () {
   // Load an image from an external URL.
   map.loadImage(
-      '/digital-agency-the-A-gency/static/images/icons/marker.png',
+      './static/images/icons/marker.png',
       function (error, image) {
           if (error) throw error;
 
@@ -29,6 +29,9 @@ map.on('load', function () {
                           'geometry': {
                               'type': 'Point',
                               'coordinates': [3.668803751201422, 51.08733753167722]
+                          },
+                          'properties': {
+                            'title': 'Test'
                           }
                       }
                   ]
@@ -42,7 +45,14 @@ map.on('load', function () {
               'source': 'point', // reference the data source
               'layout': {
                   'icon-image': 'marker', // reference the image
-                  'icon-size': 0.07
+                  'icon-size': 0.6,
+                  // 'text-field': ['get', 'title'],
+                  // 'text-font': [
+                  //   'Open Sans semibold',
+                  //   'Arial'
+                  // ],
+                  // 'text-offset': [0, 1.25],
+                  // 'text-anchor': 'top'
               }
           });
       }

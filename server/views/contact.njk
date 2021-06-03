@@ -4,12 +4,152 @@
 
 {% block content %}
     
-    <section class="max-width">
+    <section class="max-width head-office">
+        <div id="mapbox" class="head-office__mapbox"></div>
 
-        <div id="mapbox" style='width: 400px; height: 300px;'>
-        
+        <div class="head-office__addresss">
+            <div class="text">
+                <h2>
+                    Headquarters
+                </h2>
+
+                <p>
+                    Industrieweg 232 <span class="next-line">9030 Ghent</span>
+                </p>
+            </div>
+
+            <div class="img">
+                <img src="./static/images/contact/contact-banner.jpg" alt="Image of the headquarters of Enjin">
+            </div>
         </div>
+    </section>
 
+    <section class="max-width contact padding">
+        <h2 class="title">How to contact us</h2>
+
+        <div class="contact__info">
+            <ul class="contact__info__list">
+                <li class="contact__info__list__item">
+                    <p>By phone</p>
+                    <div>
+                        <i class="icon" data-feather="phone"></i>
+                    </div>
+                    <a href="tel:0123456789">0123/45 67 89</a>
+                </li>
+
+                <li class="contact__info__list__item">
+                    <p>Via mail</p>
+                    <div>
+                        <i class="icon" data-feather="mail"></i>
+                    </div>
+                    <a href="mailto:info@enjin.com">info@enjin.com</a>
+                </li>
+
+                <li class="contact__info__list__item">
+                    <p>In person</p>
+                    <div>
+                        <i class="icon" data-feather="home"></i>
+                    </div>
+                    <a href="https://www.google.com/maps?sxsrf=ALeKk01RBlypFbjGqEzBvkNWxRWgZ8_sxg:1622736076708&q=Industrieweg+232,+9030+Gent&biw=1280&bih=613&dpr=1.5&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjV_rL86vvwAhU1BGMBHUfgAGsQ_AUoAXoECAEQAw" target="_blank">Industrieweg 232, 9030 Ghent</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="max-width question padding" id="contact">
+        <h2 class="title">Do you have a question?</h2>
+
+        <div class="question__form">
+            <form action="">
+                <div class="question__form__flex">
+                    <label class="label" for="firstName">
+                        Firstname<span class="red">*</span>
+                        <input class="input" type="text" id="firstName" name="firstName" placeholder="Jane" required>
+                    </label>
+
+                    <label class="label" for="lastname">
+                        Lastname
+                        <input class="input" type="text" id="lastname" name="lastname" placeholder="Doe">
+                    </label>
+                </div>
+
+                <div class="question__form__flex">
+                    <label class="label" for="email">
+                        Email<span class="red">*</span>
+                        <input class="input" type="email" id="email" name="email" placeholder="jane_doe@gmail.com" required>
+                    </label>
+
+                    <label class="label" for="phoneNumber">
+                        Phone number
+                        <input class="input" type="tel" id="phoneNumber" name="phoneNumber" placeholder="0123456789">
+                    </label>
+                </div>
+
+                <div class="question__form__no-flex">
+                    <label class="label" for="topic">What is your question about?<span class="red">*</span></label>
+
+                    <select class="select" name="topic" id="topic" required>
+                        <option selected value="sales">Sales</option>
+                        <option value="services">Services</option>
+                        <option value="general">General</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="question__form__no-flex">
+                    <label class="label" for="question">What is your question?<span class="red">*</span></label>
+
+                    <textarea class="textarea" name="question" id="question" rows="4" placeholder="Question" required></textarea>
+                </div>
+
+                <button class="btn-pri">
+                    <span class="overlay"></span>
+                    <span class="container-text">
+                        <span>Send message</span>
+                    </span>
+                    <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section class="max-width offices padding">
+        <h2 class="title">Our offices</h2>
+
+        <div class="offices__locations">
+            <ul class="offices__locations__list">
+                {% for office in offices %}
+                    <li class="offices__locations__list__item">
+                        <div class="img">
+                            <img src="{{ office.img }}" alt="Picture of the ambience in the {{ office.city }} offices">
+                        </div>
+
+                        <div class="content">
+                            <p class="city">{{ office.city }}</p>
+                            <p class="address">{{ office.street }}<span class="next-line">{{ office.country }}</span></p>
+                            <div class="time"><i data-feather="clock"></i> <span>Closed</span></div>
+                        </div>
+                    </li>
+                {% endfor %}
+
+                <li class="offices__locations__list__item">
+                    <div class="img">
+                        <img src="./static/images/contact/offices/empty.jpg" alt="Picture of the ambience in empty offices">
+                    </div>
+
+                    <div class="content">
+                        <p class="city empty">Your store here?</p>
+                        <a href="#contact" class="btn-pri btn-ter">
+                            <span class="overlay"></span>
+                            <span class="container-text">
+                                <span>Contact us</span>
+                            </span>
+                            <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </section>
 
 {% endblock %}
