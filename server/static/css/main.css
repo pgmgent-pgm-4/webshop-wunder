@@ -979,7 +979,7 @@ footer {
           width: 40%; } }
       .testimonial__container .ceo img {
         position: relative;
-        z-index: -1; }
+        z-index: 0; }
     .testimonial__container .text {
       width: 100%;
       order: -1; }
@@ -1493,3 +1493,224 @@ footer {
           margin-right: 0.5rem; }
       .offices__locations__list__item .content a {
         font-size: 1.5rem; }
+
+.vision {
+  position: relative;
+  height: calc(100% - 4rem); }
+  @media (min-width: 28rem) {
+    .vision {
+      height: calc(100% - 7.8rem); } }
+  @media (min-width: 50rem) {
+    .vision {
+      height: calc(100% - 4.8rem); } }
+  @media (min-width: 64rem) {
+    .vision {
+      height: calc(100% - 5.06rem); } }
+  @media (min-width: 80rem) {
+    .vision {
+      max-height: 100%; } }
+  .vision__text {
+    width: 100%; }
+    .vision__text h2 {
+      margin-bottom: 2rem;
+      font-size: 2.5rem; }
+      @media (min-width: 28rem) {
+        .vision__text h2 {
+          font-size: 3.5rem; } }
+    .vision__text p {
+      margin-bottom: 1rem;
+      line-height: 1.3; }
+      .vision__text p:last-of-type {
+        margin-bottom: 0; }
+    .vision__text .text-wrap {
+      width: 100vw;
+      height: 100vh;
+      float: right;
+      opacity: .2;
+      display: none; }
+      @media (min-width: 36rem) {
+        .vision__text .text-wrap {
+          display: block;
+          height: 61rem;
+          shape-outside: polygon(81% 0%, 100% 0%, 100% 100%, 45% 100%); } }
+      @media (min-width: 39rem) {
+        .vision__text .text-wrap {
+          height: 57rem; } }
+      @media (min-width: 43rem) {
+        .vision__text .text-wrap {
+          height: 53rem; } }
+      @media (min-width: 50rem) {
+        .vision__text .text-wrap {
+          height: 46rem; } }
+      @media (min-width: 64rem) {
+        .vision__text .text-wrap {
+          height: 37rem;
+          shape-outside: polygon(85% 0%, 100% 0%, 100% 100%, 49% 100%); } }
+      @media (min-width: 75rem) {
+        .vision__text .text-wrap {
+          height: 32rem; } }
+      @media (min-width: 80rem) {
+        .vision__text .text-wrap {
+          height: 32rem;
+          width: 80rem;
+          shape-outside: polygon(84% 0%, 100% 0%, 100% 100%, 47% 100%); } }
+  .vision__img {
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    top: 0;
+    right: 0; }
+    @media (min-width: 36rem) {
+      .vision__img {
+        display: block; } }
+    .vision__img img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      right: 0;
+      object-fit: cover;
+      -webkit-clip-path: polygon(80% 0%, 100% 0%, 100% 100%, 10% 100%);
+      clip-path: polygon(80% 0%, 100% 0%, 100% 100%, 10% 100%); }
+
+.team h2 {
+  margin-bottom: 4rem;
+  font-size: 2.5rem; }
+  @media (min-width: 28rem) {
+    .team h2 {
+      font-size: 3.5rem; } }
+
+.team__big {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 6rem;
+  margin-top: 8rem; }
+  @media (min-width: 64rem) {
+    .team__big {
+      margin-bottom: 13rem; } }
+  .team__big .img {
+    top: 0;
+    left: 0;
+    transform: translateY(-20%);
+    width: 100%;
+    height: 32rem; }
+    @media (min-width: 50rem) {
+      .team__big .img {
+        height: 35rem;
+        top: 50%;
+        width: 50%;
+        left: 50%;
+        transform: translateX(-100%) translateY(-38%); } }
+    @media (min-width: 64rem) {
+      .team__big .img {
+        width: 23rem; } }
+    .team__big .img img {
+      width: 18.5rem; }
+  .team__big .content {
+    border-radius: 2px;
+    padding: 2rem;
+    padding-top: 25rem;
+    margin-top: 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #0d0d0d29;
+    width: 100%; }
+    @media (min-width: 50rem) {
+      .team__big .content {
+        padding: 2rem 4rem;
+        width: calc(50% + 3rem);
+        margin-right: -3rem; } }
+    @media (min-width: 64rem) {
+      .team__big .content {
+        width: calc(50% + 4rem);
+        margin-right: -4rem; } }
+    .team__big .content__description {
+      margin-top: 1.5rem; }
+
+.team__small ul {
+  display: flex;
+  flex-wrap: wrap; }
+  .team__small ul li {
+    margin-top: 11rem;
+    position: relative;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px #0d0d0d29;
+    width: 100%;
+    margin-left: 2.2rem; }
+    @media (min-width: 50rem) {
+      .team__small ul li {
+        margin-left: 50%; } }
+    @media (min-width: 64rem) {
+      .team__small ul li {
+        margin: 0 2.2rem;
+        margin-top: 11rem;
+        width: calc(50% - 4.4rem); } }
+    @media (min-width: 50rem) {
+      .team__small ul li:last-of-type {
+        margin-bottom: 8rem; } }
+    @media (min-width: 64rem) {
+      .team__small ul li:last-of-type {
+        margin-bottom: 0; } }
+    .team__small ul li .content {
+      padding: 2.5rem;
+      padding-top: 25rem; }
+      @media (min-width: 50rem) {
+        .team__small ul li .content {
+          padding: 8rem 2rem 8rem 2rem; } }
+      @media (min-width: 64rem) {
+        .team__small ul li .content {
+          padding: 2.5rem;
+          padding-top: 25rem; } }
+      .team__small ul li .content .position {
+        font-size: 1.5rem; }
+        @media (min-width: 50rem) {
+          .team__small ul li .content .position {
+            font-size: 2rem; } }
+    .team__small ul li .img {
+      top: -8rem;
+      width: 23rem;
+      height: 32rem;
+      left: -2.2rem; }
+      @media (min-width: 50rem) {
+        .team__small ul li .img {
+          left: -100%;
+          width: 100%;
+          top: 50%;
+          transform: translateY(-42%); } }
+      @media (min-width: 64rem) {
+        .team__small ul li .img {
+          width: 23rem;
+          transform: none;
+          top: -8rem;
+          left: -2.2rem; } }
+      .team__small ul li .img img {
+        width: 18.5rem;
+        transform: translate(-50%, -38%); }
+
+.team .name,
+.team .position {
+  font-family: 'vw_head';
+  font-size: 2rem;
+  text-transform: uppercase; }
+
+.team .name {
+  font-weight: bold;
+  margin-bottom: 0.75rem; }
+
+.team .position {
+  color: #CC0000; }
+
+.team .img {
+  background-color: #CC0000;
+  position: absolute;
+  clip-path: polygon(0% 18%, 100% 0%, 100% 82%, 0% 100%);
+  box-shadow: 0 2px 4px #0d0d0d29; }
+  .team .img img {
+    position: absolute;
+    object-fit: cover;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%); }
