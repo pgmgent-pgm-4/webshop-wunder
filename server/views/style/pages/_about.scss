@@ -107,8 +107,11 @@
         position: relative;
         display: flex;
         justify-content: flex-end;
-        margin-bottom: 13rem;
+        margin-bottom: 6rem;
         margin-top: 8rem;
+        @include media-min(md) {
+            margin-bottom: 13rem;
+        }
 
         .img {
             top: 0;
@@ -116,13 +119,16 @@
             transform: translateY(-20%);
             width: 100%;
             height: 32rem;
-
+            
             @include media-min(sm) {
+                height: 35rem;
                 top: 50%;
-                width: 23rem;
-                height: 32rem;
+                width: 50%;
                 left: 50%;
                 transform: translateX(-100%) translateY(-38%);
+            }
+            @include media-min(md) {
+                width: 23rem;
             }
             
             img {
@@ -161,25 +167,68 @@
             flex-wrap: wrap;
 
             li {
-                width: calc(50% - 4.4rem);
-                margin: 0 2.2rem;
                 margin-top: 11rem;
                 position: relative;
                 background-color: $white-color;
                 border-radius: 2px;
                 box-shadow: 0 2px 4px $primary-shadow-color;
+                width: 100%;
+                margin-left: 2.2rem;
+                @include media-min(sm) {
+                    margin-left: 50%;
+
+                }
+                @include media-min(md) {
+                    margin: 0 2.2rem;
+                    margin-top: 11rem;
+                    width: calc(50% - 4.4rem);
+                }
+
+                &:last-of-type {
+                    @include media-min(sm) {
+                        margin-bottom: 8rem;
+                    }
+                    @include media-min(md) {
+                        margin-bottom: 0;
+                    }
+                }
 
                 .content {
                     padding: 2.5rem;
                     padding-top: 25rem;
+                    @include media-min(sm) {
+                        padding: 8rem 2rem 8rem 2rem;
+                    }
+                    @include media-min(md) {
+                        padding: 2.5rem;
+                        padding-top: 25rem;
+                    }
+
+                    .position {
+                        font-size: 1.5rem;
+                        @include media-min(sm) {
+                            font-size: 2rem;
+                        }
+                    }
                 }
 
                 .img {
                     top: -8rem;
                     width: 23rem;
                     height: 32rem;
-                    padding: 2rem;
                     left: -2.2rem;
+                    @include media-min(sm) {
+                        left: -100%;
+                        width: 100%;
+                        top: 50%;
+                        transform: translateY(-42%);
+                    }
+                    @include media-min(md) {
+                        width: 23rem;
+                        transform: none;
+                        top: -8rem;
+                        left: -2.2rem;
+                    }
             
                     img {
                         width: 18.5rem;

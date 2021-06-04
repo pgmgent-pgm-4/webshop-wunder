@@ -1586,8 +1586,11 @@ footer {
   position: relative;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 13rem;
+  margin-bottom: 6rem;
   margin-top: 8rem; }
+  @media (min-width: 64rem) {
+    .team__big {
+      margin-bottom: 13rem; } }
   .team__big .img {
     top: 0;
     left: 0;
@@ -1596,11 +1599,14 @@ footer {
     height: 32rem; }
     @media (min-width: 50rem) {
       .team__big .img {
+        height: 35rem;
         top: 50%;
-        width: 23rem;
-        height: 32rem;
+        width: 50%;
         left: 50%;
         transform: translateX(-100%) translateY(-38%); } }
+    @media (min-width: 64rem) {
+      .team__big .img {
+        width: 23rem; } }
     .team__big .img img {
       width: 18.5rem; }
   .team__big .content {
@@ -1627,22 +1633,59 @@ footer {
   display: flex;
   flex-wrap: wrap; }
   .team__small ul li {
-    width: calc(50% - 4.4rem);
-    margin: 0 2.2rem;
     margin-top: 11rem;
     position: relative;
     background-color: #fff;
     border-radius: 2px;
-    box-shadow: 0 2px 4px #0d0d0d29; }
+    box-shadow: 0 2px 4px #0d0d0d29;
+    width: 100%;
+    margin-left: 2.2rem; }
+    @media (min-width: 50rem) {
+      .team__small ul li {
+        margin-left: 50%; } }
+    @media (min-width: 64rem) {
+      .team__small ul li {
+        margin: 0 2.2rem;
+        margin-top: 11rem;
+        width: calc(50% - 4.4rem); } }
+    @media (min-width: 50rem) {
+      .team__small ul li:last-of-type {
+        margin-bottom: 8rem; } }
+    @media (min-width: 64rem) {
+      .team__small ul li:last-of-type {
+        margin-bottom: 0; } }
     .team__small ul li .content {
       padding: 2.5rem;
       padding-top: 25rem; }
+      @media (min-width: 50rem) {
+        .team__small ul li .content {
+          padding: 8rem 2rem 8rem 2rem; } }
+      @media (min-width: 64rem) {
+        .team__small ul li .content {
+          padding: 2.5rem;
+          padding-top: 25rem; } }
+      .team__small ul li .content .position {
+        font-size: 1.5rem; }
+        @media (min-width: 50rem) {
+          .team__small ul li .content .position {
+            font-size: 2rem; } }
     .team__small ul li .img {
       top: -8rem;
       width: 23rem;
       height: 32rem;
-      padding: 2rem;
       left: -2.2rem; }
+      @media (min-width: 50rem) {
+        .team__small ul li .img {
+          left: -100%;
+          width: 100%;
+          top: 50%;
+          transform: translateY(-42%); } }
+      @media (min-width: 64rem) {
+        .team__small ul li .img {
+          width: 23rem;
+          transform: none;
+          top: -8rem;
+          left: -2.2rem; } }
       .team__small ul li .img img {
         width: 18.5rem;
         transform: translate(-50%, -38%); }
