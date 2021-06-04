@@ -31,14 +31,11 @@
             }
         }
 
-        .test {
+        .text-wrap {
             width: 100vw;
             height: 100vh;
             shape-outside: polygon(80% 0%, 100% 0%, 100% 100%, 48% 100%);
-            // width: 300px;
-            // height: 200px;
             float: right;
-            display: block;
             opacity: .2;
             @include media-min(full) {
                 height: 32rem;

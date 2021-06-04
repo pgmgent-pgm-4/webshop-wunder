@@ -1519,15 +1519,14 @@ footer {
       line-height: 1.3; }
       .vision__text p:last-of-type {
         margin-bottom: 0; }
-    .vision__text .test {
+    .vision__text .text-wrap {
       width: 100vw;
       height: 100vh;
       shape-outside: polygon(80% 0%, 100% 0%, 100% 100%, 48% 100%);
       float: right;
-      display: block;
       opacity: .2; }
       @media (min-width: 80rem) {
-        .vision__text .test {
+        .vision__text .text-wrap {
           height: 32rem;
           width: 80rem;
           shape-outside: polygon(84% 0%, 100% 0%, 100% 100%, 47% 100%); } }
