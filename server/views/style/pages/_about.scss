@@ -19,14 +19,8 @@
 
         h2 {
             margin-bottom: 2rem;
-            font-size: 2rem;
-            @include media-min(xs) {
-                font-size: 2.5rem;
-            }
-            @include media-min(md) {
-                font-size: 3rem;
-            }
-            @include media-min(lg) {
+            font-size: 2.5rem;
+            @include media-min(xxs) {
                 font-size: 3.5rem;
             }
         }
@@ -43,28 +37,22 @@
         .text-wrap {
             width: 100vw;
             height: 100vh;
-            shape-outside: polygon(80% 0%, 100% 0%, 100% 100%, 48% 100%);
             float: right;
             opacity: .2;
             display: none;
             @include media-min(xs) {
                 display: block;
-            }
-            @include media-min(xs) {
                 height: 61rem;
                 shape-outside: polygon(81% 0%, 100% 0%, 100% 100%, 45% 100%);
             }
             @include media-min(xss) {
                 height: 57rem;
-                shape-outside: polygon(81% 0%, 100% 0%, 100% 100%, 45% 100%);
             }
             @include media-min(ss) {
                 height: 53rem;
-                shape-outside: polygon(81% 0%, 100% 0%, 100% 100%, 45% 100%);
             }
             @include media-min(sm) {
                 height: 46rem;
-                shape-outside: polygon(81% 0%, 100% 0%, 100% 100%, 45% 100%);
             }
             @include media-min(md) {
                 height: 37rem;
@@ -108,8 +96,11 @@
 
 .team {
     h2 {
-        font-size: 3.5rem;
         margin-bottom: 4rem;
+        font-size: 2.5rem;
+        @include media-min(xxs) {
+            font-size: 3.5rem;
+        }
     }
 
     &__big {
@@ -120,24 +111,42 @@
         margin-top: 8rem;
 
         .img {
-            top: -3.5rem;
-            width: 23rem;
+            top: 0;
+            left: 0;
+            transform: translateY(-20%);
+            width: 100%;
             height: 32rem;
-            left: 50%;
-            transform: translateX(-100%);
 
+            @include media-min(sm) {
+                top: 50%;
+                width: 23rem;
+                height: 32rem;
+                left: 50%;
+                transform: translateX(-100%) translateY(-38%);
+            }
+            
             img {
                 width: 18.5rem;
             }
         }
-
+        
         .content {
             border-radius: 2px;
-            padding: 2rem 4rem;
-            margin-right: -4rem;
+            padding: 2rem;
+            padding-top: 25rem;
+            margin-top: 2rem;
             background-color: $white-color;
             box-shadow: 0 2px 4px $primary-shadow-color;
-            width: calc(50% + 4rem);
+            width: 100%;
+            @include media-min(sm) {
+                padding: 2rem 4rem;
+                width: calc(50% + 3rem);
+                margin-right: -3rem;
+            }
+            @include media-min(md) {
+                width: calc(50% + 4rem);
+                margin-right: -4rem;
+            }
 
             &__description {
                 margin-top: 1.5rem;

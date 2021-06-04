@@ -1513,14 +1513,8 @@ footer {
     width: 100%; }
     .vision__text h2 {
       margin-bottom: 2rem;
-      font-size: 2rem; }
-      @media (min-width: 36rem) {
-        .vision__text h2 {
-          font-size: 2.5rem; } }
-      @media (min-width: 64rem) {
-        .vision__text h2 {
-          font-size: 3rem; } }
-      @media (min-width: 75rem) {
+      font-size: 2.5rem; }
+      @media (min-width: 28rem) {
         .vision__text h2 {
           font-size: 3.5rem; } }
     .vision__text p {
@@ -1531,29 +1525,23 @@ footer {
     .vision__text .text-wrap {
       width: 100vw;
       height: 100vh;
-      shape-outside: polygon(80% 0%, 100% 0%, 100% 100%, 48% 100%);
       float: right;
       opacity: .2;
       display: none; }
       @media (min-width: 36rem) {
         .vision__text .text-wrap {
-          display: block; } }
-      @media (min-width: 36rem) {
-        .vision__text .text-wrap {
+          display: block;
           height: 61rem;
           shape-outside: polygon(81% 0%, 100% 0%, 100% 100%, 45% 100%); } }
       @media (min-width: 39rem) {
         .vision__text .text-wrap {
-          height: 57rem;
-          shape-outside: polygon(81% 0%, 100% 0%, 100% 100%, 45% 100%); } }
+          height: 57rem; } }
       @media (min-width: 43rem) {
         .vision__text .text-wrap {
-          height: 53rem;
-          shape-outside: polygon(81% 0%, 100% 0%, 100% 100%, 45% 100%); } }
+          height: 53rem; } }
       @media (min-width: 50rem) {
         .vision__text .text-wrap {
-          height: 46rem;
-          shape-outside: polygon(81% 0%, 100% 0%, 100% 100%, 45% 100%); } }
+          height: 46rem; } }
       @media (min-width: 64rem) {
         .vision__text .text-wrap {
           height: 37rem;
@@ -1588,8 +1576,11 @@ footer {
       clip-path: polygon(80% 0%, 100% 0%, 100% 100%, 10% 100%); }
 
 .team h2 {
-  font-size: 3.5rem;
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem;
+  font-size: 2.5rem; }
+  @media (min-width: 28rem) {
+    .team h2 {
+      font-size: 3.5rem; } }
 
 .team__big {
   position: relative;
@@ -1598,20 +1589,37 @@ footer {
   margin-bottom: 13rem;
   margin-top: 8rem; }
   .team__big .img {
-    top: -3.5rem;
-    width: 23rem;
-    height: 32rem;
-    left: 50%;
-    transform: translateX(-100%); }
+    top: 0;
+    left: 0;
+    transform: translateY(-20%);
+    width: 100%;
+    height: 32rem; }
+    @media (min-width: 50rem) {
+      .team__big .img {
+        top: 50%;
+        width: 23rem;
+        height: 32rem;
+        left: 50%;
+        transform: translateX(-100%) translateY(-38%); } }
     .team__big .img img {
       width: 18.5rem; }
   .team__big .content {
     border-radius: 2px;
-    padding: 2rem 4rem;
-    margin-right: -4rem;
+    padding: 2rem;
+    padding-top: 25rem;
+    margin-top: 2rem;
     background-color: #fff;
     box-shadow: 0 2px 4px #0d0d0d29;
-    width: calc(50% + 4rem); }
+    width: 100%; }
+    @media (min-width: 50rem) {
+      .team__big .content {
+        padding: 2rem 4rem;
+        width: calc(50% + 3rem);
+        margin-right: -3rem; } }
+    @media (min-width: 64rem) {
+      .team__big .content {
+        width: calc(50% + 4rem);
+        margin-right: -4rem; } }
     .team__big .content__description {
       margin-top: 1.5rem; }
 
