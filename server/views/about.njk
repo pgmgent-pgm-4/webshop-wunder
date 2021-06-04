@@ -6,9 +6,9 @@
     
     <section class="vision max-width">
         <div class="vision__text padding">
-            <h2 class="title">Our company policy/ dream</h2>
-
             <div class="test"></div>
+
+            <h2 class="title">Our company policy/ dream</h2>
 
             <p>Our Founded in 1963, Automobili Lamborghini is headquartered in Sant’Agata Bolognese, in Northern Italy.</p>
             
@@ -22,4 +22,39 @@
         </div>
     </section>
 
+    <section class="team max-width padding">
+        <h2 class="title">Our team</h2>
+
+        <div class="team__big">
+            <div class="img">
+                <img src="./static/images/about/team/ceo.png" alt="Image of the CEO">
+            </div>
+
+            <div class="content">
+                <p class="name">Stephan Winkelmann</p>
+
+                <p class="position">ceo</p>
+
+                <p class="content__description">Stephan Winkelmann was born in Berlin on the 18 October 1964 and grew up in Rome, Italy. He studied political science in Rome and took his degree in Munich. In 1991 he started his professional career at a German financial institution before moving to the automotive industry, working firstly for Mercedes-Benz and then for Fiat Auto from 1994 to 2004, until he was appointed CEO of Fiat Auto Austria, Switzerland and Germany.</p>
+            </div>
+        </div>
+
+        <div class="team__small">
+            <ul>
+                {% for member in team %}
+                    <li>
+                        <div class="img">
+                            <img src="{{ member.img }}" alt="Image of the CEO">
+                        </div>
+
+                        <div class="content">
+                            <p class="name">{{ member.name }}</p>
+
+                            <p class="position">{{ member.position }}</p>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
 {% endblock %}

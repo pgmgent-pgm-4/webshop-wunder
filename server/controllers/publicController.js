@@ -11,6 +11,7 @@ import newsData from '../views/_data/news.json';
 import serviceData from '../views/_data/services.json';
 import brandData from '../views/_data/brands.json';
 import officeData from '../views/_data/offices.json';
+import teamData from '../views/_data/team.json';
 
 import faker from 'faker';
 
@@ -81,7 +82,7 @@ const getAbout = (req, res, next) => {
     //posts = posts.slice(0, 3);
     // Send response
     res.render('about', {
-      //posts,
+      team: teamData,
     });
   } catch (error) {
     handleHTTPError(error, next);
