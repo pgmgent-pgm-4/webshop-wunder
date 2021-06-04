@@ -19,7 +19,16 @@
 
         h2 {
             margin-bottom: 2rem;
-            font-size: 3.5rem;
+            font-size: 2rem;
+            @include media-min(xs) {
+                font-size: 2.5rem;
+            }
+            @include media-min(md) {
+                font-size: 3rem;
+            }
+            @include media-min(lg) {
+                font-size: 3.5rem;
+            }
         }
 
         p {
@@ -37,6 +46,33 @@
             shape-outside: polygon(80% 0%, 100% 0%, 100% 100%, 48% 100%);
             float: right;
             opacity: .2;
+            display: none;
+            @include media-min(xs) {
+                display: block;
+            }
+            @include media-min(xs) {
+                height: 61rem;
+                shape-outside: polygon(81% 0%, 100% 0%, 100% 100%, 45% 100%);
+            }
+            @include media-min(xss) {
+                height: 57rem;
+                shape-outside: polygon(81% 0%, 100% 0%, 100% 100%, 45% 100%);
+            }
+            @include media-min(ss) {
+                height: 53rem;
+                shape-outside: polygon(81% 0%, 100% 0%, 100% 100%, 45% 100%);
+            }
+            @include media-min(sm) {
+                height: 46rem;
+                shape-outside: polygon(81% 0%, 100% 0%, 100% 100%, 45% 100%);
+            }
+            @include media-min(md) {
+                height: 37rem;
+                shape-outside: polygon(85% 0%, 100% 0%, 100% 100%, 49% 100%);
+            }
+            @include media-min(lg) {
+                height: 32rem;
+            }
             @include media-min(full) {
                 height: 32rem;
                 width: 80rem;
@@ -46,18 +82,16 @@
     }
 
     &__img {
+        display: none;
         overflow: hidden;
         position: absolute;
         width: 60%;
         height: 100%;
         top: 0;
         right: 0;
-        // @include media-min(xs) {
-            //     width: 50%;
-            // }
-            // @include media-min(sm) {
-                //     width: 65%;
-                // }
+        @include media-min(xs) {
+            display: block;
+        }
                 
         img {
             position: absolute;
