@@ -30,8 +30,7 @@ const getHome = (req, res, next) => {
       bodywork: bodyworkData,
       news: newsData,
       services: serviceData,
-      brands: brandData,
-      dataTest: 'test',
+      brands: brandData
     });
   } catch (error) {
     handleHTTPError(error, next);
