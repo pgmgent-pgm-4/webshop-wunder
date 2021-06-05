@@ -104,6 +104,22 @@ const getCarsTest = async(req, res, next) => {
     console.warn('An error occured!', error);
   }
 }
+/*
+Get Car Render-test
+*/
+const getCarsTest2 = async(req, res, next) => {
+  try {
+    //const category = (req.params.category === 'brands') || (req.params.category === 'shapes') ? req.params.category : null ;
+    res.render('cars--data-test2', {
+      data: res.locals.data,
+      category: req.params.category,
+      //testData: res.locals.test
+    });
+    //next();
+  } catch(error) {
+    console.warn('An error occured!', error);
+  }
+}
 
 /*
 Get Design-system Render
@@ -176,4 +192,5 @@ module.exports = {
   getTest,
   getCars,
   getCarsTest,
+  getCarsTest2
 };

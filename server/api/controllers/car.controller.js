@@ -75,6 +75,8 @@ const getCarsByShapeName = async (req, res, next) => {
       })
     }
 
+    //console.log(cars);
+
     if (cars === null) {
 			throw new HTTPError(`Could not found the cars with ShapeName ${shapeName}!`, 404);
 		}

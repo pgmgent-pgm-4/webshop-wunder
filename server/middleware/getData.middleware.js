@@ -3,7 +3,6 @@ import fetch from 'node-fetch';
 const ENJINE_BASE_PATH = 'http://localhost:8081/api';
 
 const getData = async(req, res, next, apiUrl) => {
-
   const fetchData = async() => {
     try {
       const response = await fetch(`${ENJINE_BASE_PATH}${apiUrl}/${req.params.category}`);

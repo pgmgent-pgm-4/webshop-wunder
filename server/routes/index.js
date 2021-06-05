@@ -18,7 +18,10 @@ const router = express.Router();
 Routes
 */
 router.get('/', publicController.getHome);
-router.get('/carsDataTest/:category', (req, res, next ) => {getData(req, res,next, '/cars')}, publicController.getCarsTest);
+router.get('/carsDataTest/:category', (req, res, next ) => {getData(req, res, next, '/cars')}, publicController.getCarsTest);
+
+router.get('/cars/brands/:category', (req, res, next ) => {getData(req, res, next, '/cars/brands')}, publicController.getCarsTest2);
+router.get('/cars/bodywork/:category', (req, res, next ) => {getData(req, res, next, '/cars/shapes')}, publicController.getCarsTest2);
 
 router.get('/cars', publicController.getCars);
 router.get('/news', publicController.getNews);
