@@ -8,6 +8,7 @@
       this.setActiveNavigationHeader();
       this.setActiveNavigationFooter();
       this.setActiveNavigationMobile();
+      this.openingsHours();
     },
 
     cacheElement() {
@@ -21,6 +22,8 @@
       this.$searchBar = document.querySelector('.search-bar');
       this.$closeSearch = document.querySelector('.close');
       this.$crossList = document.querySelectorAll('.side-nav__item');
+      this.$OpeningsHours = document.querySelectorAll('.openings-hours');
+      this.$openOrClosed = document.querySelectorAll('.open-or-closed');
     },
 
     icons() {
@@ -66,7 +69,7 @@
     setActiveNavigationHeader() {
       // Check if 'a' link is same as url
       this.$menuList.forEach(item => {
-        if (item.href == location.href.split('?')[0]) {
+        if (item.href == location.href.split('?')[0] || item.href == location.href.split('#')[0]) {
           item.classList.add('active')
         } else {
           item.classList.remove('active')
@@ -96,6 +99,58 @@
       })
     },
 
+    openingsHours() {
+      let openingsHours = [9, 17];
+      let openingsDays = [1, 2, 3, 4, 5];
+      
+      let today = new Date();
+      let day = today.getDay();
+      let hours = today.getHours();
+      
+      this.$OpeningsHours.forEach((container, index) => {  
+        let adaptedHours = this.getTimeZone(hours, container);
+
+        if (openingsDays.includes(day) && adaptedHours >= openingsHours[0] && adaptedHours <= openingsHours[1]) {
+          this.$openOrClosed[index].innerHTML = 'Open';
+          container.classList.remove('closed');
+          container.classList.add('open');
+        } else {
+          this.$openOrClosed[index].innerHTML = 'Closed';
+          container.classList.remove('open');
+          container.classList.add('closed');
+        }
+      })
+
+    },
+
+    getTimeZone(hours, container) {
+      let country = container.parentNode.childNodes[1].textContent;
+      if (country == 'London') {
+        var checkHours = hours - 1;
+
+      } else if (country == 'New York') {
+        var checkHours = hours - 6;
+
+      } else if (country == 'Paris') {
+        var checkHours = hours;
+
+      } else if (country == 'Los Angeles') {
+        var checkHours = hours - 9;
+
+      } else if (country == 'Hong Kong') {
+        var checkHours = hours + 6;
+
+      }
+
+      // Check if 'checkhours' is smaller than 0 or bigger than 24
+      if (checkHours >= 24) {
+        return checkHours - 24;
+      } else if (checkHours < 0) {
+        return 24 + checkHours;
+      } else {
+        return checkHours;
+      }
+    }
   };
 
   app.initialize();
