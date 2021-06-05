@@ -24,9 +24,9 @@
         "img": "./static/images/contact/offices/los-angeles.jpg"
     },
     {
-        "city": "Madrid",
-        "street": "943 Madrid Street",
-        "country": "Spain",
-        "img": "./static/images/contact/offices/madrid.jpg"
+        "city": "Hong Kong",
+        "street": "943 Hong Kong Street",
+        "country": "Hong Kong",
+        "img": "./static/images/contact/offices/hong-kong.jpg"
     }
 ]

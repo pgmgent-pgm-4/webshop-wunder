@@ -1491,6 +1491,14 @@ footer {
         .offices__locations__list__item .content .time svg {
           stroke: #0D0D0D;
           margin-right: 0.5rem; }
+        .offices__locations__list__item .content .time.closed {
+          color: #CC0000; }
+          .offices__locations__list__item .content .time.closed svg {
+            stroke: #CC0000; }
+        .offices__locations__list__item .content .time.open {
+          color: #0e7e48; }
+          .offices__locations__list__item .content .time.open svg {
+            stroke: #0e7e48; }
       .offices__locations__list__item .content a {
         font-size: 1.5rem; }
 

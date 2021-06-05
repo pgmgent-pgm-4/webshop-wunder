@@ -314,6 +314,22 @@
                         stroke: $primary-color;
                         margin-right: 0.5rem;
                     }
+
+                    &.closed {
+                        color: $accent-color;
+
+                        svg {
+                            stroke: $accent-color;
+                        }
+                    }
+
+                    &.open {
+                        color: #0e7e48;
+
+                        svg {
+                            stroke: #0e7e48;
+                        }
+                    }
                 }
 
                 a {
