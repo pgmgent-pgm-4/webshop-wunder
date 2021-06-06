@@ -330,6 +330,14 @@
                             stroke: #0e7e48;
                         }
                     }
+
+                    &.opening {
+                        color: #e4742a;
+
+                        svg {
+                            stroke: #e4742a;
+                        }
+                    }
                 }
 
                 a {

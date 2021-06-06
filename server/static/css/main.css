@@ -1499,6 +1499,10 @@ footer {
           color: #0e7e48; }
           .offices__locations__list__item .content .time.open svg {
             stroke: #0e7e48; }
+        .offices__locations__list__item .content .time.opening {
+          color: #e4742a; }
+          .offices__locations__list__item .content .time.opening svg {
+            stroke: #e4742a; }
       .offices__locations__list__item .content a {
         font-size: 1.5rem; }
 

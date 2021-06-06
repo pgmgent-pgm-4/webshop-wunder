@@ -110,10 +110,18 @@
       this.$OpeningsHours.forEach((container, index) => {  
         let adaptedHours = this.getTimeZone(hours, container);
 
-        if (openingsDays.includes(day) && adaptedHours >= openingsHours[0] && adaptedHours <= openingsHours[1]) {
+        if (openingsDays.includes(day) && adaptedHours >= openingsHours[0] && adaptedHours < ( openingsHours[1] - 1 )) {
           this.$openOrClosed[index].innerHTML = 'Open';
           container.classList.remove('closed');
           container.classList.add('open');
+        } else if (openingsDays.includes(day) && adaptedHours == ( openingsHours[0] - 1 )) {
+          this.$openOrClosed[index].innerHTML = 'Opening soon';
+          container.classList.remove('closed');
+          container.classList.add('opening');
+        } else if (openingsDays.includes(day) && adaptedHours == ( openingsHours[1] - 1 )) {
+          this.$openOrClosed[index].innerHTML = 'Closing soon';
+          container.classList.remove('open');
+          container.classList.add('closing');
         } else {
           this.$openOrClosed[index].innerHTML = 'Closed';
           container.classList.remove('open');
