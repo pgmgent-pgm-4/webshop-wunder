@@ -2,26 +2,26 @@
     {
         "name": "Paulo Poma",
         "position": "Chief Financial Officer",
-        "img": "./static/images/about/team/cfo.png"
+        "img": "/static/images/about/team/cfo.png"
     },
     {
         "name": "Maurizio Reggiani",
         "position": "Chief Technical Officer",
-        "img": "./static/images/about/team/cto.png"
+        "img": "/static/images/about/team/cto.png"
     },
     {
         "name": "Ranieri Niccoli",
         "position": "Chief Sales Officer",
-        "img": "./static/images/about/team/cso.png"
+        "img": "/static/images/about/team/cso.png"
     },
     {
         "name": "Federico Foschini",
         "position": "Chief Marketing Officer",
-        "img": "./static/images/about/team/cmo.png"
+        "img": "/static/images/about/team/cmo.png"
     },
     {
         "name": "Umberto Tossini",
         "position": "Chief Human Officer",
-        "img": "./static/images/about/team/cho.png"
+        "img": "/static/images/about/team/cho.png"
     }
 ]

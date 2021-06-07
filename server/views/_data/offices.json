@@ -3,30 +3,30 @@
         "city": "London",
         "street": "221B Baker Street",
         "country": "UK",
-        "img": "./static/images/contact/offices/london.jpg"
+        "img": "/static/images/contact/offices/london.jpg"
     },
     {
         "city": "New York",
         "street": "426 New York Street",
         "country": "USA",
-        "img": "./static/images/contact/offices/new-york.jpg"
+        "img": "/static/images/contact/offices/new-york.jpg"
     },
     {
         "city": "Paris",
         "street": "13 Paris Street",
         "country": "France",
-        "img": "./static/images/contact/offices/paris.jpg"
+        "img": "/static/images/contact/offices/paris.jpg"
     },
     {
         "city": "Los Angeles",
         "street": "463 Los Angeles Street",
         "country": "USA",
-        "img": "./static/images/contact/offices/los-angeles.jpg"
+        "img": "/static/images/contact/offices/los-angeles.jpg"
     },
     {
         "city": "Hong Kong",
         "street": "943 Hong Kong Street",
         "country": "Hong Kong",
-        "img": "./static/images/contact/offices/hong-kong.jpg"
+        "img": "/static/images/contact/offices/hong-kong.jpg"
     }
 ]

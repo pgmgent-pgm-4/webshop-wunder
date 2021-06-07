@@ -1,0 +1,69 @@
+.category-selector {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+
+    &__list {
+        display: flex;
+        align-items: center;
+
+        &__item {
+            font-size: 4.5rem;
+            font-family: 'vw_head';
+            font-weight: bold;
+            margin-right: 2.5rem;
+
+            a {
+                color: $grey-light-color;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .brands {
+        li {
+            &:nth-of-type(2) {
+                a {
+                    color: $accent-color;
+                    font-size: 5.6rem;
+
+                }
+            }
+        }
+    }
+
+    .bodywork {
+        li {
+            &:nth-of-type(3) {
+                a {
+                    color: $accent-color;
+                    font-size: 5.6rem;
+
+                }
+            }
+        }
+    }
+}
+
+.filter {
+
+    &__container {
+        border-radius: 2px;
+        display: flex;
+        padding: 1rem 2rem;
+        background-color: $primary-color;
+        color: $secondary-color;
+        justify-content: space-between;
+        font-size: 1.5rem;
+
+        &__title {
+            display: flex;
+
+            p {
+                margin-right: 0.8rem;
+            }
+        }
+    }
+}
