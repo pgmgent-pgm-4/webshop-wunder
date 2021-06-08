@@ -1,0 +1,23 @@
+.to-top__container {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    // display: none;
+    transform: translateX(calc(100% + 1.5rem));
+    z-index: 4;
+    @include transition;
+
+    a {
+        background-color: $accent-color;
+        border-radius: 2px;
+        box-shadow: 0 2px 4px $primary-shadow-color;
+        padding: 0.65rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.appear {
+        transform: translateX(0);
+    }
+}

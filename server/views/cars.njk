@@ -33,6 +33,26 @@
         </div>
     </section>
 
+    <section class="side-selector">
+        <ul class="side-selector__list">
+            {% if category %}
+                {% for cat in data %}
+                    <li class="side-selector__list__item">
+                        <a href="#{{ cat.name }}">
+                            <img src="/static/images/{{ "shapes" if "bodywork" in filter else "logo" }}/{{ cat.name }}.svg" alt="Logo of {{ cat.name }}">
+                            
+                            <p>{{ cat.name }}</p>
+                        </a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+
+        <button class="side-selector__arrow">
+            <i data-feather="chevron-right"></i>
+        </button>
+    </section>
+
 
     <section class="overview-brands padding-side max-width">
         {% if category %}
@@ -47,11 +67,11 @@
                     <div class="category-name-container">
                         <p class="category-name-container__name">{{ cat.name }}</p>
 
-                        <img src="/static/images/{{ "shapes" if "bodywork" in filter else "logo" }}/{{ cat.name }}{{ ".png" if "bodywork" in filter else ".svg" }}" alt="Image of {{ cat.name }} {{ "bodywork" if "bodywork" in filter else "logo" }}">   
+                        <img class="category-name-container__img {{ "bodywork" if "bodywork" in filter else "brands" }}" src="/static/images/{{ "shapes" if "bodywork" in filter else "logo" }}/{{ cat.name }}{{ ".png" if "bodywork" in filter else ".svg" }}" alt="Image of {{ cat.name }} {{ "bodywork" if "bodywork" in filter else "logo" }}">   
                     </div>
 
                     
-                    <ul class="cards-list">
+                    <ul class="cards-list" id="{{ cat.name }}">
                         {% for car in cat.Cars %}
                         <li class="card-car cards-list__item">
                             <a href="/cars/detail/{{ car.id }}">
@@ -59,23 +79,22 @@
                                     <i data-feather="heart" class="favorite"></i>
                                 </button>
 
-                                <p class="type">{{ car.brand }} {{car.name}}</p>
+                                <p class="type">
 
-                                {# Werkt nog niet #}
-                                {% if car.BrandId %}
-                                    {% if '1' %}
-                                    <p>Audi</p>
-                                    {% elif '2' %}
-                                    <p>Bmw</p>
-                                    {% elif '3' %}
-                                    <p>Ford</p>
-                                    {% elif '4' %}
-                                    <p>Lexus</p>
+                                    {% if car.BrandId %}
+                                        {% if car.BrandId === 1 %}
+                                        Audi
+                                        {% elif car.BrandId === 2 %}
+                                        Bmw
+                                        {% elif car.BrandId === 3 %}
+                                        Ford
+                                        {% elif car.BrandId === 4 %}
+                                        Lexus
+                                        {% endif %}
                                     {% endif %}
-                                {% endif %}
+                                 {{car.name}}</p>
 
-                                {{ car.BrandId }}
-                                <p class="price">Starting at $ {{car.price}}</p>
+                                <p class="price">Starting at <span class="bold">$ {{car.price}}</span></p>
 
                                 <img class="car-image" src="{{car.teaserImgUrl}}" alt="Image of car">
 
@@ -127,4 +146,8 @@
         {% endif %}
     {% endfor %}
     {% endif %} #}
+{% endblock %}
+
+{% block extraScript %}
+    <script type="module" src="/static/js/carsListener.js"></script>
 {% endblock %}

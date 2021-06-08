@@ -1,4 +1,29 @@
+.category-name-container {
+    position: absolute;
+    width: calc(33% - 1.5rem);
+
+    &__name {
+        position: absolute;
+        font-size: 4.5rem;
+        font-family: 'vw_head';
+        font-weight: bold;
+    }
+
+    &__img {
+        position: relative;
+        left: 4rem;
+        top: 10rem;
+        width: 24rem;
+
+        &.bodywork {
+            min-width: 28rem;
+        }
+    }
+}
+
 .cards-list {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -14,8 +39,21 @@
             margin-left: calc(33% + 0.75rem);
         }
 
-        .car-image {
-            padding: 1rem 0;
+        a {
+            position: relative;
+
+            .car-image {
+                padding: 1rem 0;
+            }
+
+            .btn-pri {
+                width: 100%;
+                // position: absolute;
+                // bottom: 1.5rem;
+                // left: 1.5rem;
+                // right: 1.5rem;
+                // width: calc(100% - 3rem);
+            }
         }
     }
 }

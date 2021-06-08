@@ -392,10 +392,14 @@ input {
   display: flex;
   margin-left: 0.75rem;
   margin-right: 0.75rem;
-  width: 100%; }
+  width: 100%;
+  display: flex; }
   .card-car a {
     width: 100%;
-    padding: 1.5rem; }
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
     .card-car a button {
       position: absolute;
       top: 1.5rem;
@@ -418,7 +422,8 @@ input {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem; }
   .card-car:hover {
-    box-shadow: 0px 4px 8px #0d0d0d29; }
+    box-shadow: 0px 4px 8px #0d0d0d29;
+    transform: translateY(-0.2rem); }
 
 .slideshow .slide {
   background: linear-gradient(0deg, #0d0d0d 0%, rgba(13, 13, 13, 0) 33%, rgba(13, 13, 13, 0) 66%, #0d0d0d 100%);
@@ -487,7 +492,25 @@ input {
     position: relative;
     z-index: -1; }
 
+.category-name-container {
+  position: absolute;
+  width: calc(33% - 1.5rem); }
+  .category-name-container__name {
+    position: absolute;
+    font-size: 4.5rem;
+    font-family: 'vw_head';
+    font-weight: bold; }
+  .category-name-container__img {
+    position: relative;
+    left: 4rem;
+    top: 10rem;
+    width: 24rem; }
+    .category-name-container__img.bodywork {
+      min-width: 28rem; }
+
 .cards-list {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
   display: flex;
   flex-wrap: wrap;
   width: 100%; }
@@ -499,8 +522,91 @@ input {
     margin-left: 0.75rem; }
     .cards-list__item:first-of-type {
       margin-left: calc(33% + 0.75rem); }
-    .cards-list__item .car-image {
-      padding: 1rem 0; }
+    .cards-list__item a {
+      position: relative; }
+      .cards-list__item a .car-image {
+        padding: 1rem 0; }
+      .cards-list__item a .btn-pri {
+        width: 100%; }
+
+.side-selector {
+  z-index: 4;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: calc(50% + 2rem);
+  transition: all 0.2s ease-in-out;
+  transform: translateX(calc(-100% + 2.9rem)) translateY(-50%); }
+  @media (min-width: 28rem) {
+    .side-selector {
+      top: calc(50% + 3.9rem); } }
+  @media (min-width: 36rem) {
+    .side-selector {
+      top: calc(50% + 3.95rem); } }
+  @media (min-width: 50rem) {
+    .side-selector {
+      top: calc(50% + 2.4rem); } }
+  @media (min-width: 64rem) {
+    .side-selector {
+      top: calc(50% + 2.5rem); } }
+  .side-selector__list {
+    border-radius: 2px;
+    color: #0D0D0D;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #0d0d0d29; }
+    .side-selector__list__item {
+      display: flex;
+      justify-content: center; }
+      .side-selector__list__item a {
+        border-radius: 2px;
+        width: 100%;
+        padding: 1rem 4rem;
+        transition: all 0.2s ease-in-out;
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid #CC0000; }
+        .side-selector__list__item a p {
+          font-size: 1.75rem;
+          font-weight: bold; }
+        .side-selector__list__item a img {
+          width: 4rem;
+          max-height: 3rem;
+          margin-right: 1.5rem;
+          filter: contrast(); }
+        .side-selector__list__item a:hover {
+          background-color: #CC0000; }
+      .side-selector__list__item:last-of-type a {
+        border-bottom: none; }
+  .side-selector__arrow {
+    background-color: #CC0000;
+    box-shadow: 0 2px 4px #0d0d0d29;
+    padding: 2rem 0.7rem;
+    border-radius: 2px;
+    cursor: pointer; }
+    .side-selector__arrow svg {
+      transition: all 0.2s ease-in-out; }
+  .side-selector.appear {
+    transform: translateX(0) translateY(-50%); }
+    .side-selector.appear .side-selector__arrow svg {
+      transform: rotate(180deg); }
+
+.to-top__container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  transform: translateX(calc(100% + 1.5rem));
+  z-index: 4;
+  transition: all 0.2s ease-in-out; }
+  .to-top__container a {
+    background-color: #CC0000;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px #0d0d0d29;
+    padding: 0.65rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .to-top__container.appear {
+    transform: translateX(0); }
 
 header {
   background-color: #0D0D0D;

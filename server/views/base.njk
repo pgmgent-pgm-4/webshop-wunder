@@ -20,11 +20,22 @@
             {% block content %}
                 
             {% endblock %} 
+
+            <section class="to-top__container">
+                <a class="to-top" id="to-top" href="">
+                    <img src="/static/images/icons/arrow-up-top.svg" alt="icon of up arrow">
+                </a>
+            </section>
         </main>
 
         {% include "partials/footer.njk" %}
-        
+
         <script type="module" src="/static/js/index.js"></script>
+
+        {% block extraScript %}
+            
+        {% endblock %}
+        
         <script src="/static/js/mapbox.js"></script>
     </body>
 </html>
