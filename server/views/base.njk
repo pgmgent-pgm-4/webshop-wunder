@@ -5,9 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{ title }} | Enjin</title>
-        <link rel="icon" type="image/png" sizes="32x32" href="./static/images/logo/favicon-32x32.png">
-        <script src="./static/js/feather.js"></script>
-        <link rel="stylesheet" href="./static/css/main.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/images/logo/favicon-32x32.png">
+        <link rel="stylesheet" href="/static/css/main.css">
+        <script src="/static/js/feather.js"></script>
         <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js'></script>
         <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css' rel='stylesheet'>
     </head>
@@ -20,14 +20,30 @@
             {% block content %}
                 
             {% endblock %} 
+
+            <section class="to-top__container">
+                <a class="to-top" id="to-top" href="">
+                    <img src="/static/images/icons/arrow-up-top.svg" alt="icon of up arrow">
+                </a>
+            </section>
         </main>
 
         {% include "partials/footer.njk" %}
+
+        <script type="module" src="/static/js/index.js"></script>
+
+        {% block extraScript %}
+            
+        {% endblock %}
         
+<<<<<<< HEAD
         {% block extraScripts %}
             
         {% endblock %}
         <script type="module" src="./static/js/index.js"></script>
         <script src="./static/js/mapbox.js"></script>
+=======
+        <script src="/static/js/mapbox.js"></script>
+>>>>>>> c4ef0c51ab853fbc57612ec451ad2841e9dc69e1
     </body>
 </html>

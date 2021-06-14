@@ -3,5 +3,151 @@
 {% extends "base.njk" %}
 
 {% block content %}
+     
+    <section class="category-selector max-width padding-side">
+        <ul class="{{ filter }} category-selector__list">
+            <li class="category-selector__list__item">
+                <a href="/cars">All models</a>
+            </li>
+
+            <li class="category-selector__list__item">
+                <a href="/cars/brands/all">Brands</a>
+            </li>
+
+            <li class="category-selector__list__item">
+                <a href="/cars/bodywork/all">Bodywork</a>
+            </li>
+        </ul>
+    </section>
+
+    <section class="max-width padding-side filter">
+        <div class="filter__container">
+            <div class="filter__container__title">
+                <p>Filter</p>
+                <i data-feather="chevron-down"></i>
+            </div>
+
+            <div class="filter__container__number">
+                <p><span class="bold">{{ count }}</span> displayed results</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="side-selector">
+        <ul class="side-selector__list">
+            {% if category %}
+                {% for cat in data %}
+                    <li class="side-selector__list__item">
+                        <a href="#{{ cat.name }}">
+                            <img src="/static/images/{{ "shapes" if "bodywork" in filter else "logo" }}/{{ cat.name }}.svg" alt="Logo of {{ cat.name }}">
+                            
+                            <p>{{ cat.name }}</p>
+                        </a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+
+        <button class="side-selector__arrow">
+            <i data-feather="chevron-right"></i>
+        </button>
+    </section>
+
+
+    <section class="overview-brands padding-side max-width">
+        {% if category %}
+                    {# {% if 'bodywork' in filter %}
+                        <p>bodywork</p>
+                    {% elif 'brands' in filter %}
+                        <p>brands</p>
+                    {% endif %} #}
+            {% for cat in data %}
+            
+                {% if category %}
+                    <div class="category-name-container">
+                        <p class="category-name-container__name">{{ cat.name }}</p>
+
+                        <img class="category-name-container__img {{ "bodywork" if "bodywork" in filter else "brands" }}" src="/static/images/{{ "shapes" if "bodywork" in filter else "logo" }}/{{ cat.name }}{{ ".png" if "bodywork" in filter else ".svg" }}" alt="Image of {{ cat.name }} {{ "bodywork" if "bodywork" in filter else "logo" }}">   
+                    </div>
+
+                    
+                    <ul class="cards-list" id="{{ cat.name }}">
+                        {% for car in cat.Cars %}
+                        <li class="card-car cards-list__item">
+                            <a href="/cars/detail/{{ car.id }}">
+                                <button>
+                                    <i data-feather="heart" class="favorite"></i>
+                                </button>
+
+                                <p class="type">
+
+                                    {% if car.BrandId %}
+                                        {% if car.BrandId === 1 %}
+                                        Audi
+                                        {% elif car.BrandId === 2 %}
+                                        Bmw
+                                        {% elif car.BrandId === 3 %}
+                                        Ford
+                                        {% elif car.BrandId === 4 %}
+                                        Lexus
+                                        {% endif %}
+                                    {% endif %}
+                                 {{car.name}}</p>
+
+                                <p class="price">Starting at <span class="bold">$ {{car.price}}</span></p>
+
+                                <img class="car-image" src="{{car.teaserImgUrl}}" alt="Image of car">
+
+                                <div class="btn-pri">
+                                    <span class="overlay"></span>
+                                    <span class="container-text">
+                                        <span>Discover</span>
+                                    </span>
+                                    <img class="arrow" src="/static/images/icons/arrow_right.svg" alt="arrow right">
+                                </div>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </section>
+    {# {% if category %}
+    {% for cat in data %}
     
+        {% if category %}
+            <h2>{{ cat.name }}</h2>    
+            
+            <ul class="cards-list">
+                {% for car in cat.Cars %}
+                <li class="card-car">
+                    <a href="/cars">
+                        <button>
+                            <i data-feather="heart" class="favorite"></i>
+                        </button>
+
+                        <p class="type">{{car.name}}</p>
+                        <p class="price">Starting at $ {{car.price}}</p>
+
+                        <img class="car-image" src="{{car.teaserImgUrl}}" alt="Image of car">
+
+                        <div class="btn-pri">
+                            <span class="overlay"></span>
+                            <span class="container-text">
+                                <span>Discover</span>
+                            </span>
+                            <img class="arrow" src="/static/images/icons/arrow_right.svg" alt="arrow right">
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endfor %}
+    {% endif %} #}
+{% endblock %}
+
+{% block extraScript %}
+    <script type="module" src="/static/js/carsListener.js"></script>
 {% endblock %}

@@ -4,7 +4,7 @@
         "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque varius enim id est posuere suscipit. Ut aliquam dignissim quam. Quisque hendrerit fringilla quam feugiat cursus.",
         "link": "/news",
         "date": "11 may 2021",
-        "img": "./static/images/news/news1.jpg",
+        "img": "/static/images/news/news1.jpg",
         "highlighted": true
     },
     {
@@ -12,7 +12,7 @@
         "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque varius enim id est posuere suscipit. Ut aliquam dignissim quam. Quisque hendrerit fringilla quam feugiat cursus.",
         "link": "/news",
         "date": "11 may 2021",
-        "img": "./static/images/news/news1.jpg",
+        "img": "/static/images/news/news1.jpg",
         "highlighted": true
     },
     {
@@ -20,7 +20,7 @@
         "synopsis": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque varius enim id est posuere suscipit. Ut aliquam dignissim quam. Quisque hendrerit fringilla quam feugiat cursus.",
         "link": "/news",
         "date": "11 may 2021",
-        "img": "./static/images/news/news1.jpg",
+        "img": "/static/images/news/news1.jpg",
         "highlighted": true
     }
 ]

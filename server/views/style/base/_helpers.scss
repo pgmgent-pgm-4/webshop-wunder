@@ -25,6 +25,19 @@
     }
 }
 
+.padding-side {
+    padding: 0 1.5rem;
+    @include media-min(xxs) {
+        padding: 0 2rem;
+    }
+    @include media-min(sm) {
+        padding: 0 3rem;
+     }
+    @include media-min(md) {
+        padding: 0 4rem;
+    }
+}
+
 .padding-home {
     padding: 4rem 1.5rem;
     @include media-min(xxs) {

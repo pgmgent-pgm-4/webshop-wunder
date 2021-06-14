@@ -22,12 +22,16 @@
   'components/forms',
   'components/burger',
   'components/card-car',
-  'components/slideshow';
+  'components/slideshow',
+  'components/cars-list',
+  'components/side-selector',
+  'components/to-top';
 
 // 5. Layout-related sections
 @import
   'layout/header',
-  'layout/footer';
+  'layout/footer',
+  'layout/overview-header';
 
 // 6. Page-specific styles
 @import
