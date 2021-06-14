@@ -273,11 +273,8 @@ module.exports = {
   getCarsBrands,
   getCarsBodywork,
   getCarsTest,
-<<<<<<< HEAD
   getCarsTest2,
   profileTest,
   thankYouTest
-=======
   // getCarsTest2
->>>>>>> c4ef0c51ab853fbc57612ec451ad2841e9dc69e1
 };
