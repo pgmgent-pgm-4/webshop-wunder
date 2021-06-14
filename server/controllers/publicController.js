@@ -183,6 +183,34 @@ const getTest = async(req, res, next) => {
   }
 };
 
+/*
+Get Contact Render
+*/
+const profileTest = async(req, res, next) => {
+  
+  try {
+    
+    res.render('profile-test', {
+    });
+  } catch (error) {
+    handleHTTPError(error, next);
+  }
+};
+
+/*
+Get Contact Render
+*/
+const thankYouTest = async(req, res, next) => {
+  console.log('test thank you')
+  try {
+    
+    res.render('thank-you-test', {
+    });
+  } catch (error) {
+    handleHTTPError(error, next);
+  }
+};
+
 module.exports = {
   getHome,
   getCars,
@@ -193,5 +221,7 @@ module.exports = {
   getTest,
   getCars,
   getCarsTest,
-  getCarsTest2
+  getCarsTest2,
+  profileTest,
+  thankYouTest
 };

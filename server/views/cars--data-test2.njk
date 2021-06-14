@@ -1,6 +1,9 @@
 {% extends "base.njk" %}
 
 {% block content %}
+
+    This is the count: {{ count }}
+
     {% if category %}
         <h2>List of cars ordered by {{ category }}:</h2>
     {% endif %}

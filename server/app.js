@@ -86,6 +86,11 @@ Swagger
 */
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+/**
+ * Auth Routes
+ */
+
+
 /*
 Not Found routes
 */

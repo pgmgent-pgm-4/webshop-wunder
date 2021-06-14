@@ -3,6 +3,53 @@ import _ from 'underscore';
 import json from './reviews.json';
 //TODO: move json to seeder-file
 
+const CARNAMES = [
+  "auto",
+  "automobile",
+  "bus",
+  "convertible",
+  "jeep",
+  "limousine",
+  "machine",
+  "motor",
+  "pickup",
+  "ride",
+  "station wagon",
+  "truck",
+  "van",
+  "wagon"
+];
+
+const ADJECTIVES = [
+  "practical",
+  "incredible",
+  "generic",
+  "gorgeous",
+  "unbranded",
+  "small",
+  "ergonomic",
+  "awesome",
+  "refined",
+  "intelligent",
+  "licensed",
+  "fantastic",
+  "handcrafted",
+  "handmade",
+  "rustic",
+  "sleek" 
+]
+
+const PRENAMES = [
+  "My",
+  "My wife's",
+  "My husband's",
+  "My comany's",
+  "My family's",
+  "My friend's",
+  "This",
+  "The"
+]
+
 const randomRating = () => {
   return Math.floor((Math.random() * 5) + 0);
 }
@@ -28,13 +75,14 @@ module.exports = {
       reviews.push({
         CarId: parseInt(_.sample(cars).id),
         UserId: parseInt(_.sample(users).id),
-        description: `${_.sample(json.prenames)} ${_.sample(json.carnames)} is ${_.sample(json.adjectives)}, ${rating} stars!`,
+        //description: `${_.sample(json.prenames)} ${_.sample(json.carnames)} is ${_.sample(json.adjectives)}, ${rating} stars!`,
+        description: `${_.sample(PRENAMES)} ${_.sample(CARNAMES)} is ${_.sample(ADJECTIVES)}, ${rating} stars!`,
         rating: rating,
         createdAt: new Date(),
         updatedAt: new Date(),
       })
     }
-
+    console.log(reviews);
     await queryInterface.bulkInsert('carReviews', 
       reviews, {}
     );

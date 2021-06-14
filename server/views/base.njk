@@ -24,6 +24,9 @@
 
         {% include "partials/footer.njk" %}
         
+        {% block extraScripts %}
+            
+        {% endblock %}
         <script type="module" src="./static/js/index.js"></script>
         <script src="./static/js/mapbox.js"></script>
     </body>
