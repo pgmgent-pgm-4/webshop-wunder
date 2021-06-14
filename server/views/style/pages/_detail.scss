@@ -1,0 +1,111 @@
+.sticky-header {
+    background-color: $primary-color;
+    position: sticky;
+    top: 4rem;
+    @include media-min(xxs) {
+        top: 7.8rem;
+    }
+    @include media-min(xs) {
+        top: 7.9rem;
+    }
+    @include media-min(sm) {
+        top: 4.8rem;
+    }
+    @include media-min(md) {
+        top: 5rem;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+        @include media-min(xxs) {
+            padding-top: 1rem;
+        }
+        @include media-min(xs) {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+        @include media-min(sm) {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        &__type {
+            display: flex;
+            order: 2;
+            width: 100%;
+            justify-content: center;
+            padding-top: 1rem;
+            @include media-min(xs) {
+                padding-top: 0;
+                width: auto;
+                order: 1;
+            }
+            
+            &__text {
+                display: flex;
+                align-content: center;
+                justify-content: space-between;
+                width: 100%;
+                color: $white-color;
+                @include media-min(xxs) {
+                    // justify-content: center;
+                    width: auto;
+                }
+                
+                span {
+                    background-color: $accent-color;
+                    margin: 0 1.5rem;
+                    width: 0.15rem;
+                    height: 2.25rem;
+                    @include media-min(xs) {
+                        margin: 0 2.5rem;
+                    }
+                    @include media-min(sm) {
+                        margin-top: 1rem;
+                    }
+                }
+                
+                p {
+                    font-family: 'vw_head';
+                    font-size: 1.75rem;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+            
+            img {
+                width: 10rem;
+                margin-right: 1.25rem;
+                padding: 0.2rem 0;
+                display: none;
+                @include media-min(sm) {
+                    display: block;
+                }
+            }
+        }
+
+        &__action {
+            display: flex;
+            align-items: center;
+            order: 1;
+            justify-content: space-between;
+            width: 100%;
+            @include media-min(xs) {
+                width: auto;
+                order: 2;
+             }
+
+            svg {
+                margin-right: 1.5rem;
+            }
+        }
+    }
+}
