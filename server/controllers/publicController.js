@@ -85,11 +85,19 @@ Get Car Bodywork Render-test
 */
 const getCarsBodywork = async(req, res, next) => {
   try {
+    const data = res.locals.data;
+    let count = 0;
+    data.map(car => {
+      car.Cars.forEach(add => {
+        return count++
+      });
+    })
     // const cat2 = (req.params.category === 'brands') || (req.params.category === 'shapes') ? req.params.category : null ;
     res.render('cars', {
       data: res.locals.data,
       category: req.params.category,
       filter: "bodywork",
+      count: count,
     });
     //next();
   } catch(error) {
