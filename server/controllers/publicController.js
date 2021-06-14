@@ -30,8 +30,7 @@ const getHome = (req, res, next) => {
       bodywork: bodyworkData,
       news: newsData,
       services: serviceData,
-      brands: brandData,
-      dataTest: 'test',
+      brands: brandData
     });
   } catch (error) {
     handleHTTPError(error, next);
@@ -54,6 +53,57 @@ const getCars = (req, res, next) => {
     handleHTTPError(error, next);
   }
 };
+
+/*
+Get Car Brands Render-test
+*/
+const getCarsBrands = async(req, res, next) => {
+  try {
+    // console.log(res.locals.data.length)
+    const data = res.locals.data;
+    let count = 0;
+    data.map(car => {
+      car.Cars.forEach(add => {
+        return count++
+      });
+    })
+    // const cat2 = (req.params.category === 'brands') || (req.params.category === 'shapes') ? req.params.category : null ;
+    res.render('cars', {
+      data: res.locals.data,
+      category: req.params.category,
+      filter: "brands",
+      count: count,
+    });
+    //next();
+  } catch(error) {
+    console.warn('An error occured!', error);
+  }
+}
+
+/*
+Get Car Bodywork Render-test
+*/
+const getCarsBodywork = async(req, res, next) => {
+  try {
+    const data = res.locals.data;
+    let count = 0;
+    data.map(car => {
+      car.Cars.forEach(add => {
+        return count++
+      });
+    })
+    // const cat2 = (req.params.category === 'brands') || (req.params.category === 'shapes') ? req.params.category : null ;
+    res.render('cars', {
+      data: res.locals.data,
+      category: req.params.category,
+      filter: "bodywork",
+      count: count,
+    });
+    //next();
+  } catch(error) {
+    console.warn('An error occured!', error);
+  }
+}
 
 /*
 Get News Render
@@ -111,11 +161,11 @@ Get Car Render-test
 */
 const getCarsTest2 = async(req, res, next) => {
   try {
-    //const category = (req.params.category === 'brands') || (req.params.category === 'shapes') ? req.params.category : null ;
+    const cat2 = (req.params.category === 'brands') || (req.params.category === 'shapes') ? req.params.category : null ;
     res.render('cars--data-test2', {
       data: res.locals.data,
-      category: req.params.category,
-      //testData: res.locals.test
+      category: cat2,
+      filter: req.params.category,
     });
     //next();
   } catch(error) {
@@ -192,6 +242,8 @@ module.exports = {
   getContact,
   getTest,
   getCars,
+  getCarsBrands,
+  getCarsBodywork,
   getCarsTest,
-  getCarsTest2
+  // getCarsTest2
 };

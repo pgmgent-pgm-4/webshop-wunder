@@ -1,0 +1,112 @@
+.category-selector {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        @include media-min(sm) {
+            align-items: center;
+            flex-direction: row;
+        }
+
+        &__item {
+            font-family: 'vw_head';
+            font-weight: bold;
+            margin-right: 2.5rem;
+            font-size: 3rem;
+            @include media-min(xs) {
+                font-size: 4rem;
+            }
+            @include media-min(sm) {
+                font-size: 3rem;
+            }
+            @include media-min(md) {
+                font-size: 3.75rem;
+            }
+            @include media-min(lg) {
+                font-size: 4.5rem;
+            }
+
+            a {
+                color: $grey-light-color;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .brands {
+        li {
+            &:nth-of-type(2) {
+                a {
+                    color: $accent-color;
+                    font-size: 4.5rem;
+                    @include media-min(xs) {
+                        font-size: 5.5rem;
+                    }
+                    @include media-min(sm) {
+                        font-size: 4.5rem;
+                    }
+                    @include media-min(md) {
+                        font-size: 5rem;
+                    }
+                    @include media-min(lg) {
+                        font-size: 5.6rem;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .bodywork {
+        li {
+            &:nth-of-type(3) {
+                a {
+                    color: $accent-color;
+                    font-size: 4.5rem;
+                    @include media-min(xs) {
+                        font-size: 5.5rem;
+                    }
+                    @include media-min(sm) {
+                        font-size: 4.5rem;
+                    }
+                    @include media-min(md) {
+                        font-size: 5rem;
+                    }
+                    @include media-min(lg) {
+                        font-size: 5.6rem;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.filter {
+
+    &__container {
+        border-radius: 2px;
+        display: flex;
+        background-color: $primary-color;
+        color: $secondary-color;
+        justify-content: space-between;
+        font-size: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        @include media-min(sm) {
+            padding: 1rem 2rem;
+        }
+
+        &__title {
+            display: flex;
+
+            p {
+                margin-right: 0.8rem;
+            }
+        }
+    }
+}

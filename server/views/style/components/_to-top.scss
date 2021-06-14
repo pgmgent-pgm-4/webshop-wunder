@@ -1,0 +1,59 @@
+.to-top__container {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    // display: none;
+    transform: translateX(calc(100% + 1.5rem));
+    z-index: 4;
+    @include transition;
+    
+    a {
+        background-color: $accent-color;
+        border-radius: 2px;
+        box-shadow: 0 2px 4px $primary-shadow-color;
+        padding: 0.65rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    &.appear {
+        transform: translateX(0);
+    }
+    
+    &:hover {
+        animation-name: bounce;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes bounce {
+        from,
+        20%,
+        53%,
+        to {
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          transform: translate3d(0, 0, 0);
+        }
+      
+        40%,
+        43% {
+          animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          transform: translate3d(0, -15px, 0) scaleY(1.1);
+        }
+      
+        70% {
+          animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          transform: translate3d(0, -7.5px, 0) scaleY(1.05);
+        }
+      
+        80% {
+          transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          transform: translate3d(0, 0, 0) scaleY(0.95);
+        }
+      
+        90% {
+          transform: translate3d(0, -3px, 0) scaleY(1.02);
+        }
+    }
+}

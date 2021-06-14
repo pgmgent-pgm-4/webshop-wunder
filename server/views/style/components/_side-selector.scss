@@ -1,0 +1,107 @@
+.side-selector {
+    z-index: 4;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: calc(50% + 2rem);
+    transform: translateX(calc(-100% + 2.2rem)) translateY(-50%);
+    @include media-min(xxs) {
+        top: calc(50% + 3.9rem);
+    }
+    @include media-min(xs) {
+        top: calc(50% + 3.95rem);
+    }
+    @include media-min(sm) {
+        top: calc(50% + 2.4rem);
+    }
+    @include media-min(md) {
+        top: calc(50% + 2.5rem);
+        transform: translateX(calc(-100% + 2.9rem)) translateY(-50%);
+    }
+    
+    @include transition;
+    
+    &__list {
+        border-radius: 2px;
+        color: $primary-color;
+        background-color: $white-color;
+        box-shadow: 0 2px 4px $primary-shadow-color;
+        
+        &__item {
+            display: flex;
+            justify-content: center;
+            
+            a {
+                border-radius: 2px;
+                width: 100%;
+                padding: 1rem 4rem;
+                @include transition;
+                display: flex;
+                align-items: center;
+                border-bottom: 2px solid $accent-color;
+                
+                p {
+                    font-size: 1.75rem;
+                    font-weight: bold;
+                }
+
+                img {
+                    width: 4rem;
+                    max-height: 3rem;
+                    margin-right: 1.5rem;
+
+                    filter: contrast();
+                }
+
+                &:hover {
+                    background-color: $accent-color;
+                }
+
+            }
+
+            &:last-of-type a {
+                border-bottom: none;
+            }
+        }
+    }
+
+    &__arrow {
+        background-color: $accent-color;
+        box-shadow: 0 2px 4px $primary-shadow-color;
+        padding: 1.5rem 0.35rem;
+        border-radius: 2px;
+        cursor: pointer;
+        @include media-min(md) {
+            padding: 2rem 0.7rem;
+        }    
+        
+        svg {
+            @include transition;
+        }
+
+        &:hover {
+
+            svg {
+                transform: translateX(0.2rem);
+            }
+        }
+    }
+
+    &.appear {
+        transform: translateX(0) translateY(-50%);
+
+        .side-selector__arrow {
+            svg {
+                transform: rotate(180deg);
+            }
+            
+            &:hover {
+    
+                svg {
+                    transform: translateX(-0.2rem) rotate(180deg);
+                }
+            }
+        }
+
+    }
+}

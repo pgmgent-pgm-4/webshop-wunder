@@ -1,10 +1,10 @@
 'use strict';
 
 const BRANDS = [
-  'audi',
-  'bmw',
-  'ford',
-  'lexus'
+  'Audi',
+  'Bmw',
+  'Ford',
+  'Lexus'
 ];
 // optional: look through existing file structure 
 
