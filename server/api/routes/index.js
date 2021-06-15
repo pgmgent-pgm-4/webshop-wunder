@@ -28,46 +28,7 @@ import * as carOptionController from '../controllers/carOption.controller';
  */
 const router = express.Router();
 
-/**
- * Swagger Components
- */
-/**
- * @swagger
- * components:
- *  schemas:
- *    Shape:
- *      type: object
- *      required:
- *        - name
- *        - imgUrl
- *      properties:
- *        id:
- *          type: integer
- *          description: ID of the shape
- *          example: 1
- *        name:
- *          type: string
- *          description: The name of the shape
- *        imgUrl:
- *          type: string
- *          description: The url to the shape svg
- *        createdAt:
- *          type: Date
- *          description: The created date of the shape
- *        updatedAt:
- *          type: Date
- *          description: The updated date of the shape
- *      example:
- *        id: 1
- *        name: NameOfShape
- *        imgUrl: ./data/NameOfShape.svg
- */
-/**
- * @swagger
- * tags:
- *  name: Shapes
- *  description: Different car-shapes
- */
+
 
 /**
  * Routes
@@ -131,7 +92,7 @@ router.get('/shapes/:shapeId', shapeController.getShapeById);
  *        content:
  *          application/json:
  *            schema:
- *              $ref: '#/components/schemas/Shape'
+ *              $ref: '#/components/schemas/ShapeUpdate'
  *      responses:
  *        200:
  *          description: The shape was succesfully created
@@ -163,7 +124,7 @@ router.post('/shapes', shapeController.createShape);
  *      content:
  *        application/json:
  *          schema:
- *            $ref: '#/components/schemas/Shape'
+ *            $ref: '#/components/schemas/ShapeUpdate'
  *    responses:
  *      200:
  *        description: The shape was updated
@@ -334,3 +295,95 @@ router.delete('/caroptions/:carOptionId', carOptionController.deleteCarOption);
 
 
 export default router;
+
+
+
+/**
+ * Swagger Components
+ */
+
+/**
+ * Schema's
+ */
+
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *    Shape:
+ *      type: object
+ *      required:
+ *        - name
+ *        - imgUrl
+ *      properties:
+ *        id:
+ *          type: integer
+ *          description: ID of the shape
+ *        name:
+ *          type: string
+ *          description: The name of the shape
+ *        imgUrl:
+ *          type: string
+ *          description: The url to the shape svg
+ *        createdAt:
+ *          type: Date
+ *          description: The created date of the shape
+ *        updatedAt:
+ *          type: Date
+ *          description: The updated date of the shape
+ *      example:
+ *        id: 1
+ *        name: NameOfShape
+ *        imgUrl: ./data/NameOfShape.svg
+ *    ShapeUpdate:
+ *      type: object
+ *      required:
+ *        - name
+ *        - imgUrl
+ *      properties:
+ *        name:
+ *          type: string
+ *          description: The name of the shape
+ *        imgUrl:
+ *          type: string
+ *          description: The url to the shape svg
+ *      example:
+ *        name: NameOfShape
+ *        imgUrl: ./data/NameOfShape.svg
+ */
+
+
+/**
+ * Tags
+ */
+
+/**
+ * @swagger
+ * tags:
+ *  name: Shapes
+ *  description: Different car-shapes
+ *  name: Brands
+ *  description: Different brand
+ *  name: CarColours
+ *  description: Different car-Colour
+ *  name: Users
+ *  description: User
+ *  name: Cars
+ *  description: Different car
+ *  name: CarReviews
+ *  description: Different car-reviews
+ *  name: Profiles
+ *  description: Different profiles
+ *  name: Orders
+ *  description: Different orders
+ *  name: CarOption
+ *  description: Different car-options
+ *  name: Car_has_options
+ *  description: Different car_has_options
+ *  name: OrderItems
+ *  description: Different OrderItems
+ *  name: Payments
+ *  description: Different Payments
+ *  name: Promotions
+ *  description: Different promotions
+ */
