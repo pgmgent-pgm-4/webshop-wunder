@@ -1716,6 +1716,7 @@ footer {
 .sticky-header {
   background-color: #0D0D0D;
   position: sticky;
+  z-index: 500;
   top: 4rem; }
   @media (min-width: 28rem) {
     .sticky-header {
@@ -1806,6 +1807,46 @@ footer {
           order: 2; } }
       .sticky-header__container__action svg {
         margin-right: 1.5rem; }
+
+.general {
+  position: relative; }
+  .general__bg {
+    background-color: #0D0D0D;
+    width: 100%;
+    height: 35vh; }
+    .general__bg__logo {
+      padding-top: 2rem; }
+      .general__bg__logo img {
+        width: 18rem; }
+  .general__car {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+  .general__info {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between; }
+    .general__info__name {
+      padding-bottom: 3rem; }
+    .general__info__price {
+      background-color: #CC0000;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      height: 100%;
+      width: 45%;
+      margin-right: -4rem;
+      clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 0% 100%); }
+      .general__info__price p {
+        padding-bottom: 3rem;
+        font-size: 4rem;
+        color: #fff;
+        font-family: 'vw_head';
+        font-weight: bold;
+        margin-right: 4rem; }
 
 .bodywork__list {
   display: flex;
