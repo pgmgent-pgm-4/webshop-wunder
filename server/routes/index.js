@@ -26,6 +26,7 @@ router.get('/carsDataTest/:category', (req, res, next ) => {getData(req, res, ne
 router.get('/cars/bodywork/:category', (req, res, next ) => {getData(req, res, next, '/cars/shapes')}, publicController.getCarsBodywork);
 router.get('/cars/brands/:category', (req, res, next ) => {getData(req, res, next, '/cars/brands')}, publicController.getCarsBrands);
 router.get('/cars', publicController.getCars);
+router.get('/cars/detail/:id', publicController.getCarDetail);
 router.get('/news', publicController.getNews);
 router.get('/contact', publicController.getContact);
 router.get('/about', publicController.getAbout);

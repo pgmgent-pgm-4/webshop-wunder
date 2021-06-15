@@ -331,7 +331,8 @@
                         }
                     }
 
-                    &.opening {
+                    &.opening,
+                    &.closing {
                         color: #e4742a;
 
                         svg {

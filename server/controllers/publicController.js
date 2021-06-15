@@ -38,7 +38,7 @@ const getHome = (req, res, next) => {
 };
 
 /*
-Get Cat Render
+Get Cars Render
 */
 const getCars = (req, res, next) => {
   try {
@@ -104,6 +104,23 @@ const getCarsBodywork = async(req, res, next) => {
     console.warn('An error occured!', error);
   }
 }
+
+/*
+Get Car Detail Render
+*/
+const getCarDetail = (req, res, next) => {
+  try {
+    // Get data from service for teasers?
+    //let posts = dataService.getPosts();
+    //posts = posts.slice(0, 3);
+    // Send response
+    res.render('detail', {
+      //posts,
+    });
+  } catch (error) {
+    handleHTTPError(error, next);
+  }
+};
 
 /*
 Get News Render
@@ -245,5 +262,7 @@ module.exports = {
   getCarsBrands,
   getCarsBodywork,
   getCarsTest,
+  getCarDetail,
+  
   // getCarsTest2
 };
