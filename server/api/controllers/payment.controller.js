@@ -63,6 +63,31 @@ const getPaymentByUserId = async (req, res, next) => {
 }
 
 /**
+ * Get a specific payment by Order-ID
+ */
+const getPaymentByOrderId = async (req, res, next) => {
+  try {
+    // Get userId parameter
+    const { orderId } = req.params;
+
+    // Get specific payment from database
+    const payment = await database.Payment.findOne({
+      where: {
+        orderId: orderId
+      }
+    });
+
+    if (payment === null) {
+			throw new HTTPError(`Could not find the payment with OrderId ${orderId}!`, 404);
+		}
+		// Send response
+		res.status(200).json(payment);
+  } catch(error) {
+    handleHTTPError(error, next);
+  }
+}
+
+/**
  * Create a new payment
  */
 const createPayment = async (req, res, next) => {
@@ -143,6 +168,7 @@ export {
   getPayments,
   getPaymentById,
   getPaymentByUserId,
+  getPaymentByOrderId,
   createPayment,
   updatePayment,
   deletePayment,
