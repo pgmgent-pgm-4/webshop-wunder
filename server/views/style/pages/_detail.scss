@@ -1,7 +1,7 @@
 .sticky-header {
     background-color: $primary-color;
     position: sticky;
-    z-index: 500;
+    z-index: 1;
     top: 4rem;
     @include media-min(xxs) {
         top: 7.8rem;
@@ -117,12 +117,21 @@
         background-color: $primary-color;
         width: 100%;
         height: 35vh;
+        @include media-min(xs) {
+            height: 35vh;
+        }
         
         &__logo {
             padding-top: 2rem;
             
             img {
-                width: 18rem;
+                width: 10rem;
+                @include media-min(xs) {
+                    width: 13.5rem;
+                }
+                @include media-min(sm) {
+                    width: 18rem;
+                }
             }
         }
         
@@ -130,39 +139,116 @@
     
     &__car {
         position: absolute;
-        top: 0;
+        top: 25%;
         left: 50%;
         transform: translateX(-50%);
+        @include media-min(xxs) {
+            top: 15%;
+        }
+        @include media-min(sm) {
+            top: 0;
+        }
+
+        img {
+            min-width: 22rem;
+            @include media-min(xxs) {
+                min-width: 25rem;
+            }
+            @include media-min(xs) {
+                min-width: 30rem;
+            }
+            @include media-min(sm) {
+                min-width: 37rem;
+            }
+        }
     }
     
     &__info {
         width: 100%;
-        height: 40vh;
+        height: 30vh;
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 4rem;
+        @include media-min(xs) {
+            padding-top: 0;
+            height: 40vh;
+            flex-wrap: nowrap;
+        }
         
         &__name {
-            padding-bottom: 3rem;
+            width: 100%;
+            @include media-min(xs) {
+                width: auto;
+                padding-bottom: 3rem;
+            }
+
+            h1 {
+                font-size: 3rem;
+                @include media-min(sm) {
+                    font-size: 3rem;
+                }
+                @include media-min(md) {
+                    font-size: 3.5rem;
+                }
+                @include media-min(lg) {
+                    margin-right: 4rem;
+                    font-size: 4rem;
+                }
+            }
         }
         
         &__price {
-            background-color: $accent-color;
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-end;
-            height: 100%;
-            width: 45%;
-            margin-right: -4rem;
-            clip-path: polygon(65% 0%, 100% 0%, 100% 100%, 0% 100%);
+            justify-self: flex-end;
+            width: 100%;
+            z-index: -1;
+
+            @include media-min(xs) {
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-end;
+                background-color: $accent-color;
+                margin-right: -2rem;
+                height: 100%;
+                width: 55%;
+                clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
+            }
+            @include media-min(sm) {
+                clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 0% 100%);
+                margin-right: -3rem;
+                width: 50%;
+            }
+            @include media-min(md) {
+                clip-path: polygon(65% 0%, 100% 0%, 100% 100%, 0% 100%);
+                width: 45%;
+                margin-right: -4rem;
+            }
             
             p {
-                padding-bottom: 3rem;
-                font-size: 4rem;
-                color: $secondary-color;
                 font-family: 'vw_head';
                 font-weight: bold;
-                margin-right: 4rem;
+                font-size: 3rem;
+                color: $accent-color;
+                text-align: right;
+                @include media-min(xs) {
+                    text-align: left;
+                    padding-bottom: 3rem;
+                    margin-right: 2rem;
+                    color: $secondary-color;
+                }
+                @include media-min(sm) {
+                    margin-right: 3rem;
+                    font-size: 3rem;
+                }
+                @include media-min(md) {
+                    margin-right: 4rem;
+                    font-size: 3.5rem;
+                }
+                @include media-min(lg) {
+                    margin-right: 4rem;
+                    font-size: 4rem;
+                }
             }
         }
     }
@@ -183,22 +269,36 @@
 
     &__list {
         display: flex;
+        flex-wrap: wrap;
         width: 100%;
-
+        @include media-min(sm) {
+            flex-wrap: nowrap;
+        }
+        
         &__item {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
+            margin-bottom: 4rem;
+            @include media-min(sm) {
+                margin-bottom: 0;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
 
             &__number {
                 color: $accent-color;
                 font-weight: bold;
                 font-size: 4rem;
                 margin-bottom: 1rem;
+                text-align: center;
             }
-
+            
             &__info {
+                text-align: center;
                 font-size: 2rem;
             }
         }
@@ -211,22 +311,53 @@
     &__container {
         display: flex;
         justify-content: space-between;
-
+        flex-direction: column;
+        @include media-min(ss) {
+            flex-direction: row;
+        }
+        
         &__img {
-            max-height: 30rem;
-            width: 60%;
-            overflow: hidden;
-            clip-path: polygon(0% 0%, 100% 0%, 45% 100%, 0% 100%);
+            order: 2;
+            @include media-min(ss) {
+                order: 1;
+                height: 30rem;
+                width: 50%;
+                overflow: hidden;
+                clip-path: polygon(0% 0%, 100% 0%, 45% 100%, 0% 100%);
+            }
+            @include media-min(md) {
+                width: 60%;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
         &__content {
-            width: 40%;
+            width: 50%;
             color: $secondary-color;
             display: flex;
-            justify-content: center;
-            align-items: flex-end;
             flex-direction: column;
-            padding-right: 4rem;
+            padding-right: 0;
+            order: 1;
+            text-align: left;
+            width: 100%;
+            padding: 2rem;
+            @include media-min(ss) {
+                padding: 0;
+                padding-right: 4rem;
+                align-items: flex-end;
+                justify-content: center;
+                width: 50%;
+                text-align: right;
+                order: 2;
+            }
+            @include media-min(md) {
+                width: 40%;
+            }
 
             .subtitle {
                 color: $accent-color;
@@ -234,13 +365,22 @@
             }
 
             .tagline {
-                font-size: 3.5rem;
                 font-weight: bold;
                 margin-bottom: 1rem;
+                font-size: 2.5rem;
+                @include media-min(sm) {
+                    font-size: 3rem;
+                }
+                @include media-min(lg) {
+                    font-size: 3.5rem;
+                }
             }
             
             .numbers {  
-                font-size: 1.75rem;
+                font-size: 1.5rem;
+                @include media-min(sm) {
+                    font-size: 1.75rem;
+                }
             }
         }
     }
@@ -252,14 +392,25 @@
     .specs-info__container {
 
         .specs-info__container__img {
-            clip-path: polygon(45% 0%, 100% 0%, 100% 100%, 0% 100%);
+            order: 2;
+            @include media-min(ss) {
+                order: 2;
+                clip-path: polygon(45% 0%, 100% 0%, 100% 100%, 0% 100%);
+            }
         }
 
         .specs-info__container__content {
             align-items: flex-start;
-            padding-left: 4rem;
+            padding-left: 0;
             padding-right: 0;
             color: $primary-color;
+            text-align: left;
+            padding: 2rem;
+            order: 1;
+            @include media-min(ss) {
+                order: 1;
+                padding-left: 4rem;
+            }
                         
         }
     }
