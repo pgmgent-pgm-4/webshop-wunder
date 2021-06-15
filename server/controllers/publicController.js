@@ -1,3 +1,5 @@
+import _ from 'underscore';
+
 /*
 Import custom packages
 */
@@ -6,10 +8,10 @@ const { /* HTTPError, */handleHTTPError } = require('../utils');
 // import EnjineApi from '../services/dataService';
 
 // Import local data
-import bodyworkData from '../views/_data/bodywork.json';
+//import bodyworkData from '../views/_data/bodywork.json';
 import newsData from '../views/_data/news.json';
 import serviceData from '../views/_data/services.json';
-import brandData from '../views/_data/brands.json';
+//import brandData from '../views/_data/brands.json';
 import officeData from '../views/_data/offices.json';
 import teamData from '../views/_data/team.json';
 
@@ -21,16 +23,17 @@ Get Home Render
 */
 const getHome = (req, res, next) => {
   try {
-    console.log('home');
-    // Get data from service for teasers?
-    //let posts = dataService.getPosts();
-    //posts = posts.slice(0, 3);
-    // Send response
+
+    // Send response    
     res.render('index', {
-      bodywork: bodyworkData,
+      //bodywork: bodyworkData,
+      bodywork: res.locals.data.shapes,
+      brands: res.locals.data.brands,
       news: newsData,
       services: serviceData,
-      brands: brandData
+      teasers: _.sample(res.locals.data.teasers, 2),
+      //brands: brandData,
+      //shapeTest: res.locals.data['shapeTest']
     });
   } catch (error) {
     handleHTTPError(error, next);
@@ -47,6 +50,8 @@ const getCars = (req, res, next) => {
     //posts = posts.slice(0, 3);
     // Send response
     res.render('cars', {
+      brands: res.locals.data.brands,
+      data: res.locals.data.cars
       //posts,
     });
   } catch (error) {
@@ -60,19 +65,21 @@ Get Car Brands Render-test
 const getCarsBrands = async(req, res, next) => {
   try {
     // console.log(res.locals.data.length)
-    const data = res.locals.data;
+    const data = res.locals.data.cars;
     let count = 0;
     data.map(car => {
       car.Cars.forEach(add => {
         return count++
       });
     })
-    // const cat2 = (req.params.category === 'brands') || (req.params.category === 'shapes') ? req.params.category : null ;
+    
     res.render('cars', {
-      data: res.locals.data,
+      data: res.locals.data.cars,
       category: req.params.category,
       filter: "brands",
       count: count,
+      shapes: res.locals.data.shapes,
+      brands: res.locals.data.brands,
     });
     //next();
   } catch(error) {
@@ -85,19 +92,21 @@ Get Car Bodywork Render-test
 */
 const getCarsBodywork = async(req, res, next) => {
   try {
-    const data = res.locals.data;
+    const data = res.locals.data.cars;
     let count = 0;
     data.map(car => {
       car.Cars.forEach(add => {
         return count++
       });
     })
-    // const cat2 = (req.params.category === 'brands') || (req.params.category === 'shapes') ? req.params.category : null ;
+    
     res.render('cars', {
-      data: res.locals.data,
+      data: res.locals.data.cars,
       category: req.params.category,
       filter: "bodywork",
       count: count,
+      shapes: res.locals.data.shapes,
+      brands: res.locals.data.brands,
     });
     //next();
   } catch(error) {
@@ -115,6 +124,7 @@ const getNews = (req, res, next) => {
     //posts = posts.slice(0, 3);
     // Send response
     res.render('news', {
+      brands: res.locals.data.brands,
       //posts,
     });
   } catch (error) {
@@ -132,6 +142,7 @@ const getAbout = (req, res, next) => {
     //posts = posts.slice(0, 3);
     // Send response
     res.render('about', {
+      brands: res.locals.data.brands,
       team: teamData,
     });
   } catch (error) {
@@ -140,38 +151,7 @@ const getAbout = (req, res, next) => {
 }
 
 
-/*
-Get Car Render-test
-*/
-const getCarsTest = async(req, res, next) => {
-  try {
-    const category = (req.params.category === 'brands') || (req.params.category === 'shapes') ? req.params.category : null ;
-    res.render('cars--data-test', {
-      data: res.locals.data,
-      category: category,
-      //testData: res.locals.test
-    });
-    //next();
-  } catch(error) {
-    console.warn('An error occured!', error);
-  }
-}
-/*
-Get Car Render-test
-*/
-const getCarsTest2 = async(req, res, next) => {
-  try {
-    const cat2 = (req.params.category === 'brands') || (req.params.category === 'shapes') ? req.params.category : null ;
-    res.render('cars--data-test2', {
-      data: res.locals.data,
-      category: cat2,
-      filter: req.params.category,
-    });
-    //next();
-  } catch(error) {
-    console.warn('An error occured!', error);
-  }
-}
+
 
 /*
 Get Design-system Render
@@ -180,6 +160,7 @@ const getDesignSystem = (req, res, next) => {
   try {
     // Send response
     res.render('design-system', {
+      brands: res.locals.data.brands,
       //design-system,
     });
   } catch (error) {
@@ -197,6 +178,7 @@ const getContact = (req, res, next) => {
     //posts = posts.slice(0, 3);
     // Send response
     res.render('contact', {
+      brands: res.locals.data.brands,
       offices: officeData,
         // name: 'This is our main office',
         // address: '21 Baker Street'
@@ -206,32 +188,7 @@ const getContact = (req, res, next) => {
   }
 };
 
-//! Below is test
-/*
-Get Contact Render
-*/
-const getTest = async(req, res, next) => {
-  
-  try {
-    
-    //console.log(EnjineApi());
-    //const API = new EnjineApi;
-    //console.log(test);
-    // Get data from service for teasers?
-    //let posts = dataService.getPosts();
-    //posts = posts.slice(0, 3);
-    // Send response
-    //const dataTest = await API.getBrands();
-    console.log(dataTest);
-    //console.log(dataTest);
-    //console.log('test')
-    res.render('test', {
-      data: await dataTest 
-    });
-  } catch (error) {
-    handleHTTPError(error, next);
-  }
-};
+
 
 /*
 Get Contact Render
@@ -241,6 +198,7 @@ const profileTest = async(req, res, next) => {
   try {
     
     res.render('profile-test', {
+      brands: res.locals.data.brands,
     });
   } catch (error) {
     handleHTTPError(error, next);
@@ -255,6 +213,7 @@ const thankYouTest = async(req, res, next) => {
   try {
     
     res.render('thank-you-test', {
+      brands: res.locals.data.brands,
     });
   } catch (error) {
     handleHTTPError(error, next);
@@ -268,13 +227,9 @@ module.exports = {
   getAbout,
   getDesignSystem,
   getContact,
-  getTest,
   getCars,
   getCarsBrands,
-  getCarsBodywork,
-  getCarsTest,
-  getCarsTest2,
+  getCarsBodywork,  
   profileTest,
   thankYouTest
-  // getCarsTest2
 };

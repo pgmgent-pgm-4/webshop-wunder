@@ -61,22 +61,13 @@
                 <li>
                     <a class="active-footer" href="/cars">Brands</a>
                 </li>
-
+            
+            {% for brand in brands %}
                 <li>
-                    <a href="/cars">Audi</a>
+                    <a href="/cars/brands/all#{{brand.name}}">{{ brand.name }}</a>
                 </li>
+            {% endfor %}
 
-                <li>
-                    <a href="/cars">BMW</a>
-                </li>
-
-                <li>
-                    <a href="/cars">Ford</a>
-                </li>
-
-                <li>
-                    <a href="/cars">Lexus</a>
-                </li>
             </ul>
         </div>
 

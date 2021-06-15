@@ -8,7 +8,18 @@ import { deleteBrand } from './brand.controller';
 const getCars = async (req, res, next) => {
 	try {
     // Get Cars from database
-    const cars = await database.Car.findAll();
+    const cars = await database.Car.findAll(
+      {
+        include: [
+          {
+            model: database.Brand
+          },
+          {
+            model: database.Shape
+          }
+        ]
+      }
+    );
     
     // Sen response
     res.status(200).json(cars);

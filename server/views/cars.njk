@@ -39,8 +39,7 @@
                 {% for cat in data %}
                     <li class="side-selector__list__item">
                         <a href="#{{ cat.name }}">
-                            <img src="/static/images/{{ "shapes" if "bodywork" in filter else "logo" }}/{{ cat.name }}.svg" alt="Logo of {{ cat.name }}">
-                            
+                            <img src="{{ cat.imgUrl }}" alt="Logo of {{ cat.name }}">
                             <p>{{ cat.name }}</p>
                         </a>
                     </li>

@@ -82,7 +82,7 @@ module.exports = {
         updatedAt: new Date(),
       })
     }
-    console.log(reviews);
+    
     await queryInterface.bulkInsert('carReviews', 
       reviews, {}
     );

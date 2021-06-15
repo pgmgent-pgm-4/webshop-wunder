@@ -13,7 +13,7 @@ const SHAPES = [
 const shapesList = SHAPES.map(shape => {
   return {
     name: shape,
-    imgUrl: `${shape}.svg`,
+    imgUrl: `/static/images/shapes/${shape}.svg`,
     createdAt: new Date(),
     updatedAt: new Date(),
   }
@@ -21,6 +21,7 @@ const shapesList = SHAPES.map(shape => {
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
+    console.log(shapesList);
     return queryInterface.bulkInsert('Shapes', 
       shapesList, {}
     );
