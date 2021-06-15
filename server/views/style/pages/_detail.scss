@@ -54,7 +54,7 @@
                 align-content: center;
                 justify-content: space-between;
                 width: 100%;
-                color: $white-color;
+                color: $secondary-color;
                 @include media-min(xxs) {
                     // justify-content: center;
                     width: auto;
@@ -145,10 +145,6 @@
         
         &__name {
             padding-bottom: 3rem;
-            
-            h1 {
-                // font-size: 4.5rem;
-            }
         }
         
         &__price {
@@ -164,11 +160,108 @@
             p {
                 padding-bottom: 3rem;
                 font-size: 4rem;
-                color: $white-color;
+                color: $secondary-color;
                 font-family: 'vw_head';
                 font-weight: bold;
                 margin-right: 4rem;
             }
+        }
+    }
+}
+
+.specs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+
+    h2 {
+        font-size: 4rem;
+        font-weight: normal;
+        margin-bottom: 4rem;
+    }
+
+    &__list {
+        display: flex;
+        width: 100%;
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+
+            &__number {
+                color: $accent-color;
+                font-weight: bold;
+                font-size: 4rem;
+                margin-bottom: 1rem;
+            }
+
+            &__info {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+.specs-info {
+    background-color: $primary-color;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+
+        &__img {
+            max-height: 30rem;
+            width: 60%;
+            overflow: hidden;
+            clip-path: polygon(0% 0%, 100% 0%, 45% 100%, 0% 100%);
+        }
+
+        &__content {
+            width: 40%;
+            color: $secondary-color;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex-direction: column;
+            padding-right: 4rem;
+
+            .subtitle {
+                color: $accent-color;
+                font-size: 1.5rem;
+            }
+
+            .tagline {
+                font-size: 3.5rem;
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+            
+            .numbers {  
+                font-size: 1.75rem;
+            }
+        }
+    }
+}
+
+.specs-info--alt {
+    background-color: $secondary-color;
+
+    .specs-info__container {
+
+        .specs-info__container__img {
+            clip-path: polygon(45% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .specs-info__container__content {
+            align-items: flex-start;
+            padding-left: 4rem;
+            padding-right: 0;
+            color: $primary-color;
+                        
         }
     }
 }
