@@ -1,0 +1,30 @@
+{% set title = 'About' %}
+
+{% extends "base.njk" %}
+
+{% block content %}
+    TEST
+    <form id="form-test-registration" method="post" action="/thank-you-test">
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" placeholder="please enter your Email">
+        {# <button>
+            GO
+        </button> #}
+        <br/>
+        <input type="submit" value="REGISTER">
+    </form>
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block extraScripts %}
+    <script src="/static/js/test.js"></script>
+{% endblock %}
+
+
+

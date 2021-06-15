@@ -2,14 +2,30 @@ import fetch from 'node-fetch';
 
 const ENJINE_BASE_PATH = 'http://localhost:8081/api';
 
-const getData = async(req, res, next, apiUrl) => {
+const getData = async(req, res, next, apiRequest) => {
   const fetchData = async() => {
     try {
-      const response = await fetch(`${ENJINE_BASE_PATH}${apiUrl}/${req.params.category}`);
-      const data = await response.json();  
-      res.locals.data = await data;
-      next();
-      //return data is optional?
+      let dataForController = {};
+
+      for (let i = 0; i < apiRequest.length ; i++) {
+
+        let url = `${ENJINE_BASE_PATH}${apiRequest[i].apiUrl}`;
+        
+        if( (apiRequest[i].apiUrl === '/cars/brands')  || (apiRequest[i].apiUrl === '/cars/shapes')) {
+            url += `/${req.params.category ? req.params.category : ''}`
+        }
+
+        const response = await fetch(url);
+        const data = await response.json();  
+
+        dataForController[apiRequest[i].dataLocation] = await data;
+      
+        if(i >= apiRequest.length-1) {
+          res.locals.data = dataForController;
+          next();
+        }
+
+      };
     } catch(error) {
       console.warn('An error occured!', error);
       next();
@@ -18,7 +34,6 @@ const getData = async(req, res, next, apiUrl) => {
 
   fetchData();
 }
-
 
 export default getData;
   

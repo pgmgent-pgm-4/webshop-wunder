@@ -1,18 +1,34 @@
 'use strict';
 
 const BRANDS = [
-  'Audi',
-  'Bmw',
-  'Ford',
-  'Lexus'
+  {
+    name: 'Audi',
+    url: 'https://www.nl.audi.be/be/web/nl.html',
+    imgUrl: '/static/images/logo/audi.svg',
+  },
+  {
+    name: 'Bmw',
+    url: 'https://www.nl.audi.be/be/web/nl.html',
+    imgUrl: '/static/images/logo/bmw.svg',
+  },
+  {
+    name: 'Ford',
+    url: 'https://www.nl.audi.be/be/web/nl.html',
+    imgUrl: '/static/images/logo/ford.svg',
+  },
+  {
+    name: 'Lexus',
+    url: 'https://nl.lexus.be/?lexReferrer=https%3A%2F%2Fwww.google.com%2F',
+    imgUrl: '/static/images/logo/lexus.svg',
+  }
 ];
 // optional: look through existing file structure 
 
 const brandsList = BRANDS.map(brand => {
   return {
-    name: brand,
-    url: '',
-    imgUrl: '',
+    name: brand.name,
+    url: brand.url,
+    imgUrl: brand.imgUrl,
     createdAt: new Date(),
     updatedAt: new Date(),
   }

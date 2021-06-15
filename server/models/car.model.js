@@ -4,6 +4,18 @@ import { Model, DataTypes } from 'sequelize';
 export default (sequelize) => {
   class Car extends Model {
     static associate(models) {
+      this.belongsTo(models.Brand, {
+        foreignKey : {
+          allowNull: false
+        }
+      })
+
+      this.belongsTo(models.Shape, {
+        foreignKey : {
+          allowNull: false
+        }
+      })
+
       this.hasMany(models.CarReview, {
         foreignKey : {
           allowNull: false

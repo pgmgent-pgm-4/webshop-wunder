@@ -14,7 +14,7 @@
                     <a href="/cars">
                         <p>{{ body.name }}</p>
                         <div class="bodywork-img">
-                            <img src="{{ body.svg }}" alt="Icon for bodywork">
+                            <img src="{{ body.imgUrl }}" alt="Icon for bodywork">
                         </div>
                     </a>
                 </li>
@@ -54,16 +54,18 @@
 
         <section class="teaser-bonus max-width padding-home">
             <ul class="cards">
+
+            {% for teaser in teasers %}
                 <li class="card-car teaser-bonus__card">
-                    <a href="">
+                    <a href="/cars/detail/{{teaser.id}}">
                         <button>
                             <i data-feather="heart" class="favorite"></i>
                         </button>
 
-                        <p class="type">Audi RS 5 Coupé</p>
-                        <p class="price">Starting at $ 75,000</p>
+                        <p class="type">{{ teaser.Brand.name }} {{ teaser.name }}</p>
+                        <p class="price">Starting at $ {{ teaser.price }}</p>
 
-                        <img class="car-image" src="./static/images/fallback/Audi__RS 5 Coupé.png" alt="Image of car">
+                        <img class="car-image" src="{{ teaser.teaserImgUrl }}" alt="Image of {{ teaser.name }}">
 
                         <div class="flex">
                             <div class="btn-pri">
@@ -84,37 +86,8 @@
                         </div>
                     </a>
                 </li>
+            {% endfor %}
 
-                <li class="card-car teaser-bonus__card">
-                    <a href="">
-                        <button>
-                            <i data-feather="heart" class="favorite"></i>
-                        </button>
-
-                        <p class="type">Audi RS 5 Coupé</p>
-                        <p class="price">Starting at $ 75,000</p>
-
-                        <img class="car-image" src="./static/images/fallback/Audi__RS 5 Coupé.png" alt="Image of car">
-
-                        <div class="flex">
-                            <div class="btn-pri">
-                                <span class="overlay"></span>
-                                <span class="container-text">
-                                    <span>Discover</span>
-                                </span>
-                                <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
-                            </div>
-
-                            <div class="btn-pri btn-sec">
-                                <span class="overlay"></span>
-                                <span class="container-text">
-                                    <span><i data-feather="shopping-cart"></i></span>
-                                </span>
-                                <img class="arrow" src="./static/images/icons/arrow_right.svg" alt="arrow right">
-                            </div>
-                        </div>
-                    </a>
-                </li>
             </ul>
         </section> 
 
@@ -187,8 +160,8 @@
             <ul class="brands__list">
                 {% for brand in brands %}
                     <li class="brands__list__item">
-                        <a href="{{ brand.link }}" target="_blank">
-                            <img src="{{ brand.logo }}" alt="Logo of car brand">
+                        <a href="{{ brand.url }}" target="_blank">
+                            <img src="{{ brand.imgUrl }}" alt="Logo of car brand">
                         </a>
                     </li>
                 {% endfor %}
