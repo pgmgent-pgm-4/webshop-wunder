@@ -1977,7 +1977,8 @@ footer {
       .specs-info__container {
         flex-direction: row; } }
     .specs-info__container__img {
-      order: 2; }
+      order: 2;
+      height: 20rem; }
       @media (min-width: 43rem) {
         .specs-info__container__img {
           order: 1;
@@ -2001,7 +2002,8 @@ footer {
       order: 1;
       text-align: left;
       width: 100%;
-      padding: 2rem; }
+      padding: 2rem;
+      padding-top: 6rem; }
       @media (min-width: 43rem) {
         .specs-info__container__content {
           padding: 0;
@@ -2048,11 +2050,69 @@ footer {
     color: #0D0D0D;
     text-align: left;
     padding: 2rem;
+    padding-top: 6rem;
     order: 1; }
     @media (min-width: 43rem) {
       .specs-info--alt .specs-info__container .specs-info__container__content {
+        padding: 0;
         order: 1;
         padding-left: 4rem; } }
+
+.reviews h2 {
+  font-size: 4rem;
+  margin-bottom: 3rem; }
+
+.reviews__list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; }
+  .reviews__list__item {
+    background-color: #fff;
+    padding: 1.5rem;
+    box-shadow: 0px 1px 2px #0d0d0d29;
+    margin: 0.75rem;
+    width: calc(100% - 1.5rem);
+    display: flex;
+    flex-wrap: wrap;
+    transition: all 0.2s ease-in-out;
+    border-radius: 2px; }
+    @media (min-width: 50rem) {
+      .reviews__list__item {
+        width: calc(50% - 1.5rem); } }
+    @media (min-width: 64rem) {
+      .reviews__list__item {
+        width: calc(33.333% - 1.5rem); } }
+    .reviews__list__item__top {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 0.75rem; }
+      .reviews__list__item__top .rating {
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        width: auto;
+        font-weight: bold; }
+        .reviews__list__item__top .rating svg {
+          stroke: #CC0000;
+          margin-right: 0.5rem; }
+      .reviews__list__item__top .date {
+        color: #9C9C9C;
+        font-size: 1.3rem; }
+    .reviews__list__item p {
+      width: 100%;
+      font-size: 1.2rem; }
+    .reviews__list__item:hover {
+      box-shadow: 0px 4px 8px #0d0d0d29;
+      transform: translateY(-0.2rem); }
+
+.configuration {
+  position: relative; }
+  .configuration .bookmark {
+    position: absolute;
+    top: -6rem; }
+  .configuration h2 {
+    font-size: 4rem; }
 
 .bodywork__list {
   display: flex;

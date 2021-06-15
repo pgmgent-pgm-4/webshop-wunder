@@ -318,6 +318,7 @@
         
         &__img {
             order: 2;
+            height: 20rem;
             @include media-min(ss) {
                 order: 1;
                 height: 30rem;
@@ -346,6 +347,7 @@
             text-align: left;
             width: 100%;
             padding: 2rem;
+            padding-top: 6rem;
             @include media-min(ss) {
                 padding: 0;
                 padding-right: 4rem;
@@ -406,12 +408,94 @@
             color: $primary-color;
             text-align: left;
             padding: 2rem;
+            padding-top: 6rem;
             order: 1;
             @include media-min(ss) {
+                padding: 0;
                 order: 1;
                 padding-left: 4rem;
             }
                         
         }
+    }
+}
+
+.reviews {
+    h2 {
+        font-size: 4rem;
+        margin-bottom: 3rem;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        &__item {
+            background-color: $white-color;
+            padding: 1.5rem;
+            box-shadow: 0px 1px 2px $primary-shadow-color;
+            margin: 0.75rem;
+            width: calc(100% - 1.5rem);
+            display: flex;
+            flex-wrap: wrap;
+            @include transition;
+            border-radius: 2px;
+            @include media-min(sm) {
+                width: calc(50% - 1.5rem);
+            }
+            @include media-min(md) {
+                width: calc(33.333% - 1.5rem);
+            }
+
+            &__top {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                margin-bottom: 0.75rem;
+                
+                .rating {
+                    font-size: 1.3rem;
+                    display: flex;
+                    align-items: center;
+                    width: auto;
+                    font-weight: bold;
+                    
+                    svg {
+                        stroke: $accent-color;
+                        margin-right: 0.5rem;
+                    }
+                }
+                
+                .date {
+                    color: $grey-color;
+                    font-size: 1.3rem;
+                }
+            }
+
+            p {
+                width: 100%;
+                font-size: 1.2rem;
+            }
+
+            &:hover {
+                box-shadow: 0px 4px 8px $primary-shadow-color;
+                transform: translateY(-0.2rem);    
+            }
+        }
+
+    }
+}
+
+.configuration {
+    position: relative;
+
+    .bookmark {
+        position: absolute;
+        top: -6rem;
+    }
+
+    h2 {
+        font-size: 4rem;
     }
 }
