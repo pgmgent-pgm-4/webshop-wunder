@@ -56,7 +56,6 @@
                 width: 100%;
                 color: $secondary-color;
                 @include media-min(xxs) {
-                    // justify-content: center;
                     width: auto;
                 }
                 
@@ -155,7 +154,7 @@
             height: 100%;
             width: 45%;
             margin-right: -4rem;
-            clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(65% 0%, 100% 0%, 100% 100%, 0% 100%);
             
             p {
                 padding-bottom: 3rem;

@@ -1839,7 +1839,7 @@ footer {
       height: 100%;
       width: 45%;
       margin-right: -4rem;
-      clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 0% 100%); }
+      clip-path: polygon(65% 0%, 100% 0%, 100% 100%, 0% 100%); }
       .general__info__price p {
         padding-bottom: 3rem;
         font-size: 4rem;
