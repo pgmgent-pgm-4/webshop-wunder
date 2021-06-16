@@ -155,8 +155,6 @@ const getCarById = async (req, res, next) => {
       ]
     });
 
-    console.log(car);
-
     if (car === null) {
 			throw new HTTPError(`Could not found the car with id ${carId}!`, 404);
 		}

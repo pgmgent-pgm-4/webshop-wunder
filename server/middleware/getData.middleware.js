@@ -10,12 +10,6 @@ const getData = async(req, res, next, apiRequest) => {
       for (let i = 0; i < apiRequest.length ; i++) {
 
         let url = `${ENJINE_BASE_PATH}${apiRequest[i].apiUrl}`;
-        console.log('FETCH FETCH');
-        console.log('FETCH FETCH');
-        console.log('FETCH FETCH');
-        console.log('FETCH FETCH');
-        console.log('FETCH FETCH');
-        console.log('id', req.params.id);
         
         if( (apiRequest[i].apiUrl === '/cars/brands')  || (apiRequest[i].apiUrl === '/cars/shapes')) {
             url += `/${req.params.category ? req.params.category : ''}`
@@ -25,17 +19,10 @@ const getData = async(req, res, next, apiRequest) => {
             url += `/${req.params.id}`;
         }
 
-        console.log('url', url);
 
         const response = await fetch(url);
         const data = await response.json();  
-        console.log('DATA DATA');
-        console.log('DATA DATA');
-        console.log('DATA DATA');
-        console.log('DATA DATA');
-        console.log('DATA DATA');
-        console.log('data', data);
-
+        
         dataForController[apiRequest[i].dataLocation] = await data;
       
         if(i >= apiRequest.length-1) {

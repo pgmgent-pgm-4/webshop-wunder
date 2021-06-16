@@ -69,11 +69,6 @@ router.get('/cars/brands/:category', (req, res, next ) => {
 ])}, publicController.getCarsBrands);
 
 router.get('/cars/detail/:id', (req, res, next ) => {
-  console.log('id in publicCOntroller');
-  console.log('id in publicCOntroller');
-  console.log('id in publicCOntroller');
-  console.log('id in publicCOntroller');
-  console.log(req.params.id);
   getData(req, res, next, [{
     'apiUrl': '/cars',
     'dataLocation': 'car'

@@ -128,9 +128,6 @@ const getCarDetail = (req, res, next) => {
     //posts = posts.slice(0, 3);
     // Send response
 
-    console.log('data in public controller CAR', res.locals.data.car);
-    console.log('data in public controller CARreviews', res.locals.data.carReviews);
-
     const reviewsWithReadableDate =  res.locals.data.carReviews.map(carReview => {
       const d = new Date(carReview.createdAt);
       return {
