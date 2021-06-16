@@ -123,8 +123,26 @@ const getCarDetail = (req, res, next) => {
     //let posts = dataService.getPosts();
     //posts = posts.slice(0, 3);
     // Send response
+
+    console.log('data in public controller CAR', res.locals.data.car);
+    console.log('data in public controller CARreviews', res.locals.data.carReviews);
+
+    const reviewsWithReadableDate =  res.locals.data.carReviews.map(carReview => {
+      const d = new Date(carReview.createdAt);
+      return {
+        description: carReview.description,
+        rating: carReview.rating,
+        createdAt: d.toDateString(),
+        CarId: carReview.CarId,
+        UserId: carReview.UserId
+      }
+    });
+
     res.render('detail', {
       //posts,
+      car: res.locals.data.car,
+      brands: res.locals.data.brands,
+      carReviews: reviewsWithReadableDate
     });
   } catch (error) {
     handleHTTPError(error, next);

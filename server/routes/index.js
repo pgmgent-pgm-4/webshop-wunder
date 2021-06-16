@@ -66,10 +66,29 @@ router.get('/cars/brands/:category', (req, res, next ) => {
     'apiUrl': '/cars/brands',
     'dataLocation': 'cars'
   }
-])
+])}, publicController.getCarsBrands);
 
-}, publicController.getCarsBrands);
-router.get('/cars/detail/:id', publicController.getCarDetail);
+router.get('/cars/detail/:id', (req, res, next ) => {
+  console.log('id in publicCOntroller');
+  console.log('id in publicCOntroller');
+  console.log('id in publicCOntroller');
+  console.log('id in publicCOntroller');
+  console.log(req.params.id);
+  getData(req, res, next, [{
+    'apiUrl': '/cars',
+    'dataLocation': 'car'
+  }, {
+    'apiUrl': '/brands',
+    'dataLocation': 'brands'
+  }, {
+    'apiUrl': '/brands',
+    'dataLocation': 'brands'
+  }, {
+    'apiUrl': `/cars/${req.params.id}/carreviews`,
+    'dataLocation': 'carReviews'
+  }
+])}, publicController.getCarDetail);
+
 router.get('/news', (req, res, next ) => { getData(req, res, next, [{'apiUrl': '/brands', 'dataLocation': 'brands'}]) }, publicController.getNews);
 router.get('/contact', (req, res, next ) => { getData(req, res, next, [{'apiUrl': '/brands', 'dataLocation': 'brands'}]) }, publicController.getContact);
 router.get('/about', (req, res, next ) => { getData(req, res, next, [{'apiUrl': '/brands', 'dataLocation': 'brands'}]) }, publicController.getAbout);

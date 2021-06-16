@@ -56,7 +56,7 @@ const randomRating = () => {
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    const amount = 50;
+    const amount = 1200;
 
     let cars = await queryInterface.sequelize.query(
       `SELECT id from Cars;`

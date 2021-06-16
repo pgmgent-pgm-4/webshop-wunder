@@ -21,7 +21,6 @@ const shapesList = SHAPES.map(shape => {
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    console.log(shapesList);
     return queryInterface.bulkInsert('Shapes', 
       shapesList, {}
     );

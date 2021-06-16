@@ -35,6 +35,7 @@
     "morgan": "^1.10.0",
     "node-fetch": "^2.6.1",
     "nunjucks": "^3.2.3",
+    "nunjucks-date": "^1.5.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
