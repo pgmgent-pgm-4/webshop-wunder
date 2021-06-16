@@ -76,4 +76,10 @@ router.get('/profile-test', (req, res, next ) => { getData(req, res, next, [{'ap
 router.get('/thank-you-test', (req, res, next ) => { getData(req, res, next, [{'apiUrl': '/brands', 'dataLocation': 'brands'}]) }, publicController.thankYouTest);
 router.get('/design-system', (req, res, next ) => { getData(req, res, next, [{'apiUrl': '/brands', 'dataLocation': 'brands'}]) }, publicController.getDesignSystem);
 
+
+
+
+//login
+router.get('/login',  publicController.login);
+
 module.exports = router;

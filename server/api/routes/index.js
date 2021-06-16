@@ -454,6 +454,8 @@ router.get('/users/:userId/carreviews', carReviewController.getCarReviewsByUserI
 router.post('/users', userController.createUser);
 router.put('/users/:userId', userController.updateUser);
 router.delete('/users/:userId', userController.deleteUser);
+// login page
+router.post('/users/login', userController.loginUser);
 
 
 

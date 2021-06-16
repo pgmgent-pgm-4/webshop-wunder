@@ -164,6 +164,32 @@ const updateUser = async (req, res, next) => {
   }
 }
 
+/**
+ * Login a new user
+ */
+ const loginUser = async (req, res, next) => {
+  try {
+    // Get body from response
+    const model = req.body;
+    console.log('body conteroller', model);
+
+    // Create a user
+    const userInDb = await database.User.findOne({
+      where: {
+        email: req.body.email,
+        password: req.body.password
+      }
+    })
+
+    //console.log('userInDb',userInDb);
+
+		// Send response, if null, user is not correct, else user is returned
+		res.status(201).json(userInDb);
+  } catch(error) {
+    handleHTTPError(error, next);
+  }
+}
+
 export { 
   getUsers,
   getUserById,
@@ -172,4 +198,5 @@ export {
   deleteUser,
   getCarReviewsFromUserById,
   getProfileFromUserById,
+  loginUser
  };

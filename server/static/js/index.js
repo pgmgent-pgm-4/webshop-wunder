@@ -10,6 +10,7 @@
       this.setActiveNavigationMobile();
       this.scrollToTop();
       this.openingsHours();
+      this.checkCurrentUser();
     },
 
     cacheElement() {
@@ -25,6 +26,8 @@
       this.$crossList = document.querySelectorAll('.side-nav__item');
       this.$OpeningsHours = document.querySelectorAll('.openings-hours');
       this.$openOrClosed = document.querySelectorAll('.open-or-closed');
+      // User Test
+      this.$userTest = document.querySelector('#userTESTEST');
     },
 
     icons() {
@@ -179,6 +182,18 @@
       scrollToTop.onclick = function(e) {
         e.preventDefault();
         document.documentElement.scrollTop = 0;
+      }
+    },
+
+    checkCurrentUser() {
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      if(currentUser !== '') {
+        console.log('user ingelogd');
+        this.$userTest.innerHTML = 'INGELOGD: ' + currentUser.email;
+        //console.dir(currentUser, {depth: null});
+      } else {
+        console.log('user NIET ingelogd');
+        this.$userTest.innerHTML = 'NIET INGELOGD';
       }
     }
   };

@@ -205,6 +205,22 @@ const profileTest = async(req, res, next) => {
   }
 };
 
+
+/*
+Login
+*/
+const login = async(req, res, next) => {
+  
+  try {
+    
+    res.render('login', {
+      //brands: res.locals.data.brands,
+    });
+  } catch (error) {
+    handleHTTPError(error, next);
+  }
+};
+
 /*
 Get Contact Render
 */
@@ -231,5 +247,6 @@ module.exports = {
   getCarsBrands,
   getCarsBodywork,  
   profileTest,
-  thankYouTest
+  thankYouTest,
+  login
 };
