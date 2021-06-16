@@ -7,12 +7,7 @@ const TAGS = [
   'spring',
   'autumn',
   'crazy',
-  'sales'
 ]
-
-const randomNumber = (min, max) => {
-  return Math.floor((Math.random() * max) + min);
-}
 
 const returnBoolean = () => {
   const number = Math.random();
@@ -38,7 +33,7 @@ module.exports = {
 
     TAGS.forEach(tag => {
 
-      const discount = randomNumber(1,9)*10;
+      const discount = _.random(1,9)*10;
       const promotionName = `${tag.toUpperCase()}-SALES`;
       const promotionCode = `${tag.toUpperCase()}${discount}`;
       

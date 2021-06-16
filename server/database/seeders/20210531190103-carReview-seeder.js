@@ -75,7 +75,6 @@ module.exports = {
       reviews.push({
         CarId: parseInt(_.sample(cars).id),
         UserId: parseInt(_.sample(users).id),
-        //description: `${_.sample(json.prenames)} ${_.sample(json.carnames)} is ${_.sample(json.adjectives)}, ${rating} stars!`,
         description: `${_.sample(PRENAMES)} ${_.sample(CARNAMES)} is ${_.sample(ADJECTIVES)}, ${rating} stars!`,
         rating: rating,
         createdAt: new Date(),

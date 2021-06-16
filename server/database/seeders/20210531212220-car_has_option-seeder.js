@@ -2,10 +2,6 @@
 import 'babel-polyfill';
 import _  from 'underscore';
 
-const randomNumber = (min, max) => {
-  return Math.floor((Math.random() * max) + min);
-}
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     let cars = await queryInterface.sequelize.query(
@@ -21,14 +17,14 @@ module.exports = {
     const car_has_options = [];
 
     cars.forEach(car => {
-      const amountOfOption = randomNumber(0, carOptions.length);
+      const amountOfOption = _.random(0, carOptions.length);
     
       if (amountOfOption > 0) {
         for (let i = 0; i < amountOfOption; i++) {
           car_has_options.push({
             CarId: car.id,
             CarOptionId: _.sample(carOptions).id,
-            price: randomNumber(1, 25)*50,
+            price: _.random(1, 25)*50,
             createdAt: new Date(),
             updatedAt: new Date(),
           })

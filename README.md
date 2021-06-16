@@ -1,11 +1,27 @@
-# Final Project: Webshop
+# @Work2 : Final Project: Webshop Enjine
 
-## Development (in progress)
-### Start up server
-You can run the server with the command :  
-> npm run start
+## Assignment
+As our final assignment for @Work 2, we created an original self-made deisgn for a webshop. This webshop needed to have products and categories for a self chosen audience.
 
-This Code will start the server, create database if not present, start up API, render views.
+## Approach
+We chose to sell cars in our own webshop **Enjine**. The overview page would have 2 categories, 'Bodywork' and 'Brands'. going to the cars-overview would group them by this category. 'Car' being our main product while still having a lot of properties. All examples can be found in the API documentation.
+
+## Start up server
+If you would wan to re-seed the database, remove the database file at: **/server/data/database.sqlite3**.  
+Re-building the database can be done with following command:
+> npm run dev
+
+After the database is build again, you can seed all the tables with following command:
+> npm run seed-database
+
+Either after re-seeding or not, this project uses server-side rendering. starting up this project can be done with following command:
+> npm run start  
+
+
+## API 
+8 out of 13 endpoints are defined and can be tested at :  
+[localhost:8081/api/docs](localhost:8081/api/docs)
+
 
 ## Folder-structure
 ```
@@ -13,20 +29,45 @@ This Code will start the server, create database if not present, start up API, r
 └── server  
     ├── api
     │   ├── controllers 
+    │   │   ( handles the request and operates the CRUD on the Database for each Table in a different file
+    │   │   
     │   └── routes
-    │       └── index.js (all routes for the API)
+    │       └── index.js (all routes for the API with swagger js-doc documentation)
     ├── app.js
     ├── controllers
-    │   └── publicController.js ( controller is being called from /routes, decides what to output )
-    ├── static
+    │   └── publicController.js ( controller is being called from /routes, 
+    │                             decides what data to render to which page from the '/views'-folder )
+    │
+    ├── data
+    │   └── database.sqlite3 ( database file, can be erased and re-generated, see above )
+    │                             
+    ├── database
+    │   └── seeders
+    │       ├── 20210523142206-shape-seeder.js
+    │       └── .....        
+    │            (all file in this folder are run with the 'seed-database' script to populate database.sqlite3 file)
+    ├── middleware
+    │   └── getData.middleware.js
+    │       (this middleware is being called from the publicroutes, to save the data in the response, so the publicController can render it )
+    │
+    ├── models
+    │   ├── brand.model.js
+    │   ├── car.model.js
+    │   └──  .....
+    │       ( All defined models to use in Sequelize with relations )
+    │
+    ├── routes
+    │   └── index.js
+    │       ( All public routes )
+    │
+    ├── static ( all files are accesible from the client )
     │   ├── css
     │   │   └── main.css ( file is being generated from node-sass)
     │   ├── images ( images can be added here, refer to './static/images/...' )
     │   └── js ( add script is necesarry, refer to './static/js/...' )
-    ├── routes
-    │   └── index.js ( defined routes ex. '/contact' will call publicController "getContact" )
+    │
     └── views
-        ├── base.njk ( base-file as example, use include in other files)
+        ├── base.njk ( base-file with header and footer, other pages can be rendered inside this page)
         ├── index.njk
         ├── partials
         │   └── header.njk ( partials can be loaded with {% include "partials/header.njk" %}  )
@@ -46,116 +87,4 @@ Nunjucks-files are being rendered from the **/views**-folder.
 Scss is being converted from **/views/style/main.scss** to **/public/css/main.css**  
 images, scripts, ..can be added to the **/public/images** and **/public/css**-folders.  
 
-
-## Back-end
-**public controller**
-Endpoints are created in the publicController and refers to that specific page in the **/views**-folder.  
-Data is fetched in middleware, saved in response so publicController can send it to the view-engine.
-
-**accesing API:**  
-API documentation is available at [http://localhost:8080/api/docs](http://localhost:8080/api/docs).  
-For now only 'shapes' is defined, below is a list of finished models, controllers, endpoints
-
-**Finished Models:**  
-- [x] Brands
-- [x] Shapes
-- [x] CarColours
-- [x] CarReviews
-- [x] Users
-- [x] Profiles
-- [x] Cars
-- [x] Car_has_options
-- [x] CarOptions
-- [x] Orders
-- [x] OrderItems
-- [x] Payments
-- [x] Promotions  
-**!TODO:** Check polymorphism in orderItems, Id can be non existent in other tables?
-
-**Finished Controllers:**  
-- [x] Brands
-- [x] Shapes
-- [x] CarColours
-- [x] CarReviews
-- [x] Users
-- [x] Profiles
-- [x] Cars
-- [ ] Car_has_options
-- [ ] CarOptions
-- [ ] Orders
-- [ ] OrderItems
-- [ ] Payments
-- [ ] Promotions  
-  
-**Finished Endpoints:**  
-- [x] Brands
-- [x] Shapes
-- [x] CarColours
-- [x] CarReviews
-- [x] Users
-- [x] Profiles
-- [x] Cars
-- [ ] Car_has_options
-- [ ] CarOptions
-- [ ] Orders
-- [ ] OrderItems
-- [ ] Payments
-- [ ] Promotions  
-  
-**Finished Swagger Documentation:**  
-- [ ] Brands
-- [x] Shapes
-- [ ] CarColours
-- [ ] CarReviews
-- [ ] Users
-- [ ] Profiles
-- [ ] Cars
-- [ ] Car_has_options
-- [ ] CarOptions
-- [ ] Orders
-- [ ] OrderItems
-- [ ] Payments
-- [ ] Promotions
-
-
-
-
-## Introductie
-Voor het finale project van @work2 maakten we  een webshop waarin we auto's aanbieden van verschillende merken en in verschillende vormen. 
-De naam van de webshop is "Enjin".
-
-## Verschillende Pagina's
-* Home
-* Contact
-* About us
-* (Optional: News)
-* (Optional: Services)
-    * (Optional: Detailpage service)
-* Overview Cars
-    * Ordered by Brand
-    * Ordered by Shape
-    * Filtered by ..
-* Register-page
-* Login-page
-* User-page
-    * User Dashboard
-    * Overview Orders
-    * Personal Settings
-    * Preferences
-    * Wishlist
-    * Shopping Basket
-* Checkout Process
-    * Confirm order
-    * Choose delivery adress, options
-    * Choose payment
-    * Order confirmed (Thank you)
-* Shopping Basket (Overlay)
-* Cookie-info (Pop-up)
-
-
-
-
-## API
-
-### /api/
 

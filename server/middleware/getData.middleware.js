@@ -19,10 +19,9 @@ const getData = async(req, res, next, apiRequest) => {
             url += `/${req.params.id}`;
         }
 
-
         const response = await fetch(url);
         const data = await response.json();  
-        
+
         dataForController[apiRequest[i].dataLocation] = await data;
       
         if(i >= apiRequest.length-1) {

@@ -2,8 +2,6 @@
 
 import faker from 'faker';
 
-
-
 module.exports = {
   up: (queryInterface, Sequelize) => {
     const amount = 150;

@@ -49,7 +49,6 @@ export default (sequelize) => {
         through : "Car_has_colours",
         as: "carColours",
         foreignKey: "CarId",
-        //constraints: false 
         unique: false
       });
     }
