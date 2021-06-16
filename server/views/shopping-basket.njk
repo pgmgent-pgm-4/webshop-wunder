@@ -1,7 +1,111 @@
-{% set title = 'Profile' %}
+{% set title = 'Shopping basket' %}
 
 {% extends "user-base.njk" %}
 
 {% block profile %}
-    shopping basket
+    <section class="shopping-basket">
+        <h2>Shopping basket</h2>
+
+        <ul class="shopping-basket__list">
+            <li class="shopping-basket__list__item">
+                <a href="/cars/detail/1">
+                    <div class="car__info">
+                        <p class="car__info__title bold">Audi RS 5 Coupé</p>
+
+                        <p class="car__info__bodywork bold">Sportback</p>
+                        
+                        <ul class="car__info__options margin-bottom">
+                            <li>Metallic colour</li>
+
+                            <li>Sport package</li>
+                        </ul>
+                        
+                        <p class="car__info__price bold">$ 75,000</p>
+                    </div>
+
+                    <div class="car__logo">
+                        <img src="/static/images/logo/Audi-grey.png" alt="Logo of Audi">
+                    </div>
+                    
+                    <div class="car__cross">
+                        <i data-feather="x"></i>
+                    </div>
+
+                    <div class="car__img">
+                        <img src="/static/images/detail/audi-top.png" alt="Image of car">
+                    </div>
+                </a>
+            </li>
+            
+            <li class="shopping-basket__list__item">
+                <a href="/cars/detail/1">
+                    <div class="car__info">
+                        <p class="car__info__title bold">Audi RS 5 Coupé</p>
+
+                        <p class="car__info__bodywork bold">Sportback</p>
+                        
+                        <ul class="car__info__options margin-bottom">
+                            <li>Metallic colour</li>
+
+                            <li>Sport package</li>
+                        </ul>
+                        
+                        <p class="car__info__price bold">$ 75,000</p>
+                    </div>
+
+                    <div class="car__logo">
+                        <img src="/static/images/logo/Audi-grey.png" alt="Logo of Audi">
+                    </div>
+                    
+                    <div class="car__cross">
+                        <i data-feather="x"></i>
+                    </div>
+
+                    <div class="car__img">
+                        <img src="/static/images/detail/audi-top.png" alt="Image of car">
+                    </div>
+                </a>
+            </li>
+
+            <li class="shopping-basket__list__item">
+                <a href="/cars/detail/1">
+                    <div class="car__info">
+                        <p class="car__info__title bold">Audi RS 5 Coupé</p>
+
+                        <p class="car__info__bodywork bold">Sportback</p>
+                        
+                        <ul class="car__info__options margin-bottom">
+                            <li>Metallic colour</li>
+
+                            <li>Sport package</li>
+                        </ul>
+                        
+                        <p class="car__info__price bold">$ 75,000</p>
+                    </div>
+
+                    <div class="car__logo">
+                        <img src="/static/images/logo/Audi-grey.png" alt="Logo of Audi">
+                    </div>
+                    
+                    <div class="car__cross">
+                        <i data-feather="x"></i>
+                    </div>
+
+                    <div class="car__img">
+                        <img src="/static/images/detail/audi-top.png" alt="Image of car">
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+        <div class="shopping-basket__button">
+            <button class="btn-pri">
+                <span class="overlay"></span>
+                <span class="container-text">
+                    <span>Order all</span>
+                </span>
+                <img class="arrow" src="/static/images/icons/arrow_right.svg" alt="arrow right">
+            </button>
+        </div>
+    </section>
 {% endblock %}
