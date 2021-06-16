@@ -86,7 +86,16 @@ router.get('/cars/detail/:id', (req, res, next ) => {
 
 router.get('/cars/detail/:id', (req, res, next ) => { getData(req, res, next, [{'apiUrl': '/brands', 'dataLocation': 'brands'}]) }, publicController.getCarDetail);
 
-router.get('/profile', (req, res, next ) => { getData(req, res, next, [{'apiUrl': '/brands', 'dataLocation': 'brands'}]) }, publicController.getProfileOverview);
+router.get('/profile', (req, res, next ) => { 
+  getData(req, res, next, [{
+    'apiUrl': '/brands', 
+    'dataLocation': 'brands'
+  }, {
+    'apiUrl': `/users/${req.params.id}/profile`,
+    'dataLocation': 'profile'
+  }
+
+]) }, publicController.getProfileOverview);
 router.get('/profile/orders', (req, res, next ) => { getData(req, res, next, [{'apiUrl': '/brands', 'dataLocation': 'brands'}]) }, publicController.getOrders);
 router.get('/profile/personal-settings', (req, res, next ) => { getData(req, res, next, [{'apiUrl': '/brands', 'dataLocation': 'brands'}]) }, publicController.getPersonalSettings);
 router.get('/profile/preferences', (req, res, next ) => { getData(req, res, next, [{'apiUrl': '/brands', 'dataLocation': 'brands'}]) }, publicController.getPreferences);

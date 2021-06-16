@@ -14,7 +14,7 @@ const randomdob = () => {
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    const amount = 30;
+    const amount = 150;
 
     let users = await queryInterface.sequelize.query(
       `SELECT id from Users;`
@@ -24,7 +24,7 @@ module.exports = {
     const profiles = [];
     for (let i = 0; i < amount; i++) {
       profiles.push({
-        UserId: _.sample(users).id,
+        UserId: users[i].id,
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
         dob: randomdob(),

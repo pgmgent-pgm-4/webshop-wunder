@@ -49,7 +49,12 @@ const getProfileFromUserById = async (req, res, next) => {
     const profile = await database.Profile.findOne({
       where: {
         UserId: userId
-      }
+      },
+      include : [
+        {
+          model: database.User
+        }
+      ]
     });
 
     if (profile === null) {
