@@ -1,0 +1,31 @@
+{% set title = 'Cars overview' %}
+
+{% extends "base.njk" %}
+
+{% block content %}
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+    <form action="" id="login-form">
+    
+    <label for="email">
+    Email:
+    </label>
+    <input type="text" name="email" id="email" placeholder="enter your email">
+
+    <label for="password">
+    Password:
+    </label>
+    <input type="password" name="password" id="password">
+
+    <input type="submit" value="Log in">
+
+
+    </form>
+{% endblock %}
+
+{% block extraScript %}
+    <script type="module" src="/static/js/login.js"></script>
+{% endblock %}
