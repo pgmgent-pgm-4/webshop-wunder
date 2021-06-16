@@ -66,9 +66,24 @@ router.get('/cars/brands/:category', (req, res, next ) => {
     'apiUrl': '/cars/brands',
     'dataLocation': 'cars'
   }
-])
+])}, publicController.getCarsBrands);
 
-}, publicController.getCarsBrands);
+router.get('/cars/detail/:id', (req, res, next ) => {
+  getData(req, res, next, [{
+    'apiUrl': '/cars',
+    'dataLocation': 'car'
+  }, {
+    'apiUrl': '/brands',
+    'dataLocation': 'brands'
+  }, {
+    'apiUrl': '/brands',
+    'dataLocation': 'brands'
+  }, {
+    'apiUrl': `/cars/${req.params.id}/carreviews`,
+    'dataLocation': 'carReviews'
+  }
+])}, publicController.getCarDetail);
+
 router.get('/cars/detail/:id', (req, res, next ) => { getData(req, res, next, [{'apiUrl': '/brands', 'dataLocation': 'brands'}]) }, publicController.getCarDetail);
 
 router.get('/profile', (req, res, next ) => { getData(req, res, next, [{'apiUrl': '/brands', 'dataLocation': 'brands'}]) }, publicController.getProfileOverview);

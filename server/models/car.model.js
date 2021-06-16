@@ -109,7 +109,7 @@ export default (sequelize) => {
         type: DataTypes.FLOAT,
         allowNull: false
       },
-      breakTIme: {
+      breakTime: {
         type: DataTypes.FLOAT,
         allowNull: false
       },

@@ -534,6 +534,31 @@ router.get('/cars/:carId', carController.getCarById);
  */
 router.get('/cars/:carId/caroptions', car_has_optionController.getCar_has_optionsByCarId);
 
+/**
+ * @swagger
+ * /api/cars/{carId}/carreviews:
+ *  get:
+ *    summary: Get the car reviews for a car by id
+ *    tags: [Cars]
+ *    parameters:
+ *      - in: path
+ *        name: carId
+ *        schema:
+ *          type: string
+ *        required: true
+ *        description: The carId
+ *    responses:
+ *      200:
+ *        description: The list of reviews by car Id
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/CarReview'
+ *      404:
+ *        description: The Car options were not found
+ */
+router.get('/cars/:carId/carreviews', carReviewController.getCarReviewsByCarId);
+
 
 /**
  * @swagger

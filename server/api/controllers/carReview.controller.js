@@ -63,6 +63,31 @@ const getCarReviewsByUserId = async (req, res, next) => {
 }
 
 /**
+ * Get carReviews for cars by CarId
+ */
+const getCarReviewsByCarId = async (req, res, next) => {
+  try {
+    // Get carReviewId parameter
+    const { carId } = req.params;
+
+    // Get carReviews from database
+    const carReviews = await database.CarReview.findAll({
+      where: {
+        CarId: carId
+      }
+    });
+
+    if (carReviews === null) {
+			throw new HTTPError(`Could not find carReviews for car with id ${carId}!`, 404);
+		}
+		// Send response
+		res.status(200).json(carReviews);
+  } catch(error) {
+    handleHTTPError(error, next);
+  }
+}
+
+/**
  * Create a new carReview
  */
 const createCarReview = async (req, res, next) => {
@@ -143,6 +168,7 @@ export {
   getCarReviews,
   getCarReviewById,
   getCarReviewsByUserId,
+  getCarReviewsByCarId,
   createCarReview,
   updateCarReview,
   deleteCarReview,

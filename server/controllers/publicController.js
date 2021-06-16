@@ -127,9 +127,24 @@ const getCarDetail = (req, res, next) => {
     //let posts = dataService.getPosts();
     //posts = posts.slice(0, 3);
     // Send response
+
+    const reviewsWithReadableDate =  res.locals.data.carReviews.map(carReview => {
+      const d = new Date(carReview.createdAt);
+      return {
+        description: carReview.description,
+        rating: carReview.rating,
+        createdAt: d.toDateString(),
+        CarId: carReview.CarId,
+        UserId: carReview.UserId
+      }
+    });
+
     res.render('detail', {
       brands: res.locals.data.brands,
       //posts,
+      car: res.locals.data.car,
+      brands: res.locals.data.brands,
+      carReviews: reviewsWithReadableDate
     });
   } catch (error) {
     handleHTTPError(error, next);

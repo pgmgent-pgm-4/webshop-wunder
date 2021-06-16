@@ -9,6 +9,12 @@ export default (sequelize) => {
           allowNull: false
         }
       })
+
+      this.belongsTo(models.Car, {
+        foreignKey : {
+          allowNull: false
+        }
+      })
     }
   }
 

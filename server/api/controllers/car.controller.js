@@ -144,7 +144,16 @@ const getCarById = async (req, res, next) => {
     // Get carId parameter
     const { carId } = req.params;
     // Get specific car from database
-    const car = await database.Car.findByPk(carId);
+    const car = await database.Car.findByPk(carId, {
+      include : [
+        {
+          model: database.Brand
+        },
+        {
+          model: database.Shape
+        }
+      ]
+    });
 
     if (car === null) {
 			throw new HTTPError(`Could not found the car with id ${carId}!`, 404);
