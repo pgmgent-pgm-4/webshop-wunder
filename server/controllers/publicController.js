@@ -238,6 +238,7 @@ const getProfileOverview = (req, res, next) => {
     // Send response
     res.render('profile', {
       brands: res.locals.data.brands,
+      profile: res.locals.data.profile
         // name: 'This is our main office',
         // address: '21 Baker Street'
     });

@@ -13,6 +13,13 @@ export default (sequelize) => {
         foreignKey : 'orderItemTableId', 
         constraints: false 
       });
+
+      this.belongsTo(models.Order, {
+        foreignKey : {
+          allowNull: false
+        }
+      });
+
     }
   }
 

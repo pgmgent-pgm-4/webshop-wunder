@@ -6,7 +6,7 @@ import faker from 'faker';
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    const amount = 20;
+    const amount = 150;
 
     const usersList = []
     for (let i = 0; i < amount; i++) {
