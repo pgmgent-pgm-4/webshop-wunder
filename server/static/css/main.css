@@ -1225,11 +1225,20 @@ footer {
     .profile-wrapper {
       width: calc(100% - 8rem); } }
   .profile-wrapper__container {
-    display: flex; }
+    display: flex;
+    flex-direction: column; }
+    @media (min-width: 50rem) {
+      .profile-wrapper__container {
+        flex-direction: row; } }
     .profile-wrapper__container__nav {
-      width: 23%;
+      width: 100%;
       font-family: 'vw_head';
-      font-size: 1.2rem; }
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem; }
+      @media (min-width: 50rem) {
+        .profile-wrapper__container__nav {
+          width: 23%;
+          margin-bottom: 0; } }
       .profile-wrapper__container__nav__list__item {
         margin-bottom: 0.5rem;
         transition: all 0.2s ease-in-out; }
@@ -1250,9 +1259,16 @@ footer {
         .profile-wrapper__container__nav__list__item:hover {
           transform: translateX(0.3rem); }
     .profile-wrapper__container__content {
-      width: 77%;
-      padding-left: 1.5rem;
-      border-left: 2px solid #CC0000; }
+      width: 100%;
+      padding-top: 1.5rem;
+      border-top: 2px solid #CC0000; }
+      @media (min-width: 50rem) {
+        .profile-wrapper__container__content {
+          width: 77%;
+          padding-top: 0;
+          padding-left: 1.5rem;
+          border-top: none;
+          border-left: 2px solid #CC0000; } }
 
 .vision {
   position: relative;
