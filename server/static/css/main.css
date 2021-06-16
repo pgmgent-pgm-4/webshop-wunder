@@ -1184,6 +1184,76 @@ footer {
     .filter__container__title p {
       margin-right: 0.8rem; }
 
+.profile-hello {
+  background-color: #CC0000;
+  color: #F9F9F9; }
+  .profile-hello__container {
+    padding-left: 1.5rem;
+    padding-top: 4rem;
+    padding-bottom: calc(4rem + 7rem); }
+    @media (min-width: 28rem) {
+      .profile-hello__container {
+        padding-left: 2rem; } }
+    @media (min-width: 50rem) {
+      .profile-hello__container {
+        padding-left: 3rem; } }
+    @media (min-width: 64rem) {
+      .profile-hello__container {
+        padding-left: 4rem; } }
+    .profile-hello__container h1 {
+      font-size: 4.5rem; }
+    .profile-hello__container p {
+      padding-left: 3rem;
+      font-family: 'vw_head';
+      font-size: 2.5rem; }
+
+.profile-wrapper {
+  width: calc(100% - 3rem);
+  background-color: #fff;
+  box-shadow: 0 3px 6px #0d0d0d29;
+  border-radius: 2px;
+  margin-top: -7rem;
+  margin-bottom: 4rem;
+  padding: 2rem; }
+  @media (min-width: 28rem) {
+    .profile-wrapper {
+      width: calc(100% - 4rem); } }
+  @media (min-width: 50rem) {
+    .profile-wrapper {
+      width: calc(100% - 6rem); } }
+  @media (min-width: 64rem) {
+    .profile-wrapper {
+      width: calc(100% - 8rem); } }
+  .profile-wrapper__container {
+    display: flex; }
+    .profile-wrapper__container__nav {
+      width: 23%;
+      font-family: 'vw_head';
+      font-size: 1.2rem; }
+      .profile-wrapper__container__nav__list__item {
+        margin-bottom: 0.5rem;
+        transition: all 0.2s ease-in-out; }
+        .profile-wrapper__container__nav__list__item a {
+          transition: all 0.2s ease-in-out;
+          position: relative; }
+          .profile-wrapper__container__nav__list__item a.active {
+            font-weight: bold; }
+            .profile-wrapper__container__nav__list__item a.active::before {
+              content: '';
+              width: 1.2rem;
+              height: 0.25rem;
+              background-color: #CC0000;
+              position: absolute;
+              border-radius: 50px;
+              top: 45%;
+              left: -1.5rem; }
+        .profile-wrapper__container__nav__list__item:hover {
+          transform: translateX(0.3rem); }
+    .profile-wrapper__container__content {
+      width: 77%;
+      padding-left: 1.5rem;
+      border-left: 2px solid #CC0000; }
+
 .vision {
   position: relative;
   height: calc(100% - 4rem); }

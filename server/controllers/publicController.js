@@ -40,6 +40,7 @@ const getHome = (req, res, next) => {
   }
 };
 
+
 /*
 Get Cars Render
 */
@@ -58,6 +59,7 @@ const getCars = (req, res, next) => {
     handleHTTPError(error, next);
   }
 };
+
 
 /*
 Get Car Brands Render-test
@@ -87,6 +89,7 @@ const getCarsBrands = async(req, res, next) => {
   }
 }
 
+
 /*
 Get Car Bodywork Render-test
 */
@@ -114,6 +117,7 @@ const getCarsBodywork = async(req, res, next) => {
   }
 }
 
+
 /*
 Get Car Detail Render
 */
@@ -124,12 +128,14 @@ const getCarDetail = (req, res, next) => {
     //posts = posts.slice(0, 3);
     // Send response
     res.render('detail', {
+      brands: res.locals.data.brands,
       //posts,
     });
   } catch (error) {
     handleHTTPError(error, next);
   }
 };
+
 
 /*
 Get News Render
@@ -148,6 +154,7 @@ const getNews = (req, res, next) => {
     handleHTTPError(error, next);
   }
 };
+
 
 /*
 Get About Render
@@ -168,8 +175,6 @@ const getAbout = (req, res, next) => {
 }
 
 
-
-
 /*
 Get Design-system Render
 */
@@ -184,6 +189,7 @@ const getDesignSystem = (req, res, next) => {
     handleHTTPError(error, next);
   }
 };
+
 
 /*
 Get Contact Render
@@ -206,6 +212,122 @@ const getContact = (req, res, next) => {
 };
 
 
+/*
+Get Profile Render
+*/
+const getProfileOverview = (req, res, next) => {
+  try {
+    // Get data from service for teasers?
+    //let posts = dataService.getPosts();
+    //posts = posts.slice(0, 3);
+    // Send response
+    res.render('profile', {
+      brands: res.locals.data.brands,
+        // name: 'This is our main office',
+        // address: '21 Baker Street'
+    });
+  } catch (error) {
+    handleHTTPError(error, next);
+  }
+};
+
+
+/*
+Get Orders Render
+*/
+const getOrders = (req, res, next) => {
+  try {
+    // Get data from service for teasers?
+    //let posts = dataService.getPosts();
+    //posts = posts.slice(0, 3);
+    // Send response
+    res.render('orders', {
+      brands: res.locals.data.brands,
+        // name: 'This is our main office',
+        // address: '21 Baker Street'
+    });
+  } catch (error) {
+    handleHTTPError(error, next);
+  }
+};
+
+/*
+Get Personal settings Render
+*/
+const getPersonalSettings = (req, res, next) => {
+  try {
+    // Get data from service for teasers?
+    //let posts = dataService.getPosts();
+    //posts = posts.slice(0, 3);
+    // Send response
+    res.render('settings', {
+      brands: res.locals.data.brands,
+        // name: 'This is our main office',
+        // address: '21 Baker Street'
+    });
+  } catch (error) {
+    handleHTTPError(error, next);
+  }
+};
+
+/*
+Get Preferences Render
+*/
+const getPreferences = (req, res, next) => {
+  try {
+    // Get data from service for teasers?
+    //let posts = dataService.getPosts();
+    //posts = posts.slice(0, 3);
+    // Send response
+    res.render('preferences', {
+      brands: res.locals.data.brands,
+        // name: 'This is our main office',
+        // address: '21 Baker Street'
+    });
+  } catch (error) {
+    handleHTTPError(error, next);
+  }
+};
+
+/*
+Get Wishlist Render
+*/
+const getWishlist = (req, res, next) => {
+  try {
+    // Get data from service for teasers?
+    //let posts = dataService.getPosts();
+    //posts = posts.slice(0, 3);
+    // Send response
+    res.render('wishlist', {
+      brands: res.locals.data.brands,
+        // name: 'This is our main office',
+        // address: '21 Baker Street'
+    });
+  } catch (error) {
+    handleHTTPError(error, next);
+  }
+};
+
+
+/*
+Get Shopping basket Render
+*/
+const getShoppingBasket = (req, res, next) => {
+  try {
+    // Get data from service for teasers?
+    //let posts = dataService.getPosts();
+    //posts = posts.slice(0, 3);
+    // Send response
+    res.render('shopping-basket', {
+      brands: res.locals.data.brands,
+        // name: 'This is our main office',
+        // address: '21 Baker Street'
+    });
+  } catch (error) {
+    handleHTTPError(error, next);
+  }
+};
+
 
 /*
 Get Contact Render
@@ -222,6 +344,7 @@ const profileTest = async(req, res, next) => {
   }
 };
 
+
 /*
 Get Contact Render
 */
@@ -237,6 +360,7 @@ const thankYouTest = async(req, res, next) => {
   }
 };
 
+
 module.exports = {
   getHome,
   getCars,
@@ -249,5 +373,11 @@ module.exports = {
   getCarsBodywork,
   getCarDetail,  
   profileTest,
-  thankYouTest
+  thankYouTest,
+  getProfileOverview,
+  getOrders,
+  getPersonalSettings,
+  getPreferences,
+  getWishlist,
+  getShoppingBasket,
 };
