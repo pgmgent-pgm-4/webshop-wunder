@@ -22,7 +22,6 @@ const BRANDS = [
     imgUrl: '/static/images/logo/lexus.svg',
   }
 ];
-// optional: look through existing file structure 
 
 const brandsList = BRANDS.map(brand => {
   return {

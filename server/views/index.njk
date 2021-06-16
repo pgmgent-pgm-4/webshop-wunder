@@ -11,7 +11,7 @@
             <ul class="bodywork__list">
             {% for body in bodywork %}
                 <li class="bodywork__list__item">
-                    <a href="/cars">
+                    <a href="/cars/bodywork/all#{{body.name}}">
                         <p>{{ body.name }}</p>
                         <div class="bodywork-img">
                             <img src="{{ body.imgUrl }}" alt="Icon for bodywork">

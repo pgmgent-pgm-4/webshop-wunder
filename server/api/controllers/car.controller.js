@@ -245,7 +245,6 @@ const updateCar = async (req, res, next) => {
 /**
  * Get all Cars by Specific Brand
  */
-//!TODO do it with brand-name? with query in stead of endpount?
  const getCarsFromBrandById = async (req, res, next) => {
   try {
     // Get carId parameter
@@ -271,8 +270,6 @@ const updateCar = async (req, res, next) => {
 /**
  * Get all Cars by Specific BrandName
  */
-//!TODO do it with brand-name? with query in stead of endpount?
-//! include doenst work Brand is not associated to Car!
 
  const getCarsFromBrandByBrandName = async (req, res, next) => {
   try {
