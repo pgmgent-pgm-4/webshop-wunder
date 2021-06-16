@@ -1,0 +1,114 @@
+.profile-hello {
+    background-color: $accent-color;
+    color: $secondary-color;
+
+    &__container {
+        padding-left: 1.5rem;
+        padding-top: 4rem;
+        padding-bottom: calc(4rem + 7rem);
+        @include media-min(xxs) {
+            padding-left: 2rem;
+        }
+        @include media-min(sm) {
+            padding-left: 3rem;
+        }
+        @include media-min(md) {
+            padding-left: 4rem;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+        }
+
+        p {
+            padding-left: 3rem;
+            font-family: 'vw_head';
+            font-size: 2.5rem;
+        }
+    }
+}
+
+.profile-wrapper {
+    width: calc(100% - 3rem);
+    background-color: $white-color;
+    box-shadow: 0 3px 6px $primary-shadow-color;
+    border-radius: 2px;
+    margin-top: -7rem;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    @include media-min(xxs) {
+        width: calc(100% - 4rem);
+    }
+    @include media-min(sm) {
+        width: calc(100% - 6rem);
+    }
+    @include media-min(md) {
+        width: calc(100% - 8rem);
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @include media-min(sm) {
+            flex-direction: row;
+        }
+        
+        &__nav {
+            width: 100%;
+            font-family: 'vw_head';
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            @include media-min(sm) {
+                width: 23%;
+                margin-bottom: 0;
+            }
+
+            &__list {
+
+                &__item {
+                    margin-bottom: 0.5rem;
+                    @include transition;
+                    
+                    a {
+                        @include transition;
+                        position: relative;
+                        
+                        &.active {
+                            font-weight: bold;
+                            
+                            &::before {
+                                content: '';
+                                width: 1.2rem;
+                                height: 0.25rem;
+                                background-color: $accent-color;
+                                position: absolute;
+                                border-radius: 50px;
+                                top: 45%;
+                                left: -1.5rem;
+                            }
+                        }
+                    }
+                    
+                    &:hover {
+                        transform: translateX(0.3rem);
+                    }
+                }
+            }
+        }
+
+        &__content {
+            width: 100%;
+            padding-top: 1.5rem;
+            border-top: 2px solid $accent-color;
+            @include media-min(sm) {
+                width: 77%;
+                padding-top: 0;
+                padding-left: 1.5rem;
+                border-top: none;
+                border-left: 2px solid $accent-color;
+            }
+
+        }
+    }
+
+}
