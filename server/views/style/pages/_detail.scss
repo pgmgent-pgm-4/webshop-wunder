@@ -125,13 +125,19 @@
             padding-top: 2rem;
             
             img {
+                object-fit: contain;
                 width: 10rem;
+                height: 8rem;
                 @include media-min(xs) {
                     width: 13.5rem;
+                    height: 8rem;
                 }
                 @include media-min(sm) {
                     width: 18rem;
+                    height: 10rem;
                 }
+                // width: 100%;
+                // height: 100%;
             }
         }
         

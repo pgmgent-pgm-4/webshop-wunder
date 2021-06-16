@@ -1906,13 +1906,17 @@ footer {
     .general__bg__logo {
       padding-top: 2rem; }
       .general__bg__logo img {
-        width: 10rem; }
+        object-fit: contain;
+        width: 10rem;
+        height: 8rem; }
         @media (min-width: 36rem) {
           .general__bg__logo img {
-            width: 13.5rem; } }
+            width: 13.5rem;
+            height: 8rem; } }
         @media (min-width: 50rem) {
           .general__bg__logo img {
-            width: 18rem; } }
+            width: 18rem;
+            height: 10rem; } }
   .general__car {
     position: absolute;
     top: 25%;

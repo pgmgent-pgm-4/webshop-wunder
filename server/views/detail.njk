@@ -9,7 +9,7 @@
     <section class="sticky-header">
         <div class="sticky-header__container max-width padding-side">
             <div class="sticky-header__container__type">
-                <img src="/static/images/detail/audi-top.png">
+                <img src="{{ car.teaserImgUrl }}">
 
                 <div class="sticky-header__container__type__text">
                     <p>{{ car.name }}</p>
@@ -40,7 +40,7 @@
             </div>
 
             <div class="max-width general__car">
-                <img src="/static/images/detail/ford-head.png" alt="Image of car">
+                <img src="/static/images/detail/{{ car.Brand.name }}-head.png" alt="Image of car">
             </div>
 
             <div class="max-width general__info padding-side">
