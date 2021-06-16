@@ -55,11 +55,7 @@
 
     <section class="overview-brands padding-side max-width">
         {% if category %}
-                    {# {% if 'bodywork' in filter %}
-                        <p>bodywork</p>
-                    {% elif 'brands' in filter %}
-                        <p>brands</p>
-                    {% endif %} #}
+
             {% for cat in data %}
             
                 {% if category %}
@@ -112,39 +108,6 @@
             {% endfor %}
         {% endif %}
     </section>
-    {# {% if category %}
-    {% for cat in data %}
-    
-        {% if category %}
-            <h2>{{ cat.name }}</h2>    
-            
-            <ul class="cards-list">
-                {% for car in cat.Cars %}
-                <li class="card-car">
-                    <a href="/cars">
-                        <button>
-                            <i data-feather="heart" class="favorite"></i>
-                        </button>
-
-                        <p class="type">{{car.name}}</p>
-                        <p class="price">Starting at $ {{car.price}}</p>
-
-                        <img class="car-image" src="{{car.teaserImgUrl}}" alt="Image of car">
-
-                        <div class="btn-pri">
-                            <span class="overlay"></span>
-                            <span class="container-text">
-                                <span>Discover</span>
-                            </span>
-                            <img class="arrow" src="/static/images/icons/arrow_right.svg" alt="arrow right">
-                        </div>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endfor %}
-    {% endif %} #}
 {% endblock %}
 
 {% block extraScript %}

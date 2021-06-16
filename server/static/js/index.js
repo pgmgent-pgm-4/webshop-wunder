@@ -73,7 +73,7 @@
     setActiveNavigationHeader() {
       // Check if 'a' link is same as url
       this.$menuList.forEach(item => {
-        if (item.href == location.href.split('?')[0] || item.href == location.href.split('#')[0]) {
+        if (item.href == location.href.split('?')[0] || item.href == location.href.split('#')[0] || item.href.split('/')[3] == location.href.split('/')[3]) {
           item.classList.add('active')
         } else {
           item.classList.remove('active')
@@ -84,7 +84,7 @@
     setActiveNavigationFooter() {
       // Check if 'a' link is same as url
       this.$footerList.forEach(item => {
-        if (item.href == location.href.split('?')[0]) {
+        if (item.href == location.href.split('?')[0] || item.href == location.href.split('#')[0] || item.href.split('/')[3] == location.href.split('/')[3]) {
           item.classList.add('active')
         } else {
           item.classList.remove('active')
@@ -95,7 +95,7 @@
     setActiveNavigationMobile() {
       // Check if 'a' link is same as url
       this.$mobileList.forEach(item => {
-        if (item.href == location.href.split('?')[0]) {
+        if (item.href == location.href.split('?')[0] || item.href == location.href.split('#')[0] || item.href.split('/')[3] == location.href.split('/')[3]) {
           item.classList.add('active')
         } else {
           item.classList.remove('active')
